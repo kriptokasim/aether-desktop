@@ -46,13 +46,7 @@
     4.  Main process sends result back to Renderer via IPC.
 
 ## AI Usage Inventory
-- **Location**:
-    - `apps/studio/electron/main/chat`: Likely handles chat backend logic.
-    - `packages/ai`: Shared AI logic.
-- **Dependencies**: `@ai-sdk/anthropic`, `ai` (Vercel AI SDK).
-- **Features**:
-    - Chat interface for generating code/edits.
-    - Potential "Apply" functionality to modify code based on AI response.
+For a detailed overview of AI modules, flows, and configuration, see [AETHER_DESKTOP_AI_OVERVIEW.md](AETHER_DESKTOP_AI_OVERVIEW.md).
 
 ## Helper Sequence Outlines
 
