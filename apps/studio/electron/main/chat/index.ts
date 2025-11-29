@@ -144,6 +144,11 @@ class LlmManager {
             };
         } catch (error: any) {
             try {
+                // Handle missing config error specifically
+                if (error.message && error.message.includes('Anthropic AI is not configured')) {
+                    return { message: error.message, type: 'error' };
+                }
+
                 if (error?.error?.statusCode) {
                     if (error?.error?.statusCode === 403) {
                         const rateLimitError = JSON.parse(

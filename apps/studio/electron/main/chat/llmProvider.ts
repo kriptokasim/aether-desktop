@@ -21,36 +21,46 @@ export async function initModel(
     }
 }
 
+import { getAnthropicConfig } from './config';
+
 async function getAnthropicProvider(
     model: CLAUDE_MODELS,
     payload: OnlookPayload,
 ): Promise<LanguageModelV1> {
-    const apiKey = import.meta.env.VITE_ANTHROPIC_API_KEY;
-    const proxyUrl = `${import.meta.env.VITE_SUPABASE_API_URL}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}${ProxyRoutes.ANTHROPIC}`;
+    const config = getAnthropicConfig();
 
-    const config: {
+    if (config.source === 'disabled') {
+        throw new Error(
+            'Anthropic AI is not configured. Please set VITE_ANTHROPIC_API_KEY or VITE_SUPABASE_API_URL.',
+        );
+    }
+
+    const providerConfig: {
         apiKey?: string;
         baseURL?: string;
         headers?: Record<string, string>;
     } = {};
 
-    if (apiKey) {
-        config.apiKey = apiKey;
-    } else {
+    if (config.source === 'direct') {
+        providerConfig.apiKey = config.apiKey;
+    } else if (config.source === 'supabaseProxy') {
         const authTokens = await getRefreshedAuthTokens();
         if (!authTokens) {
-            throw new Error('No auth tokens found');
+            throw new Error('No auth tokens found for Supabase proxy');
         }
-        config.apiKey = '';
-        config.baseURL = proxyUrl;
-        config.headers = {
+
+        const proxyUrl = `${config.supabaseUrl}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}${ProxyRoutes.ANTHROPIC}`;
+
+        providerConfig.apiKey = '';
+        providerConfig.baseURL = proxyUrl;
+        providerConfig.headers = {
             Authorization: `Bearer ${authTokens.accessToken}`,
             'X-Onlook-Request-Type': payload.requestType,
             'anthropic-beta': 'output-128k-2025-02-19',
         };
     }
 
-    const anthropic = createAnthropic(config);
+    const anthropic = createAnthropic(providerConfig);
     return anthropic(model, {
         cacheControl: true,
     });
