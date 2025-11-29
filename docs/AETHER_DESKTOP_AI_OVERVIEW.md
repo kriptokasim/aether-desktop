@@ -79,7 +79,23 @@ The AI provider configuration is handled in `apps/studio/electron/main/chat/llmP
 ### User Settings
 *   **`autoApplyCode`**: A setting (likely in `PersistentStorage`) that controls whether code suggestions are automatically applied.
 
-## End-to-End Flow Examples
+## Anthropic Configuration
+
+The AI integration is currently powered by Anthropic. Configuration is centralized in `apps/studio/electron/main/chat/config.ts`.
+
+### Configuration Logic
+The application determines the AI source based on environment variables:
+1.  **Direct**: If `VITE_ANTHROPIC_API_KEY` is present, it connects directly to Anthropic API.
+2.  **Supabase Proxy**: If no API key is found but `VITE_SUPABASE_API_URL` is present, it uses the Supabase proxy (requires authentication).
+3.  **Disabled**: If neither is present, AI features are disabled, and the user is prompted to configure them.
+
+### User Settings
+Users can configure the following settings via the UI (Settings > AI):
+-   **Anthropic Model**: The specific model version to use (e.g., `claude-3-5-sonnet-20241022`). Defaults to `claude-3-5-sonnet-20241022`.
+-   **Auto-apply Code**: Whether to automatically apply code suggestions from the AI.
+
+## End-to-End Flow
+ Examples
 
 ### 1. User Sends a Chat Message
 1.  **UI**: User types "Change the button color to red" in `OverlayChat` and hits Enter.

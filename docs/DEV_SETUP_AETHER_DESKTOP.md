@@ -38,6 +38,24 @@ bun run package
 
 We use `bun test` for testing and `eslint` for linting.
 
+### AI Setup (Anthropic)
+
+To enable AI features, you need to configure the Anthropic provider.
+
+1.  **Direct API Key**:
+    Set `VITE_ANTHROPIC_API_KEY` in your `.env` file:
+    ```bash
+    VITE_ANTHROPIC_API_KEY=sk-ant-...
+    ```
+
+2.  **Supabase Proxy**:
+    If you don't have a direct key, you can use the Supabase proxy (requires authentication). Ensure `VITE_SUPABASE_API_URL` is set.
+    ```bash
+    VITE_SUPABASE_API_URL=https://your-supabase-url.co
+    ```
+
+If neither is configured, the AI features will be disabled, and you will see a configuration error in the chat.
+
 ### Running Tests
 ```bash
 bun test

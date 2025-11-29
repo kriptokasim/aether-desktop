@@ -1,5 +1,10 @@
 # Aether Desktop Baseline Roadmap
 
+- [ ] **Multi-Provider AI Support**:
+    -   Refactor `LlmManager` to support multiple providers (Gemini, OpenAI).
+    -   Add configuration UI for selecting providers.
+    -   Implement provider-specific logic.
+
 ## Potential Improvements (Later)
 
 - **AI Brain Improvements**:
