@@ -1,6 +1,6 @@
 import { DEFAULT_IDE } from '../ide/index.ts';
 
-export const APP_NAME = 'Onlook';
+export const APP_NAME = 'Aether';
 export const APP_SCHEMA = 'onlook';
 export const HOSTING_DOMAIN = 'onlook.live';
 export const CUSTOM_OUTPUT_DIR = '.next-prod';

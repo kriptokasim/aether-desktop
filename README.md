@@ -2,6 +2,8 @@
 
 <a id="readme-top"></a>
 
+> **Note**: Aether Desktop is an open-source fork based on Onlook Desktop.
+
 ![image](https://github.com/user-attachments/assets/7b787ac7-96cd-44fd-90da-46996e1e1bf5)
 
 <div align="center">
