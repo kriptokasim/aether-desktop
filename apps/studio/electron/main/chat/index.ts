@@ -143,6 +143,7 @@ class LlmManager {
                             object: { toolName: string; args: Record<string, unknown> };
                         } = await generateObject({
                             model,
+                            output: 'object',
                             schema: repairSchema,
                             prompt: [
                                 `The model tried to call a non-existent tool "${toolCall.toolName}".`,
@@ -173,6 +174,7 @@ class LlmManager {
 
                     const { object: repairedArgs } = await generateObject({
                         model,
+                        output: 'object',
                         schema: tool.parameters,
                         prompt: [
                             `The model tried to call the tool "${toolCall.toolName}"` +
@@ -208,6 +210,9 @@ class LlmManager {
                 text: await text,
             };
         } catch (error: any) {
+            // Log the full error for debugging
+            console.error('LlmManager stream error:', error);
+
             try {
                 // Handle missing config error specifically
                 const errorMessage = error.message || '';
@@ -244,10 +249,20 @@ class LlmManager {
                     return { message: 'Request aborted', type: 'error' };
                 }
 
-                return { message: JSON.stringify(error), type: 'error' };
+                // Better error message extraction
+                const message =
+                    error.message ||
+                    error.error?.message ||
+                    error.toString() ||
+                    'An unknown error occurred';
+
+                return { message, type: 'error' };
             } catch (parseError) {
                 console.error('Error parsing error', parseError);
-                return { message: JSON.stringify(parseError), type: 'error' };
+                const fallbackMessage =
+                    (parseError as Error)?.message ||
+                    'An error occurred while processing the request';
+                return { message: fallbackMessage, type: 'error' };
             } finally {
                 this.abortController?.abort();
                 this.abortController = null;
