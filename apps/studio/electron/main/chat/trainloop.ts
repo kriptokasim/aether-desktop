@@ -9,12 +9,18 @@ class TrainLoopManager {
     private constructor() {}
 
     async getClient() {
-        const proxyUrl = `${import.meta.env.VITE_SUPABASE_API_URL}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}${ProxyRoutes.TRAINLOOP}`;
-        const authTokens = await getRefreshedAuthTokens();
-        if (!authTokens) {
-            throw new Error('No auth tokens found');
+        try {
+            const proxyUrl = `${import.meta.env.VITE_SUPABASE_API_URL}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}${ProxyRoutes.TRAINLOOP}`;
+            const authTokens = await getRefreshedAuthTokens();
+            if (!authTokens) {
+                return null;
+            }
+            return new Client(authTokens.accessToken, proxyUrl);
+        } catch (error) {
+            // Silently fail if not authenticated - analytics is optional
+            console.debug('TrainLoop client not available:', error);
+            return null;
         }
-        return new Client(authTokens.accessToken, proxyUrl);
     }
 
     public static getInstance(): TrainLoopManager {
@@ -25,12 +31,20 @@ class TrainLoopManager {
     }
 
     public async saveApplyResult(messages: CoreMessage[], type: SampleFeedbackType) {
-        const client = await this.getClient();
-        await client.sendData(
-            messages as unknown as Record<string, string>[],
-            type,
-            'onlook-apply-set',
-        );
+        try {
+            const client = await this.getClient();
+            if (!client) {
+                return; // Silently skip if no client available
+            }
+            await client.sendData(
+                messages as unknown as Record<string, string>[],
+                type,
+                'onlook-apply-set',
+            );
+        } catch (error) {
+            // Log but don't throw - analytics failures shouldn't break the app
+            console.debug('Failed to save apply result to TrainLoop:', error);
+        }
     }
 }
 

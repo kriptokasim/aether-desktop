@@ -36,7 +36,7 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
-        "@ai-sdk/anthropic": "^1.1.17",
+        "@ai-sdk/anthropic": "^2.0.50",
         "@ai-sdk/google": "^2.0.44",
         "@ai-sdk/openai": "^2.0.74",
         "@codemirror/autocomplete": "^6.18.6",
@@ -65,7 +65,7 @@
         "@types/webfontloader": "^1.6.38",
         "@uiw/react-codemirror": "^4.21.21",
         "@xterm/xterm": "^5.6.0-beta.98",
-        "ai": "^4.2.6",
+        "ai": "^5.0.104",
         "browser-image-compression": "^2.0.2",
         "detect-port": "^2.1.0",
         "download": "^8.0.0",
@@ -112,8 +112,8 @@
         "@onlook/typescript": "*",
         "@playwright/test": "^1.42.1",
         "@tailwindcss/typography": "^0.5.15",
-        "@types/babel-generator": "^6.25.8",
         "@types/babel__traverse": "^7.20.6",
+        "@types/babel-generator": "^6.25.8",
         "@types/bun": "^1.1.6",
         "@types/css-tree": "^2.3.8",
         "@types/download": "^8.0.5",

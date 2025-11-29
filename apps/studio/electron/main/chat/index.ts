@@ -107,6 +107,15 @@ class LlmManager {
                 requestType,
             });
 
+            // Debug logging to understand what's being sent
+            console.log('AI Request Config:', {
+                provider: activeProvider,
+                model: selectedModel,
+                messageCount: messages.length,
+                hasTools: !!chatToolSet,
+                toolCount: Object.keys(chatToolSet).length,
+            });
+
             const { usage, fullStream, text, response } = await streamText({
                 model,
                 messages,
