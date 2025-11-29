@@ -1,6 +1,8 @@
 # Aether Desktop Baseline Roadmap
 
-- [ ] **Multi-Provider AI Support**:
+- [x] **Multi-Provider AI Support**: Add support for OpenAI and Gemini alongside Anthropic.
+- [ ] **Provider-specific presets and templates**: Optimize prompts for each provider.
+- [ ] **Provider benchmarking / routing**: Automatically select the best provider based on task.
     -   Refactor `LlmManager` to support multiple providers (Gemini, OpenAI).
     -   Add configuration UI for selecting providers.
     -   Implement provider-specific logic.

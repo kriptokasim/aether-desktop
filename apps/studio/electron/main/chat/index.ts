@@ -1,6 +1,5 @@
 import { PromptProvider } from '@onlook/ai/src/prompt/provider';
 import { chatToolSet } from '@onlook/ai/src/tools';
-import { CLAUDE_MODELS } from '@onlook/models';
 import {
     ChatSuggestionSchema,
     ChatSummarySchema,
@@ -21,10 +20,15 @@ import {
     type TextStreamPart,
     type ToolSet,
 } from 'ai';
-import { z } from 'zod';
 import { mainWindow } from '..';
+import { z } from 'zod';
 import { PersistentStorage } from '../storage';
-import { type AIProviderId } from './config';
+import {
+    AI_PROVIDERS,
+    DEFAULT_MODELS,
+    FAST_MODELS,
+    type AIProviderId,
+} from '@onlook/models/constants';
 import { initModel } from './llmProvider';
 
 class LlmManager {
@@ -71,30 +75,35 @@ class LlmManager {
         const { abortController, skipSystemPrompt } = options || {};
         this.abortController = abortController || new AbortController();
         try {
+            const settings = PersistentStorage.USER_SETTINGS.read();
+            const activeProvider =
+                (settings?.chat?.provider as AIProviderId) || AI_PROVIDERS.ANTHROPIC;
+
             if (!skipSystemPrompt) {
                 const systemMessage = {
                     role: 'system',
-                    content: this.promptProvider.getSystemPrompt(process.platform),
+                    content: this.promptProvider.getSystemPrompt(process.platform, activeProvider),
                     experimental_providerMetadata: {
                         anthropic: { cacheControl: { type: 'ephemeral' } },
                     },
                 } as CoreSystemMessage;
                 messages = [systemMessage, ...messages];
             }
-            const settings = PersistentStorage.USER_SETTINGS.read();
-            const activeProvider = (settings?.chat?.provider as AIProviderId) || 'anthropic';
-            let selectedModel: string = CLAUDE_MODELS.SONNET_4;
+            let selectedModel: string = DEFAULT_MODELS[AI_PROVIDERS.ANTHROPIC];
 
-            if (activeProvider === 'anthropic') {
+            if (activeProvider === AI_PROVIDERS.ANTHROPIC) {
                 selectedModel =
-                    (settings?.chat?.anthropicModel as string) || CLAUDE_MODELS.SONNET_4;
-            } else if (activeProvider === 'openai') {
-                selectedModel = (settings?.chat?.openaiModel as string) || 'gpt-4o';
-            } else if (activeProvider === 'gemini') {
-                selectedModel = (settings?.chat?.geminiModel as string) || 'gemini-1.5-flash';
+                    (settings?.chat?.anthropicModel as string) ||
+                    DEFAULT_MODELS[AI_PROVIDERS.ANTHROPIC];
+            } else if (activeProvider === AI_PROVIDERS.OPENAI) {
+                selectedModel =
+                    (settings?.chat?.openaiModel as string) || DEFAULT_MODELS[AI_PROVIDERS.OPENAI];
+            } else if (activeProvider === AI_PROVIDERS.GEMINI) {
+                selectedModel =
+                    (settings?.chat?.geminiModel as string) || DEFAULT_MODELS[AI_PROVIDERS.GEMINI];
             }
 
-            const model = await initModel(activeProvider, selectedModel, {
+            const model: any = await initModel(activeProvider, selectedModel, {
                 requestType,
             });
 
@@ -120,8 +129,41 @@ class LlmManager {
                     error,
                 }) => {
                     if (NoSuchToolError.isInstance(error)) {
-                        console.error('Invalid tool name', toolCall.toolName);
-                        return null; // do not attempt to fix invalid tool names
+                        console.warn('Invalid tool name', toolCall.toolName, 'attempting to fix');
+                        const toolNames = Object.keys(tools).join(', ');
+
+                        // Define schema separately with explicit typing to avoid deep type instantiation
+                        const repairSchema = z.object({
+                            toolName: z.string(),
+                            args: z.record(z.string(), z.unknown()),
+                        });
+
+                        // Explicitly type the result to prevent deep type instantiation
+                        const repairResult: {
+                            object: { toolName: string; args: Record<string, unknown> };
+                        } = await generateObject({
+                            model,
+                            schema: repairSchema,
+                            prompt: [
+                                `The model tried to call a non-existent tool "${toolCall.toolName}".`,
+                                `The available tools are: ${toolNames}.`,
+                                `Please determine which valid tool was intended and provide the correct tool name and arguments.`,
+                                `Original arguments: ${JSON.stringify(toolCall.args)}`,
+                            ].join('\n'),
+                        });
+
+                        const repairedToolCall = repairResult.object;
+
+                        if (!repairedToolCall) {
+                            throw new Error('Failed to repair tool call: no object returned');
+                        }
+
+                        return {
+                            toolCallType: 'function' as const,
+                            toolCallId: toolCall.toolCallId,
+                            toolName: repairedToolCall.toolName,
+                            args: repairedToolCall.args as Record<string, unknown>,
+                        };
                     }
                     const tool = tools[toolCall.toolName as keyof typeof tools];
 
@@ -142,7 +184,16 @@ class LlmManager {
                         ].join('\n'),
                     });
 
-                    return { ...toolCall, args: JSON.stringify(repairedArgs) };
+                    if (!repairedArgs) {
+                        throw new Error('Failed to repair tool arguments: no object returned');
+                    }
+
+                    return {
+                        toolCallType: 'function' as const,
+                        toolCallId: toolCall.toolCallId,
+                        toolName: toolCall.toolName as string,
+                        args: repairedArgs,
+                    };
                 },
             });
             const streamParts: TextStreamPart<ToolSet>[] = [];
@@ -220,9 +271,17 @@ class LlmManager {
         mainWindow?.webContents.send(MainChannels.CHAT_STREAM_PARTIAL, res);
     }
 
+    private getActiveProviderAndFastModel(): { provider: AIProviderId; model: string } {
+        const settings = PersistentStorage.USER_SETTINGS.read();
+        const provider = (settings?.chat?.provider as AIProviderId) ?? AI_PROVIDERS.ANTHROPIC;
+        const model = FAST_MODELS[provider] ?? FAST_MODELS[AI_PROVIDERS.ANTHROPIC];
+        return { provider, model };
+    }
+
     public async generateSuggestions(messages: CoreMessage[]): Promise<ChatSuggestion[]> {
         try {
-            const model = await initModel('anthropic', CLAUDE_MODELS.HAIKU, {
+            const { provider, model: modelName } = this.getActiveProviderAndFastModel();
+            const model = await initModel(provider, modelName, {
                 requestType: StreamRequestType.SUGGESTIONS,
             });
 
@@ -241,13 +300,14 @@ class LlmManager {
 
     public async generateChatSummary(messages: CoreMessage[]): Promise<string | null> {
         try {
-            const model = await initModel('anthropic', CLAUDE_MODELS.HAIKU, {
+            const { provider, model: modelName } = this.getActiveProviderAndFastModel();
+            const model = await initModel(provider, modelName, {
                 requestType: StreamRequestType.SUMMARY,
             });
 
             const systemMessage: CoreSystemMessage = {
                 role: 'system',
-                content: this.promptProvider.getSummaryPrompt(),
+                content: this.promptProvider.getSummaryPrompt(provider),
                 experimental_providerMetadata: {
                     anthropic: { cacheControl: { type: 'ephemeral' } },
                 },

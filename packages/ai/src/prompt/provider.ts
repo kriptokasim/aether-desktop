@@ -1,3 +1,4 @@
+import { AI_PROVIDERS, type AIProviderId } from '@onlook/models/constants';
 import type {
     ChatMessageContext,
     ErrorMessageContext,
@@ -15,15 +16,13 @@ import { PLATFORM_SIGNATURE } from './signatures';
 import { SUMMARY_PROMPTS } from './summary';
 
 export class PromptProvider {
-    shouldWrapXml: boolean;
-    constructor(shouldWrapXml = true) {
-        this.shouldWrapXml = shouldWrapXml;
-    }
+    constructor() {}
 
-    getSystemPrompt(platform: NodeJS.Platform) {
+    getSystemPrompt(platform: NodeJS.Platform, provider: AIProviderId = AI_PROVIDERS.ANTHROPIC) {
         let prompt = '';
+        const useXml = provider === AI_PROVIDERS.ANTHROPIC;
 
-        if (this.shouldWrapXml) {
+        if (useXml) {
             prompt += wrapXml('role', EDIT_PROMPTS.system);
             prompt += wrapXml('search-replace-rules', EDIT_PROMPTS.searchReplaceRules);
             prompt += wrapXml(
@@ -31,18 +30,19 @@ export class PromptProvider {
                 this.getExampleConversation(SEARCH_REPLACE_EXAMPLE_CONVERSATION),
             );
         } else {
-            prompt += EDIT_PROMPTS.system;
-            prompt += EDIT_PROMPTS.searchReplaceRules;
-            prompt += this.getExampleConversation(SEARCH_REPLACE_EXAMPLE_CONVERSATION);
+            prompt += `### Role\n${EDIT_PROMPTS.system}\n\n`;
+            prompt += `### Rules\n${EDIT_PROMPTS.searchReplaceRules}\n\n`;
+            prompt += `### Example Conversation\n${this.getExampleConversation(SEARCH_REPLACE_EXAMPLE_CONVERSATION)}\n\n`;
         }
         prompt = prompt.replace(PLATFORM_SIGNATURE, platform);
         return prompt;
     }
 
-    getCreatePageSystemPrompt() {
+    getCreatePageSystemPrompt(provider: AIProviderId = AI_PROVIDERS.ANTHROPIC) {
         let prompt = '';
+        const useXml = provider === AI_PROVIDERS.ANTHROPIC;
 
-        if (this.shouldWrapXml) {
+        if (useXml) {
             prompt += wrapXml('role', PAGE_SYSTEM_PROMPT.role);
             prompt += wrapXml('rules', PAGE_SYSTEM_PROMPT.rules);
             prompt += wrapXml(
@@ -50,9 +50,9 @@ export class PromptProvider {
                 this.getExampleConversation(CREATE_PAGE_EXAMPLE_CONVERSATION),
             );
         } else {
-            prompt += PAGE_SYSTEM_PROMPT.role;
-            prompt += PAGE_SYSTEM_PROMPT.rules;
-            prompt += this.getExampleConversation(CREATE_PAGE_EXAMPLE_CONVERSATION);
+            prompt += `### Role\n${PAGE_SYSTEM_PROMPT.role}\n\n`;
+            prompt += `### Rules\n${PAGE_SYSTEM_PROMPT.rules}\n\n`;
+            prompt += `### Example Conversation\n${this.getExampleConversation(CREATE_PAGE_EXAMPLE_CONVERSATION)}\n\n`;
         }
         return prompt;
     }
@@ -70,10 +70,16 @@ export class PromptProvider {
         return prompt;
     }
 
-    getHydratedUserMessage(content: UserContent, context: ChatMessageContext[]): CoreUserMessage {
+    getHydratedUserMessage(
+        content: UserContent,
+        context: ChatMessageContext[],
+        provider: AIProviderId = AI_PROVIDERS.ANTHROPIC,
+    ): CoreUserMessage {
         if (content.length === 0) {
             throw new Error('Message is required');
         }
+
+        const useXml = provider === AI_PROVIDERS.ANTHROPIC;
 
         const files = context.filter((c) => c.type === 'file').map((c) => c);
         const highlights = context.filter((c) => c.type === 'highlight').map((c) => c);
@@ -82,24 +88,24 @@ export class PromptProvider {
         const images = context.filter((c) => c.type === 'image').map((c) => c);
 
         let prompt = '';
-        let contextPrompt = this.getFilesContent(files, highlights);
+        let contextPrompt = this.getFilesContent(files, highlights, provider);
         if (contextPrompt) {
-            if (this.shouldWrapXml) {
+            if (useXml) {
                 contextPrompt = wrapXml('context', contextPrompt);
             }
             prompt += contextPrompt;
         }
 
         if (errors.length > 0) {
-            let errorPrompt = this.getErrorsContent(errors);
+            let errorPrompt = this.getErrorsContent(errors, provider);
             prompt += errorPrompt;
         }
 
         if (project.length > 0) {
-            prompt += this.getProjectContext(project[0]);
+            prompt += this.getProjectContext(project[0], provider);
         }
 
-        if (this.shouldWrapXml) {
+        if (useXml) {
             const textContent =
                 typeof content === 'string'
                     ? content
@@ -130,10 +136,15 @@ export class PromptProvider {
         };
     }
 
-    getFilesContent(files: FileMessageContext[], highlights: HighlightMessageContext[]) {
+    getFilesContent(
+        files: FileMessageContext[],
+        highlights: HighlightMessageContext[],
+        provider: AIProviderId = AI_PROVIDERS.ANTHROPIC,
+    ) {
         if (files.length === 0) {
             return '';
         }
+        const useXml = provider === AI_PROVIDERS.ANTHROPIC;
         let prompt = '';
         prompt += `${CONTEXT_PROMPTS.filesContentPrefix}\n`;
         let index = 1;
@@ -142,9 +153,9 @@ export class PromptProvider {
             filePrompt += `${FENCE.code.start}${this.getLanguageFromFilePath(file.path)}\n`;
             filePrompt += file.content;
             filePrompt += `\n${FENCE.code.end}\n`;
-            filePrompt += this.getHighlightsContent(file.path, highlights);
+            filePrompt += this.getHighlightsContent(file.path, highlights, provider);
 
-            if (this.shouldWrapXml) {
+            if (useXml) {
                 filePrompt = wrapXml(files.length > 1 ? `file-${index}` : 'file', filePrompt);
             }
             prompt += filePrompt;
@@ -154,16 +165,20 @@ export class PromptProvider {
         return prompt;
     }
 
-    getErrorsContent(errors: ErrorMessageContext[]) {
+    getErrorsContent(
+        errors: ErrorMessageContext[],
+        provider: AIProviderId = AI_PROVIDERS.ANTHROPIC,
+    ) {
         if (errors.length === 0) {
             return '';
         }
+        const useXml = provider === AI_PROVIDERS.ANTHROPIC;
         let prompt = `${CONTEXT_PROMPTS.errorsContentPrefix}\n`;
         for (const error of errors) {
             prompt += `${error.content}\n`;
         }
 
-        if (prompt.trim().length > 0 && this.shouldWrapXml) {
+        if (prompt.trim().length > 0 && useXml) {
             prompt = wrapXml('errors', prompt);
         }
         return prompt;
@@ -173,11 +188,16 @@ export class PromptProvider {
         return filePath.split('.').pop() || '';
     }
 
-    getHighlightsContent(filePath: string, highlights: HighlightMessageContext[]) {
+    getHighlightsContent(
+        filePath: string,
+        highlights: HighlightMessageContext[],
+        provider: AIProviderId = AI_PROVIDERS.ANTHROPIC,
+    ) {
         const fileHighlights = highlights.filter((h) => h.path === filePath);
         if (fileHighlights.length === 0) {
             return '';
         }
+        const useXml = provider === AI_PROVIDERS.ANTHROPIC;
         let prompt = `${CONTEXT_PROMPTS.highlightPrefix}\n`;
         let index = 1;
         for (const highlight of fileHighlights) {
@@ -185,7 +205,7 @@ export class PromptProvider {
             highlightPrompt += `${FENCE.code.start}\n`;
             highlightPrompt += highlight.content;
             highlightPrompt += `\n${FENCE.code.end}\n`;
-            if (this.shouldWrapXml) {
+            if (useXml) {
                 highlightPrompt = wrapXml(
                     fileHighlights.length > 1 ? `highlight-${index}` : 'highlight',
                     highlightPrompt,
@@ -197,10 +217,11 @@ export class PromptProvider {
         return prompt;
     }
 
-    getSummaryPrompt() {
+    getSummaryPrompt(provider: AIProviderId = AI_PROVIDERS.ANTHROPIC) {
         let prompt = '';
+        const useXml = provider === AI_PROVIDERS.ANTHROPIC;
 
-        if (this.shouldWrapXml) {
+        if (useXml) {
             prompt += wrapXml('summary-rules', SUMMARY_PROMPTS.rules);
             prompt += wrapXml('summary-guidelines', SUMMARY_PROMPTS.guidelines);
             prompt += wrapXml('summary-format', SUMMARY_PROMPTS.format);
@@ -212,12 +233,12 @@ export class PromptProvider {
                 'EXAMPLE SUMMARY:\n' + SUMMARY_PROMPTS.summary,
             );
         } else {
-            prompt += SUMMARY_PROMPTS.rules + '\n\n';
-            prompt += SUMMARY_PROMPTS.guidelines + '\n\n';
-            prompt += SUMMARY_PROMPTS.format + '\n\n';
-            prompt += SUMMARY_PROMPTS.reminder + '\n\n';
-            prompt += this.getSummaryExampleConversation();
-            prompt += 'EXAMPLE SUMMARY:\n' + SUMMARY_PROMPTS.summary + '\n\n';
+            prompt += `### Rules\n${SUMMARY_PROMPTS.rules}\n\n`;
+            prompt += `### Guidelines\n${SUMMARY_PROMPTS.guidelines}\n\n`;
+            prompt += `### Format\n${SUMMARY_PROMPTS.format}\n\n`;
+            prompt += `### Reminder\n${SUMMARY_PROMPTS.reminder}\n\n`;
+            prompt += `### Example Conversation\n${this.getSummaryExampleConversation()}\n\n`;
+            prompt += `### Example Summary Output\nEXAMPLE SUMMARY:\n${SUMMARY_PROMPTS.summary}\n\n`;
         }
 
         return prompt;
@@ -231,9 +252,13 @@ export class PromptProvider {
         return prompt;
     }
 
-    getProjectContext(project: ProjectMessageContext) {
+    getProjectContext(
+        project: ProjectMessageContext,
+        provider: AIProviderId = AI_PROVIDERS.ANTHROPIC,
+    ) {
         const content = `${CONTEXT_PROMPTS.projectContextPrefix} ${project.path}`;
-        if (this.shouldWrapXml) {
+        const useXml = provider === AI_PROVIDERS.ANTHROPIC;
+        if (useXml) {
             return wrapXml('project-info', content);
         }
         return content;

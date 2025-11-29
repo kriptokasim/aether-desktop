@@ -1,9 +1,11 @@
 import { useUserManager } from '@/components/Context';
-import { DefaultSettings } from '@onlook/models/constants';
-import { CLAUDE_MODELS } from '@onlook/models/llm';
+import {
+    DefaultSettings,
+    AI_PROVIDERS,
+    DEFAULT_MODELS,
+    type AIProviderId,
+} from '@onlook/models/constants';
 import { observer } from 'mobx-react-lite';
-
-export type AIProviderId = 'anthropic' | 'openai' | 'gemini';
 
 export interface AetherAISettings {
     provider: AIProviderId;
@@ -13,10 +15,10 @@ export interface AetherAISettings {
     autoApplyCode: boolean;
 }
 
-export const DEFAULT_AI_PROVIDER: AIProviderId = 'anthropic';
-export const DEFAULT_ANTHROPIC_MODEL = CLAUDE_MODELS.SONNET_4;
-export const DEFAULT_OPENAI_MODEL = 'gpt-4o';
-export const DEFAULT_GEMINI_MODEL = 'gemini-1.5-flash';
+export const DEFAULT_AI_PROVIDER: AIProviderId = AI_PROVIDERS.ANTHROPIC;
+export const DEFAULT_ANTHROPIC_MODEL = DEFAULT_MODELS[AI_PROVIDERS.ANTHROPIC];
+export const DEFAULT_OPENAI_MODEL = DEFAULT_MODELS[AI_PROVIDERS.OPENAI];
+export const DEFAULT_GEMINI_MODEL = DEFAULT_MODELS[AI_PROVIDERS.GEMINI];
 export const DEFAULT_AUTO_APPLY_CODE = DefaultSettings.CHAT_SETTINGS.autoApplyCode;
 
 export const useAetherAISettings = () => {

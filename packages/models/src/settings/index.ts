@@ -1,5 +1,6 @@
 import { IdeType } from '../ide';
 import { type Project } from '../projects';
+import { type AIProviderId } from '../constants';
 
 export interface UserSettings {
     id?: string;
@@ -25,7 +26,7 @@ export interface ChatSettings {
     anthropicModel?: string;
     openaiModel?: string;
     geminiModel?: string;
-    provider?: string;
+    provider?: AIProviderId;
 }
 
 export interface ProjectsCache {

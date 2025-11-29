@@ -1,6 +1,6 @@
-import { CLAUDE_MODELS } from '@onlook/models/llm';
+import { AI_PROVIDERS, DEFAULT_MODELS, type AIProviderId } from '@onlook/models/constants';
 
-export type AIProviderId = 'anthropic' | 'openai' | 'gemini';
+export type { AIProviderId };
 export type ProviderSource = 'direct' | 'supabaseProxy' | 'disabled';
 
 export interface ProviderConfigBase {
@@ -9,21 +9,21 @@ export interface ProviderConfigBase {
 }
 
 export interface AnthropicConfig extends ProviderConfigBase {
-    id: 'anthropic';
+    id: typeof AI_PROVIDERS.ANTHROPIC;
     source: ProviderSource;
     apiKey?: string;
     supabaseUrl?: string;
 }
 
 export interface OpenAIConfig extends ProviderConfigBase {
-    id: 'openai';
+    id: typeof AI_PROVIDERS.OPENAI;
     source: ProviderSource;
     apiKey?: string;
     supabaseUrl?: string;
 }
 
 export interface GeminiConfig extends ProviderConfigBase {
-    id: 'gemini';
+    id: typeof AI_PROVIDERS.GEMINI;
     source: ProviderSource;
     apiKey?: string;
     supabaseUrl?: string;
@@ -34,9 +34,9 @@ export type AnyProviderConfig = AnthropicConfig | OpenAIConfig | GeminiConfig;
 export interface AetherAIProviderConfig {
     activeProvider: AIProviderId;
     providers: {
-        anthropic: AnthropicConfig;
-        openai: OpenAIConfig;
-        gemini: GeminiConfig;
+        [AI_PROVIDERS.ANTHROPIC]: AnthropicConfig;
+        [AI_PROVIDERS.OPENAI]: OpenAIConfig;
+        [AI_PROVIDERS.GEMINI]: GeminiConfig;
     };
 }
 
@@ -53,19 +53,16 @@ export function getAnthropicConfig(): AnthropicConfig {
     }
 
     return {
-        id: 'anthropic',
+        id: AI_PROVIDERS.ANTHROPIC,
         source,
         apiKey,
         supabaseUrl,
-        defaultModel: CLAUDE_MODELS.SONNET_4,
+        defaultModel: DEFAULT_MODELS[AI_PROVIDERS.ANTHROPIC],
     };
 }
 
 export function getOpenAIConfig(): OpenAIConfig {
     const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-    // Assuming we might use a proxy for OpenAI too, but for now let's stick to the plan
-    // If there's a specific VITE_OPENAI_SUPABASE_URL, use it, otherwise maybe fallback or just keep it simple.
-    // The plan mentioned VITE_OPENAI_SUPABASE_URL.
     const supabaseUrl =
         import.meta.env.VITE_OPENAI_SUPABASE_URL || import.meta.env.VITE_SUPABASE_API_URL;
 
@@ -74,17 +71,15 @@ export function getOpenAIConfig(): OpenAIConfig {
     if (apiKey && apiKey.length > 0) {
         source = 'direct';
     } else if (supabaseUrl && supabaseUrl.length > 0) {
-        // Only enable proxy if we actually have a way to proxy OpenAI requests through Supabase
-        // For now, let's assume we do if the URL is set, similar to Anthropic
         source = 'supabaseProxy';
     }
 
     return {
-        id: 'openai',
+        id: AI_PROVIDERS.OPENAI,
         source,
         apiKey,
         supabaseUrl,
-        defaultModel: 'gpt-4o', // Default for now
+        defaultModel: DEFAULT_MODELS[AI_PROVIDERS.OPENAI],
     };
 }
 
@@ -102,11 +97,11 @@ export function getGeminiConfig(): GeminiConfig {
     }
 
     return {
-        id: 'gemini',
+        id: AI_PROVIDERS.GEMINI,
         source,
         apiKey,
         supabaseUrl,
-        defaultModel: 'gemini-1.5-flash', // Default for now
+        defaultModel: DEFAULT_MODELS[AI_PROVIDERS.GEMINI],
     };
 }
 
@@ -114,9 +109,9 @@ export function getAetherAIProviderConfig(activeProvider: AIProviderId): AetherA
     return {
         activeProvider,
         providers: {
-            anthropic: getAnthropicConfig(),
-            openai: getOpenAIConfig(),
-            gemini: getGeminiConfig(),
+            [AI_PROVIDERS.ANTHROPIC]: getAnthropicConfig(),
+            [AI_PROVIDERS.OPENAI]: getOpenAIConfig(),
+            [AI_PROVIDERS.GEMINI]: getGeminiConfig(),
         },
     };
 }

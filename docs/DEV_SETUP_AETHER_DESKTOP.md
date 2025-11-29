@@ -38,18 +38,23 @@ bun run package
 
 We use `bun test` for testing and `eslint` for linting.
 
-### AI Setup (Anthropic)
+### Multi-Provider AI Setup
 
-To enable AI features, you need to configure the Anthropic provider.
+Aether Desktop supports Anthropic, OpenAI, and Gemini. To configure them:
 
-1.  **Direct API Key**:
-    Set `VITE_ANTHROPIC_API_KEY` in your `.env` file:
-    ```bash
-    VITE_ANTHROPIC_API_KEY=sk-ant-...
-    ```
+1.  **Environment Variables**:
+    *   **Anthropic**: Set `VITE_ANTHROPIC_API_KEY` in `.env.local`.
+    *   **OpenAI**: Set `VITE_OPENAI_API_KEY` in `.env.local`.
+    *   **Gemini**: Set `VITE_GEMINI_API_KEY` in `.env.local`.
 
-2.  **Supabase Proxy**:
-    If you don't have a direct key, you can use the Supabase proxy (requires authentication). Ensure `VITE_SUPABASE_API_URL` is set.
+2.  **Settings**:
+    *   Go to **Settings > AI** in the app.
+    *   Select your desired **AI Provider**.
+    *   Configure the **Model** string if needed.
+
+3.  **Misconfiguration**:
+    *   If a provider is selected but not configured (missing API key), the chat will display an error message prompting you to set the key.
+    *   If you don't have a direct key, you can use the Supabase proxy (requires authentication). Ensure `VITE_SUPABASE_API_URL` is set.
     ```bash
     VITE_SUPABASE_API_URL=https://your-supabase-url.co
     ```

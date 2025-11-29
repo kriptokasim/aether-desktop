@@ -6,3 +6,4 @@ export * from './ipc';
 export * from './language';
 export * from './terminal';
 export * from './fonts';
+export * from './ai';

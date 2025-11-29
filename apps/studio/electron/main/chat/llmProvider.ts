@@ -1,6 +1,7 @@
 import type { StreamRequestType } from '@onlook/models/chat';
+import { type AIProviderId } from '@onlook/models/constants';
 import { type LanguageModelV1 } from 'ai';
-import { type AIProviderId, getAetherAIProviderConfig } from './config';
+import { getAetherAIProviderConfig } from './config';
 import { createProviderClient } from './providerFactory';
 
 export interface OnlookPayload {

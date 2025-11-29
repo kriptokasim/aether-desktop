@@ -1,16 +1,16 @@
 import { createAnthropic } from '@ai-sdk/anthropic';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { createOpenAI } from '@ai-sdk/openai';
-import { BASE_PROXY_ROUTE, FUNCTIONS_ROUTE, ProxyRoutes } from '@onlook/models/constants';
+import {
+    BASE_PROXY_ROUTE,
+    FUNCTIONS_ROUTE,
+    ProxyRoutes,
+    AI_PROVIDERS,
+    type AIProviderId,
+} from '@onlook/models/constants';
 import { type LanguageModelV1 } from 'ai';
 import { getRefreshedAuthTokens } from '../auth';
-import type {
-    AIProviderId,
-    AnthropicConfig,
-    AnyProviderConfig,
-    GeminiConfig,
-    OpenAIConfig,
-} from './config';
+import type { AnthropicConfig, AnyProviderConfig, GeminiConfig, OpenAIConfig } from './config';
 
 export interface ProviderClient {
     id: AIProviderId;
@@ -129,11 +129,11 @@ export async function createProviderClient(
     modelName: string,
 ): Promise<any> {
     switch (provider) {
-        case 'anthropic':
+        case AI_PROVIDERS.ANTHROPIC:
             return createAnthropicClient(config as AnthropicConfig, modelName);
-        case 'openai':
+        case AI_PROVIDERS.OPENAI:
             return createOpenAIClient(config as OpenAIConfig, modelName);
-        case 'gemini':
+        case AI_PROVIDERS.GEMINI:
             return createGeminiClient(config as GeminiConfig, modelName);
         default:
             throw new Error(`Unsupported provider: ${provider}`);

@@ -67,7 +67,7 @@ The AI logic is split between the **Renderer process** (UI, state management) an
 ### Shared Packages (`packages/ai`)
 
 *   **`PromptProvider`** (`packages/ai/src/prompt/provider.ts`)
-    *   **Purpose**: Constructs the system prompts and user messages, including context (files, errors, etc.).
+    *   **Purpose**: Constructs the system prompts and user messages, including context (files, errors, etc.). It is provider-aware, generating XML-structured prompts for Anthropic and Markdown for others.
     *   **Key Functions**: `getSystemPrompt`, `getHydratedUserMessage`.
 
 *   **`chatToolSet`** (`packages/ai/src/tools/index.ts`)
@@ -133,6 +133,5 @@ Users can configure the following settings via the UI (Settings > AI):
 
 ## Current Limitations / Observations
 
-*   **Provider Lock-in**: The code currently hardcodes `LLMProvider.ANTHROPIC` and `CLAUDE_MODELS` in `LlmManager`.
 *   **Proxy Dependency**: Without a direct API key, it relies on a specific Supabase proxy structure.
-*   **Tooling**: The `chatToolSet` is imported from `@onlook/ai`, suggesting that tool definitions are shared but the execution logic resides in the main process (or is handled by the `ai` SDK's `experimental_repairToolCall`).
+*   **Tooling**: The `chatToolSet` is imported from `@onlook/ai`. Tool execution is handled by the `ai` SDK, with custom repair logic implemented for `NoSuchToolError` to guide the model towards valid tools.
