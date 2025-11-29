@@ -9,6 +9,7 @@ import { cn } from '@onlook/ui/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useMemo } from 'react';
+import AISettingsTab from './AI';
 import AdvancedTab from './Advance';
 import { DomainTab } from './Domain';
 import PreferencesTab from './Preferences';
@@ -80,6 +81,11 @@ export const SettingsModal = observer(() => {
             label: SettingsTabValue.PREFERENCES,
             icon: <Icons.Person className="mr-2 h-4 w-4" />,
             component: <PreferencesTab />,
+        },
+        {
+            label: SettingsTabValue.AI,
+            icon: <Icons.MagicWand className="mr-2 h-4 w-4" />,
+            component: <AISettingsTab />,
         },
         {
             label: SettingsTabValue.ADVANCED,

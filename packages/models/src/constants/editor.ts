@@ -1,3 +1,4 @@
+import { CLAUDE_MODELS } from '../llm/index.ts';
 import { DEFAULT_IDE } from '../ide/index.ts';
 
 export const APP_NAME = 'Aether';
@@ -80,7 +81,9 @@ export const DefaultSettings = {
         autoApplyCode: true,
         expandCodeBlocks: false,
         showMiniChat: true,
+        anthropicModel: CLAUDE_MODELS.SONNET_4,
     },
+
     EDITOR_SETTINGS: {
         shouldWarnDelete: true,
         ideType: DEFAULT_IDE,

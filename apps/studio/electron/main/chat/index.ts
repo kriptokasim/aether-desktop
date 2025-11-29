@@ -80,7 +80,11 @@ class LlmManager {
                 } as CoreSystemMessage;
                 messages = [systemMessage, ...messages];
             }
-            const model = await initModel(LLMProvider.ANTHROPIC, CLAUDE_MODELS.SONNET_4, {
+            const settings = PersistentStorage.USER_SETTINGS.read();
+            const selectedModel =
+                (settings?.chat?.anthropicModel as CLAUDE_MODELS) || CLAUDE_MODELS.SONNET_4;
+
+            const model = await initModel(LLMProvider.ANTHROPIC, selectedModel, {
                 requestType,
             });
 

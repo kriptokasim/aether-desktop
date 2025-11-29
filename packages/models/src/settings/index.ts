@@ -22,6 +22,7 @@ export interface ChatSettings {
     autoApplyCode: boolean;
     expandCodeBlocks: boolean;
     showMiniChat: boolean;
+    anthropicModel?: string;
 }
 
 export interface ProjectsCache {
