@@ -23,6 +23,9 @@ export interface ChatSettings {
     expandCodeBlocks: boolean;
     showMiniChat: boolean;
     anthropicModel?: string;
+    openaiModel?: string;
+    geminiModel?: string;
+    provider?: string;
 }
 
 export interface ProjectsCache {

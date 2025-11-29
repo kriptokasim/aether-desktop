@@ -1,67 +1,25 @@
-import { createAnthropic } from '@ai-sdk/anthropic';
 import type { StreamRequestType } from '@onlook/models/chat';
-import { BASE_PROXY_ROUTE, FUNCTIONS_ROUTE, ProxyRoutes } from '@onlook/models/constants';
-import { CLAUDE_MODELS, LLMProvider } from '@onlook/models/llm';
 import { type LanguageModelV1 } from 'ai';
-import { getRefreshedAuthTokens } from '../auth';
+import { type AIProviderId, getAetherAIProviderConfig } from './config';
+import { createProviderClient } from './providerFactory';
+
 export interface OnlookPayload {
     requestType: StreamRequestType;
 }
 
 export async function initModel(
-    provider: LLMProvider,
-    model: CLAUDE_MODELS,
+    provider: AIProviderId,
+    modelName: string,
     payload: OnlookPayload,
 ): Promise<LanguageModelV1> {
-    switch (provider) {
-        case LLMProvider.ANTHROPIC:
-            return await getAnthropicProvider(model, payload);
-        default:
-            throw new Error(`Unsupported provider: ${provider}`);
-    }
-}
+    const providerConfig = getAetherAIProviderConfig(provider);
+    const config = providerConfig.providers[provider];
 
-import { getAnthropicConfig } from './config';
+    // Pass requestType to headers if needed (mostly for Anthropic proxy)
+    // The factory functions might need to be updated to accept payload if we want to pass requestType
+    // For now, let's assume we can pass it or handle it within the factory if we pass payload.
+    // Actually, looking at the previous code, requestType was passed to headers.
+    // I should update createAnthropicClient in providerFactory to accept payload or headers.
 
-async function getAnthropicProvider(
-    model: CLAUDE_MODELS,
-    payload: OnlookPayload,
-): Promise<LanguageModelV1> {
-    const config = getAnthropicConfig();
-
-    if (config.source === 'disabled') {
-        throw new Error(
-            'Anthropic AI is not configured. Please set VITE_ANTHROPIC_API_KEY or VITE_SUPABASE_API_URL.',
-        );
-    }
-
-    const providerConfig: {
-        apiKey?: string;
-        baseURL?: string;
-        headers?: Record<string, string>;
-    } = {};
-
-    if (config.source === 'direct') {
-        providerConfig.apiKey = config.apiKey;
-    } else if (config.source === 'supabaseProxy') {
-        const authTokens = await getRefreshedAuthTokens();
-        if (!authTokens) {
-            throw new Error('No auth tokens found for Supabase proxy');
-        }
-
-        const proxyUrl = `${config.supabaseUrl}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}${ProxyRoutes.ANTHROPIC}`;
-
-        providerConfig.apiKey = '';
-        providerConfig.baseURL = proxyUrl;
-        providerConfig.headers = {
-            Authorization: `Bearer ${authTokens.accessToken}`,
-            'X-Onlook-Request-Type': payload.requestType,
-            'anthropic-beta': 'output-128k-2025-02-19',
-        };
-    }
-
-    const anthropic = createAnthropic(providerConfig);
-    return anthropic(model, {
-        cacheControl: true,
-    });
+    return await createProviderClient(provider, config, modelName);
 }

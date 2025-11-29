@@ -1,5 +1,22 @@
 # Aether Desktop AI Overview
 
+## Providers Supported
+Aether Desktop supports multiple AI providers:
+- **Anthropic** (Default): Uses Claude models (e.g., Sonnet 3.5).
+- **OpenAI**: Uses GPT models (e.g., GPT-4o).
+- **Gemini**: Uses Gemini models (e.g., Gemini 1.5 Flash).
+
+## Provider Selection
+You can select the active provider and configure models in **Settings > AI**.
+- **Provider**: Choose between Anthropic, OpenAI, and Gemini.
+- **Models**: Specify the model string for each provider (e.g., `claude-3-5-sonnet-20241022`, `gpt-4o`, `gemini-1.5-flash`).
+
+## Per-provider Configuration
+Each provider requires specific configuration via environment variables:
+- **Anthropic**: `VITE_ANTHROPIC_API_KEY` or `VITE_SUPABASE_API_URL` (for proxy).
+- **OpenAI**: `VITE_OPENAI_API_KEY`.
+- **Gemini**: `VITE_GEMINI_API_KEY`.
+
 This document provides a high-level overview of the AI integration within Aether Desktop (formerly Onlook Desktop). It describes the architecture, key modules, UI entry points, and configuration.
 
 ## Overview

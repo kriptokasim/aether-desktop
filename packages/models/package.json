@@ -30,6 +30,7 @@
     },
     "devDependencies": {
         "@onlook/typescript": "*",
+        "@types/uuid": "^11.0.0",
         "typescript": "^5.5.4"
     },
     "dependencies": {

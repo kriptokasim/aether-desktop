@@ -1,6 +1,6 @@
 import { PromptProvider } from '@onlook/ai/src/prompt/provider';
 import { chatToolSet } from '@onlook/ai/src/tools';
-import { CLAUDE_MODELS, LLMProvider } from '@onlook/models';
+import { CLAUDE_MODELS } from '@onlook/models';
 import {
     ChatSuggestionSchema,
     ChatSummarySchema,
@@ -24,6 +24,7 @@ import {
 import { z } from 'zod';
 import { mainWindow } from '..';
 import { PersistentStorage } from '../storage';
+import { type AIProviderId } from './config';
 import { initModel } from './llmProvider';
 
 class LlmManager {
@@ -81,10 +82,19 @@ class LlmManager {
                 messages = [systemMessage, ...messages];
             }
             const settings = PersistentStorage.USER_SETTINGS.read();
-            const selectedModel =
-                (settings?.chat?.anthropicModel as CLAUDE_MODELS) || CLAUDE_MODELS.SONNET_4;
+            const activeProvider = (settings?.chat?.provider as AIProviderId) || 'anthropic';
+            let selectedModel: string = CLAUDE_MODELS.SONNET_4;
 
-            const model = await initModel(LLMProvider.ANTHROPIC, selectedModel, {
+            if (activeProvider === 'anthropic') {
+                selectedModel =
+                    (settings?.chat?.anthropicModel as string) || CLAUDE_MODELS.SONNET_4;
+            } else if (activeProvider === 'openai') {
+                selectedModel = (settings?.chat?.openaiModel as string) || 'gpt-4o';
+            } else if (activeProvider === 'gemini') {
+                selectedModel = (settings?.chat?.geminiModel as string) || 'gemini-1.5-flash';
+            }
+
+            const model = await initModel(activeProvider, selectedModel, {
                 requestType,
             });
 
@@ -149,8 +159,13 @@ class LlmManager {
         } catch (error: any) {
             try {
                 // Handle missing config error specifically
-                if (error.message && error.message.includes('Anthropic AI is not configured')) {
-                    return { message: error.message, type: 'error' };
+                const errorMessage = error.message || '';
+                if (
+                    errorMessage.includes('Anthropic AI is not configured') ||
+                    errorMessage.includes('OpenAI is not configured') ||
+                    errorMessage.includes('Gemini is not configured')
+                ) {
+                    return { message: errorMessage, type: 'error' };
                 }
 
                 if (error?.error?.statusCode) {
@@ -207,7 +222,7 @@ class LlmManager {
 
     public async generateSuggestions(messages: CoreMessage[]): Promise<ChatSuggestion[]> {
         try {
-            const model = await initModel(LLMProvider.ANTHROPIC, CLAUDE_MODELS.HAIKU, {
+            const model = await initModel('anthropic', CLAUDE_MODELS.HAIKU, {
                 requestType: StreamRequestType.SUGGESTIONS,
             });
 
@@ -226,7 +241,7 @@ class LlmManager {
 
     public async generateChatSummary(messages: CoreMessage[]): Promise<string | null> {
         try {
-            const model = await initModel(LLMProvider.ANTHROPIC, CLAUDE_MODELS.HAIKU, {
+            const model = await initModel('anthropic', CLAUDE_MODELS.HAIKU, {
                 requestType: StreamRequestType.SUMMARY,
             });
 
