@@ -77,8 +77,7 @@ export async function createOpenAIClient(config: OpenAIConfig, modelName: string
         if (!authTokens) {
             throw new Error('No auth tokens found for Supabase proxy');
         }
-        // Assuming a similar proxy route for OpenAI if it exists
-        const proxyUrl = `${config.supabaseUrl}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}/openai`; // Adjust route as needed
+        const proxyUrl = `${config.supabaseUrl}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}${ProxyRoutes.OPENAI}`;
 
         providerConfig.apiKey = '';
         providerConfig.baseURL = proxyUrl;
@@ -105,12 +104,11 @@ export async function createGeminiClient(config: GeminiConfig, modelName: string
     if (config.source === 'direct') {
         providerConfig.apiKey = config.apiKey;
     } else if (config.source === 'supabaseProxy') {
-        // Placeholder for Gemini proxy logic if needed
         const authTokens = await getRefreshedAuthTokens();
         if (!authTokens) {
             throw new Error('No auth tokens found for Supabase proxy');
         }
-        const proxyUrl = `${config.supabaseUrl}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}/gemini`; // Adjust route as needed
+        const proxyUrl = `${config.supabaseUrl}${FUNCTIONS_ROUTE}${BASE_PROXY_ROUTE}${ProxyRoutes.GEMINI}`;
 
         providerConfig.apiKey = '';
         providerConfig.baseURL = proxyUrl;

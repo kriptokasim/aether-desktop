@@ -16,6 +16,8 @@ export enum ApiRoutes {
 export const BASE_PROXY_ROUTE = '/proxy';
 export enum ProxyRoutes {
     ANTHROPIC = '/anthropic',
+    OPENAI = '/openai',
+    GEMINI = '/gemini',
     TRAINLOOP = '/trainloop',
 }
 export const REDIRECT_APP_URL = 'https://onlook.dev/redirect-app';

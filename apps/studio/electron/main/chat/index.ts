@@ -103,7 +103,7 @@ class LlmManager {
                     (settings?.chat?.geminiModel as string) || DEFAULT_MODELS[AI_PROVIDERS.GEMINI];
             }
 
-            const model: any = await initModel(activeProvider, selectedModel, {
+            const model = await initModel(activeProvider, selectedModel, {
                 requestType,
             });
 
