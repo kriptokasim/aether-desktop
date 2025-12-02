@@ -88,7 +88,9 @@ export async function signIn(provider: 'github' | 'google') {
         return;
     }
 
+    console.log('OAuth URL:', data.url);
     shell.openExternal(data.url);
+
     sendAnalytics('sign in', { provider });
 }
 
