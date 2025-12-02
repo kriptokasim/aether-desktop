@@ -1,4 +1,4 @@
-import { extractFontParts, getFontFileName, convertFontString } from '@onlook/utility';
+import { extractFontParts, getFontFileName, convertFontString } from '@aether/utility';
 
 describe('Font Utilities', () => {
     describe('extractFontParts', () => {

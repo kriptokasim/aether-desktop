@@ -3,7 +3,7 @@ import { DATA_ONLOOK_ID } from "./constants";
 import { compress, isReactFragment } from "./helpers";
 import type { TemplateNode, TemplateTag } from './model';
 
-export default function babelPluginOnlook({ root = process.cwd() }): any {
+export default function babelPluginAether({ root = process.cwd() }): any {
   const componentStack: string[] = [];
   return {
     visitor: {
@@ -56,13 +56,13 @@ export default function babelPluginOnlook({ root = process.cwd() }): any {
         const attributeValue = getTemplateNode(path, filename, componentStack);
 
         // Create the custom attribute
-        const onlookAttribute = t.jSXAttribute(
+        const aetherAttribute = t.jSXAttribute(
           t.jSXIdentifier(DATA_ONLOOK_ID),
           t.stringLiteral(attributeValue)
         );
 
         // Append the attribute to the element
-        path.node.openingElement.attributes.push(onlookAttribute);
+        path.node.openingElement.attributes.push(aetherAttribute);
       }
     },
   };

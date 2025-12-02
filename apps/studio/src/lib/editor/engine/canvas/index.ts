@@ -1,12 +1,12 @@
 import type { ProjectsManager } from '@/lib/projects';
 import { SIZE_PRESETS } from '@/lib/sizePresets';
-import { DefaultSettings } from '@onlook/models/constants';
+import { DefaultSettings } from '@aether/models/constants';
 import type {
     FrameSettings,
     Project,
     ProjectSettings,
     RectPosition,
-} from '@onlook/models/projects';
+} from '@aether/models/projects';
 import { debounce } from 'lodash';
 import { makeAutoObservable, reaction } from 'mobx';
 import { nanoid } from 'nanoid/non-secure';

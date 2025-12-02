@@ -1,5 +1,5 @@
-import { PropsType } from '@onlook/models/element';
-import { Input } from '@onlook/ui/input';
+import { PropsType } from '@aether/models/element';
+import { Input } from '@aether/ui/input';
 import type { Prop } from '.';
 interface TextPropProps {
     prop: Prop;

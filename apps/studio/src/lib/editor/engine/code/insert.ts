@@ -1,7 +1,7 @@
-import type { ActionElement, ActionLocation, PasteParams } from '@onlook/models/actions';
-import { CodeActionType, type CodeInsert } from '@onlook/models/actions';
-import { EditorAttributes } from '@onlook/models/constants';
-import { StyleChangeType } from '@onlook/models/style';
+import type { ActionElement, ActionLocation, PasteParams } from '@aether/models/actions';
+import { CodeActionType, type CodeInsert } from '@aether/models/actions';
+import { EditorAttributes } from '@aether/models/constants';
+import { StyleChangeType } from '@aether/models/style';
 import { twMerge } from 'tailwind-merge';
 import { getTailwindClasses } from './helpers';
 

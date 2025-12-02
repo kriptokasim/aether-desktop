@@ -1,4 +1,4 @@
-import { AI_PROVIDERS, DEFAULT_MODELS, type AIProviderId } from '@onlook/models/constants';
+import { AI_PROVIDERS, DEFAULT_MODELS, type AIProviderId } from '@aether/models/constants';
 
 export type { AIProviderId };
 export type ProviderSource = 'direct' | 'supabaseProxy' | 'disabled';

@@ -1,9 +1,9 @@
 import { useEditorEngine, useProjectsManager } from '@/components/Context';
 import { useMetadataForm } from '@/hooks/useMetadataForm';
-import { DefaultSettings, type ImageContentData, type PageMetadata } from '@onlook/models';
-import { MainChannels } from '@onlook/models/constants';
+import { DefaultSettings, type ImageContentData, type PageMetadata } from '@aether/models';
+import { MainChannels } from '@aether/models/constants';
 import { invokeMainChannel } from '@/lib/utils';
-import { toast } from '@onlook/ui/use-toast';
+import { toast } from '@aether/ui/use-toast';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import { MetadataForm } from './MetadataForm';

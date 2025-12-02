@@ -1,11 +1,11 @@
 import { useEditorEngine } from '@/components/Context';
 import type { CompoundStyle } from '@/lib/editor/styles/models';
 import type { ColorItem } from '@/routes/editor/LayersPanel/BrandTab/ColorPanel/ColorPalletGroup';
-import { Icons } from '@onlook/ui/icons/index';
-import { Input } from '@onlook/ui/input';
-import { Popover, PopoverContent, PopoverTrigger } from '@onlook/ui/popover';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@onlook/ui/tabs';
-import { Color, toNormalCase } from '@onlook/utility';
+import { Icons } from '@aether/ui/icons/index';
+import { Input } from '@aether/ui/input';
+import { Popover, PopoverContent, PopoverTrigger } from '@aether/ui/popover';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@aether/ui/tabs';
+import { Color, toNormalCase } from '@aether/utility';
 import { memo, useEffect, useRef, useState } from 'react';
 import { isBackgroundImageEmpty } from '.';
 import ColorButton from './ColorButton';
@@ -186,7 +186,7 @@ export const BrandPopoverPicker = memo(
                                         />
                                         {searchQuery && (
                                             <button
-                                                className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-onlook active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
+                                                className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-aether active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
                                                 onClick={() => setSearchQuery('')}
                                             >
                                                 <Icons.CrossS className="h-3 w-3 text-foreground-primary/50 group-hover:text-foreground-primary" />

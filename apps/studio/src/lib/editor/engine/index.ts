@@ -8,8 +8,8 @@ import {
 import type { ProjectsManager } from '@/lib/projects';
 import type { UserManager } from '@/lib/user';
 import { invokeMainChannel, sendAnalytics } from '@/lib/utils';
-import { MainChannels } from '@onlook/models/constants';
-import type { FrameSettings } from '@onlook/models/projects';
+import { MainChannels } from '@aether/models/constants';
+import type { FrameSettings } from '@aether/models/projects';
 import type { NativeImage } from 'electron';
 import { makeAutoObservable } from 'mobx';
 import { nanoid } from 'nanoid/non-secure';

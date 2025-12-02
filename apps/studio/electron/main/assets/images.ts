@@ -1,5 +1,5 @@
-import type { ImageContentData } from '@onlook/models/actions';
-import { DefaultSettings } from '@onlook/models/constants';
+import type { ImageContentData } from '@aether/models/actions';
+import { DefaultSettings } from '@aether/models/constants';
 import { promises as fs } from 'fs';
 import mime from 'mime-lite';
 import path from 'path';

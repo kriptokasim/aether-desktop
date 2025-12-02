@@ -1,19 +1,19 @@
-# Onlook React Babel preprocessor
+# Aether React Babel preprocessor
 
 ## Usage
 
 1. Install preprocessor library
 
 ```bash
-npm i --save-dev @onlook/babel-plugin-react
+npm i --save-dev @aether/babel-plugin-react
 ```
 
-2. Add the onlook preprocessor
+2. Add the aether preprocessor
 
-If it doesn't exists, create a `.babelrc` file and add the onlook preprocessor.
+If it doesn't exists, create a `.babelrc` file and add the aether preprocessor.
 ```
 {
-  "plugins": ["@onlook/react"]
+  "plugins": ["@aether/react"]
 }
 ```
 
@@ -23,7 +23,7 @@ For base Webpack project, use [babel-loader](https://www.npmjs.com/package/babel
 
 1. Install `babel-loader` and the plugin 
 ```bash
-npm install -D babel-loader @babel/core @babel/preset-env webpack @onlook/babel-plugin-react
+npm install -D babel-loader @babel/core @babel/preset-env webpack @aether/babel-plugin-react
 ```
 
 2. Add `babel-loader` rule in webpack.config.js
@@ -47,12 +47,12 @@ module: {
 }
 ```
 
-3. Add the onlook babel plugin
+3. Add the aether babel plugin
 
-If it doesn't exists, create a `.babelrc` file and add the onlook plugin.
+If it doesn't exists, create a `.babelrc` file and add the aether plugin.
 ```json
 {
-  "plugins": ["@onlook/react"]
+  "plugins": ["@aether/react"]
 }
 ```
 
@@ -66,7 +66,7 @@ To use with Create React App, access to webpack configuration is required to add
 1. Install dependencies 
 
 ```
-npm install react-app-rewired customize-cra @onlook/babel-plugin-react --save-dev
+npm install react-app-rewired customize-cra @aether/babel-plugin-react --save-dev
 ```
 
 
@@ -92,7 +92,7 @@ const { override, addBabelPlugins } = require('customize-cra');
 
 module.exports = override(
   ...addBabelPlugins(
-    '@onlook/react'
+    '@aether/react'
   )
 );
 ```
@@ -112,11 +112,11 @@ In your project directory, run the following command:
 
 You'll notice that the config and scripts folders have been added to your project directory. These folders contain all the configuration files and scripts that were previously managed by CRA, including webpack, Babel, ESLint, etc.
 
-2. Add the onlook preprocessor
+2. Add the aether preprocessor
 
-If it doesn't exists, create a `.babelrc` file and add the onlook preprocessor.
+If it doesn't exists, create a `.babelrc` file and add the aether preprocessor.
 ```bash
 {
-  "plugins": ["@onlook/react"]
+  "plugins": ["@aether/react"]
 }
 ```

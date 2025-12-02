@@ -1,6 +1,6 @@
-import type { ActionTarget, GroupContainer } from '@onlook/models/actions';
-import { EditorAttributes } from '@onlook/models/constants';
-import type { DomElement } from '@onlook/models/element';
+import type { ActionTarget, GroupContainer } from '@aether/models/actions';
+import { EditorAttributes } from '@aether/models/constants';
+import type { DomElement } from '@aether/models/element';
 import { getOrAssignDomId } from '../../ids';
 import { getDomElement } from '../helpers';
 import { elementFromDomId } from '/common/helpers';

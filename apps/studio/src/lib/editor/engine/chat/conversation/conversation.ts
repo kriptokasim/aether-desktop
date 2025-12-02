@@ -1,5 +1,5 @@
-import { ChatMessageRole, type ChatConversation, type TokenUsage } from '@onlook/models/chat';
-import { MAX_NAME_LENGTH } from '@onlook/models/constants';
+import { ChatMessageRole, type ChatConversation, type TokenUsage } from '@aether/models/chat';
+import { MAX_NAME_LENGTH } from '@aether/models/constants';
 import type { CoreMessage, ToolCallPart, ToolResultPart } from 'ai';
 import { makeAutoObservable } from 'mobx';
 import { nanoid } from 'nanoid/non-secure';

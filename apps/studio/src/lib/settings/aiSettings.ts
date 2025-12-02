@@ -4,7 +4,7 @@ import {
     AI_PROVIDERS,
     DEFAULT_MODELS,
     type AIProviderId,
-} from '@onlook/models/constants';
+} from '@aether/models/constants';
 import { observer } from 'mobx-react-lite';
 
 export interface AetherAISettings {

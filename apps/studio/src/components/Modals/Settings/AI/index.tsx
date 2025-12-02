@@ -1,13 +1,13 @@
 import { useAetherAISettings } from '@/lib/settings/aiSettings';
-import { Button } from '@onlook/ui/button';
+import { Button } from '@aether/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
+} from '@aether/ui/dropdown-menu';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
 import { observer } from 'mobx-react-lite';
 
 const AISettingsTab = observer(() => {
@@ -19,7 +19,7 @@ const AISettingsTab = observer(() => {
             <div className="flex justify-between items-center">
                 <div className="flex flex-col gap-2">
                     <p className="text-largePlus">AI Provider</p>
-                    <p className="text-foreground-onlook text-small">
+                    <p className="text-foreground-aether text-small">
                         Select the AI provider to use
                     </p>
                 </div>
@@ -55,7 +55,7 @@ const AISettingsTab = observer(() => {
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col gap-2">
                         <p className="text-largePlus">Anthropic Model</p>
-                        <p className="text-foreground-onlook text-small">
+                        <p className="text-foreground-aether text-small">
                             Specify the Anthropic model to use (e.g. claude-3-5-sonnet-20241022)
                         </p>
                     </div>
@@ -75,7 +75,7 @@ const AISettingsTab = observer(() => {
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col gap-2">
                         <p className="text-largePlus">OpenAI Model</p>
-                        <p className="text-foreground-onlook text-small">
+                        <p className="text-foreground-aether text-small">
                             Specify the OpenAI model to use (e.g. gpt-4o)
                         </p>
                     </div>
@@ -93,7 +93,7 @@ const AISettingsTab = observer(() => {
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col gap-2">
                         <p className="text-largePlus">Gemini Model</p>
-                        <p className="text-foreground-onlook text-small">
+                        <p className="text-foreground-aether text-small">
                             Specify the Gemini model to use (e.g. gemini-1.5-flash)
                         </p>
                     </div>
@@ -110,7 +110,7 @@ const AISettingsTab = observer(() => {
             <div className="flex justify-between items-center">
                 <div className="flex flex-col gap-2">
                     <p className="text-largePlus">Auto-apply Code</p>
-                    <p className="text-foreground-onlook text-small">
+                    <p className="text-foreground-aether text-small">
                         Automatically apply code suggestions from AI
                     </p>
                 </div>

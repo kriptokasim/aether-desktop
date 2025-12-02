@@ -1,6 +1,6 @@
 {
-    "name": "@onlook/git",
-    "description": "A git library for Onlook",
+    "name": "@aether/git",
+    "description": "A git library for Aether",
     "main": "./src/index.ts",
     "type": "module",
     "module": "src/index.ts",
@@ -9,7 +9,7 @@
     "private": true,
     "repository": {
         "type": "git",
-        "url": "https://github.com/onlook-dev/desktop.git"
+        "url": "https://github.com/aether-dev/desktop.git"
     },
     "scripts": {
         "clean": "rm -rf node_modules",
@@ -18,17 +18,17 @@
         "typecheck": "tsc --noEmit"
     },
     "keywords": [
-        "onlook",
+        "aether",
         "git"
     ],
     "author": {
-        "name": "Onlook",
-        "email": "contact@onlook.com"
+        "name": "Aether",
+        "email": "contact@aether.com"
     },
     "license": "Apache-2.0",
-    "homepage": "https://onlook.com",
+    "homepage": "https://aether.com",
     "devDependencies": {
-        "@onlook/typescript": "*"
+        "@aether/typescript": "*"
     },
     "dependencies": {
         "globby": "^14.1.0",

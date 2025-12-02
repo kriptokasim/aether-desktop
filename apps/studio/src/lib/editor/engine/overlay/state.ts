@@ -1,4 +1,4 @@
-import type { DomElementStyles } from '@onlook/models/element';
+import type { DomElementStyles } from '@aether/models/element';
 import { makeAutoObservable } from 'mobx';
 import { nanoid } from 'nanoid/non-secure';
 import type { RectDimensions } from './rect';

@@ -1,6 +1,6 @@
 import { updateTransactionActions } from '@/lib/editor/engine/history/helpers';
-import { type Action, type UpdateStyleAction } from '@onlook/models/actions';
-import { StyleChangeType } from '@onlook/models/style';
+import { type Action, type UpdateStyleAction } from '@aether/models/actions';
+import { StyleChangeType } from '@aether/models/style';
 import { describe, expect, it } from 'bun:test';
 
 describe('updateTransactionActions', () => {

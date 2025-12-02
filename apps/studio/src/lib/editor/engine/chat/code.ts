@@ -1,10 +1,10 @@
 import type { ProjectsManager } from '@/lib/projects';
 import { invokeMainChannel, sendAnalytics } from '@/lib/utils';
-import { CodeBlockProcessor } from '@onlook/ai';
-import { ChatMessageRole, type AssistantChatMessage, type CodeBlock } from '@onlook/models/chat';
-import type { CodeDiff } from '@onlook/models/code';
-import { MainChannels } from '@onlook/models/constants';
-import { toast } from '@onlook/ui/use-toast';
+import { CodeBlockProcessor } from '@aether/ai';
+import { ChatMessageRole, type AssistantChatMessage, type CodeBlock } from '@aether/models/chat';
+import type { CodeDiff } from '@aether/models/code';
+import { MainChannels } from '@aether/models/constants';
+import { toast } from '@aether/ui/use-toast';
 import { SampleFeedbackType } from '@trainloop/sdk';
 import type { CoreMessage } from 'ai';
 import { makeAutoObservable } from 'mobx';

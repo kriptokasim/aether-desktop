@@ -133,7 +133,7 @@ export interface IconProps {
 }
 
 export const Icons = {
-    OnlookLogo: ({ className, ...props }: IconProps) => (
+    AetherLogo: ({ className, ...props }: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width={22}
@@ -198,7 +198,7 @@ export const Icons = {
             </defs>
         </svg>
     ),
-    OnlookIcon: ({ className, ...props }: IconProps) => (
+    AetherIcon: ({ className, ...props }: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width={22}
@@ -250,7 +250,7 @@ export const Icons = {
             </defs>
         </svg>
     ),
-    OnlookTextLogo: ({ className, ...props }: IconProps) => (
+    AetherTextLogo: ({ className, ...props }: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width={139}

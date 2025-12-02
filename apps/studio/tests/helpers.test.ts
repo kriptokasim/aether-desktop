@@ -1,4 +1,4 @@
-import { toNormalCase } from '@onlook/utility';
+import { toNormalCase } from '@aether/utility';
 import { camelCase } from 'lodash';
 
 describe('toNormalCase', () => {

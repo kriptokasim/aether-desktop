@@ -1,6 +1,6 @@
-import { PromptProvider } from '@onlook/ai/src/prompt/provider';
-import type { ChatMessageContext } from '@onlook/models/chat';
-import { ChatMessageRole, type UserChatMessage } from '@onlook/models/chat';
+import { PromptProvider } from '@aether/ai/src/prompt/provider';
+import type { ChatMessageContext } from '@aether/models/chat';
+import { ChatMessageRole, type UserChatMessage } from '@aether/models/chat';
 import type { CoreUserMessage, UserContent } from 'ai';
 import { nanoid } from 'nanoid/non-secure';
 

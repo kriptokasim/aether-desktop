@@ -2,7 +2,7 @@ import { anthropic } from '@ai-sdk/anthropic';
 import { tool, type ToolSet } from 'ai';
 import { readFile } from 'fs/promises';
 import { z } from 'zod';
-import { ONLOOK_PROMPT } from '../prompt/onlook';
+import { ONLOOK_PROMPT } from '../prompt/aether';
 import { getAllFiles } from './helpers';
 
 export const listFilesTool = tool({
@@ -43,8 +43,8 @@ export const readFilesTool = tool({
     },
 });
 
-export const onlookInstructionsTool = tool({
-    description: 'Get the instructions for the Onlook AI',
+export const aetherInstructionsTool = tool({
+    description: 'Get the instructions for the Aether AI',
     parameters: z.object({}),
     execute: async () => {
         return ONLOOK_PROMPT;
@@ -133,5 +133,5 @@ export const getStrReplaceEditorTool = (handlers: FileOperationHandlers) => {
 export const chatToolSet: ToolSet = {
     list_files: listFilesTool,
     read_files: readFilesTool,
-    onlook_instructions: onlookInstructionsTool,
+    aether_instructions: aetherInstructionsTool,
 };

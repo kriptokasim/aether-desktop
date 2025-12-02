@@ -5,8 +5,8 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-} from '@onlook/ui/alert-dialog';
-import { Button } from '@onlook/ui/button';
+} from '@aether/ui/alert-dialog';
+import { Button } from '@aether/ui/button';
 import { observer } from 'mobx-react-lite';
 
 const RenameImageModal = observer(

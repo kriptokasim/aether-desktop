@@ -73,7 +73,7 @@ export const modifyViteConfig = (configFileExtension: string): void => {
     );
 
     let reactPluginAdded = false;
-    let onlookBabelPluginAdded = false;
+    let aetherBabelPluginAdded = false;
     let reactImportAdded = false;
 
     // Add import for react plugin if it doesn't exist
@@ -127,7 +127,7 @@ export const modifyViteConfig = (configFileExtension: string): void => {
                     );
 
                     if (reactPluginIndex === -1) {
-                        // If react plugin doesn't exist, add it with the Onlook Babel plugin
+                        // If react plugin doesn't exist, add it with the Aether Babel plugin
                         const reactPlugin = t.callExpression(t.identifier('react'), [
                             t.objectExpression([
                                 t.objectProperty(
@@ -145,9 +145,9 @@ export const modifyViteConfig = (configFileExtension: string): void => {
                         ]);
                         pluginsArray.push(reactPlugin);
                         reactPluginAdded = true;
-                        onlookBabelPluginAdded = true;
+                        aetherBabelPluginAdded = true;
                     } else {
-                        // If react plugin exists, ensure it has the Onlook Babel plugin
+                        // If react plugin exists, ensure it has the Aether Babel plugin
                         const reactPlugin = pluginsArray[reactPluginIndex];
                         if (t.isCallExpression(reactPlugin) && reactPlugin.arguments.length === 0) {
                             // React plugin exists but has no arguments, add the configuration
@@ -167,12 +167,12 @@ export const modifyViteConfig = (configFileExtension: string): void => {
                                 ]),
                             );
                             reactPluginAdded = true;
-                            onlookBabelPluginAdded = true;
+                            aetherBabelPluginAdded = true;
                         } else if (
                             t.isCallExpression(reactPlugin) &&
                             reactPlugin.arguments.length > 0
                         ) {
-                            // React plugin exists and has arguments, ensure it has the Onlook Babel plugin
+                            // React plugin exists and has arguments, ensure it has the Aether Babel plugin
                             const reactConfig = reactPlugin.arguments[0];
                             if (t.isObjectExpression(reactConfig)) {
                                 let babelProp = reactConfig.properties.find(
@@ -195,7 +195,7 @@ export const modifyViteConfig = (configFileExtension: string): void => {
                                     );
                                     reactConfig.properties.push(babelProp);
                                     reactPluginAdded = true;
-                                    onlookBabelPluginAdded = true;
+                                    aetherBabelPluginAdded = true;
                                 } else if (t.isObjectExpression(babelProp.value)) {
                                     let pluginsProp = babelProp.value.properties.find(
                                         (prop): prop is t.ObjectProperty =>
@@ -212,7 +212,7 @@ export const modifyViteConfig = (configFileExtension: string): void => {
                                         );
                                         babelProp.value.properties.push(pluginsProp);
                                         reactPluginAdded = true;
-                                        onlookBabelPluginAdded = true;
+                                        aetherBabelPluginAdded = true;
                                     } else if (t.isArrayExpression(pluginsProp.value)) {
                                         if (
                                             !hasPlugin(
@@ -224,7 +224,7 @@ export const modifyViteConfig = (configFileExtension: string): void => {
                                                 t.stringLiteral(ONLOOK_PLUGIN.BABEL),
                                             );
                                             reactPluginAdded = true;
-                                            onlookBabelPluginAdded = true;
+                                            aetherBabelPluginAdded = true;
                                         }
                                     }
                                 }
@@ -242,13 +242,13 @@ export const modifyViteConfig = (configFileExtension: string): void => {
     if (reactPluginAdded) {
         console.log(`React plugin added to ${configFileName}`);
     }
-    if (onlookBabelPluginAdded) {
+    if (aetherBabelPluginAdded) {
         console.log(`${ONLOOK_PLUGIN.BABEL} plugin added to ${configFileName}`);
     }
     if (reactImportAdded) {
         console.log(`React import added to ${configFileName}`);
     }
-    if (!reactPluginAdded && !onlookBabelPluginAdded && !reactImportAdded) {
+    if (!reactPluginAdded && !aetherBabelPluginAdded && !reactImportAdded) {
         console.log(`No changes were necessary in ${configFileName}`);
     }
 };

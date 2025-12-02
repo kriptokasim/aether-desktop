@@ -1,17 +1,17 @@
 import { useEditorEngine } from '@/components/Context';
 import { invokeMainChannel } from '@/lib/utils';
-import { Theme } from '@onlook/models/assets';
-import { MainChannels } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
+import { Theme } from '@aether/models/assets';
+import { MainChannels } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
-import { Icons } from '@onlook/ui/icons';
-import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@onlook/ui/tooltip';
-import { Color, toNormalCase, generateUniqueName } from '@onlook/utility';
+} from '@aether/ui/dropdown-menu';
+import { Icons } from '@aether/ui/icons';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@aether/ui/tooltip';
+import { Color, toNormalCase, generateUniqueName } from '@aether/utility';
 import { useState } from 'react';
 import { ColorPopover } from './ColorPopover';
 import { ColorNameInput } from './ColorNameInput';

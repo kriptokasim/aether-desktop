@@ -1,10 +1,10 @@
 import { useEditorEngine } from '@/components/Context';
 import { invokeMainChannel, sendAnalytics } from '@/lib/utils';
-import type { CodeDiffRequest } from '@onlook/models';
-import { MainChannels } from '@onlook/models/constants';
-import { PropsType, type DomElement, type PropsParsingResult } from '@onlook/models/element';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons/index';
+import type { CodeDiffRequest } from '@aether/models';
+import { MainChannels } from '@aether/models/constants';
+import { PropsType, type DomElement, type PropsParsingResult } from '@aether/models/element';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons/index';
 import { useEffect, useState } from 'react';
 import BooleanProp from './BooleanProp';
 import CodeProp from './CodeProp';

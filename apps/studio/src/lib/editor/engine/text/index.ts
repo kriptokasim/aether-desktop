@@ -1,7 +1,7 @@
 import { invokeMainChannel } from '@/lib/utils';
-import { MainChannels } from '@onlook/models/constants';
-import type { DomElement, ElementPosition } from '@onlook/models/element';
-import { toast } from '@onlook/ui/use-toast';
+import { MainChannels } from '@aether/models/constants';
+import type { DomElement, ElementPosition } from '@aether/models/element';
+import { toast } from '@aether/ui/use-toast';
 import type { WebviewTag } from 'electron';
 import jsStringEscape from 'js-string-escape';
 import type { EditorEngine } from '..';

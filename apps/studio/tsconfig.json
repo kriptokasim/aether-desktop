@@ -1,11 +1,13 @@
 {
-    "extends": "@onlook/typescript/vite-react.json",
+    "extends": "@aether/typescript/vite-react.json",
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"],
-            "/*": ["./*"]
-        }
+            "/*": ["./*"],
+            "@aether/ai/*": ["../../packages/ai/*"]
+        },
+        "moduleResolution": "bundler"
     },
     "include": ["src", "electron", "common", "data", "tests"],
     "exclude": ["node_modules"]

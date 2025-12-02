@@ -1,5 +1,5 @@
-import type { PageNode } from '@onlook/models/pages';
-import { cn } from '@onlook/ui/utils';
+import type { PageNode } from '@aether/models/pages';
+import { cn } from '@aether/ui/utils';
 import { forwardRef } from 'react';
 import type { RowRendererProps } from 'react-arborist';
 
@@ -13,10 +13,10 @@ const PageTreeRow = forwardRef<
             {...attrs}
             className={cn(
                 'outline-none h-6 cursor-pointer w-full rounded',
-                'text-foreground-onlook/70',
+                'text-foreground-aether/70',
                 !attrs['aria-selected'] && [
-                    isHighlighted && 'bg-background-onlook text-foreground-primary',
-                    'hover:text-foreground-primary hover:bg-background-onlook',
+                    isHighlighted && 'bg-background-aether text-foreground-primary',
+                    'hover:text-foreground-primary hover:bg-background-aether',
                 ],
                 attrs['aria-selected'] && [
                     '!bg-[#FA003C] dark:!bg-[#FA003C]',

@@ -1,4 +1,4 @@
-import { DOM_IGNORE_TAGS, EditorAttributes } from '@onlook/models/constants';
+import { DOM_IGNORE_TAGS, EditorAttributes } from '@aether/models/constants';
 
 export function elementFromDomId(domId: string): HTMLElement | null {
     return document.querySelector(`[${EditorAttributes.DATA_ONLOOK_DOM_ID}="${domId}"]`);
@@ -35,7 +35,7 @@ export function isValidHtmlElement(element: Element): boolean {
     );
 }
 
-export function isOnlookInDoc(doc: Document): boolean {
+export function isAetherInDoc(doc: Document): boolean {
     const attributeExists = doc.evaluate(
         `//*[@${EditorAttributes.DATA_ONLOOK_ID}]`,
         doc,

@@ -1,4 +1,4 @@
-import type { DomElement, DomElementStyles } from '@onlook/models/element';
+import type { DomElement, DomElementStyles } from '@aether/models/element';
 import { reaction } from 'mobx';
 import type { EditorEngine } from '..';
 import type { RectDimensions } from './rect';

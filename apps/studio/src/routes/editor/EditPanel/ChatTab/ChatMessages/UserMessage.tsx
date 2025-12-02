@@ -1,9 +1,9 @@
 import { useEditorEngine } from '@/components/Context';
 import type { UserChatMessageImpl } from '@/lib/editor/engine/chat/message/user';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons/index';
-import { Textarea } from '@onlook/ui/textarea';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@onlook/ui/tooltip';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons/index';
+import { Textarea } from '@aether/ui/textarea';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@aether/ui/tooltip';
 import { nanoid } from 'nanoid';
 import React, { useEffect, useRef, useState } from 'react';
 import { SentContextPill } from '../ContextPills/SentContextPill';

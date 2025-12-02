@@ -2,18 +2,18 @@ import { useEditorEngine } from '@/components/Context';
 import { useTheme } from '@/components/ThemeProvider';
 import type { FileNode } from '@/lib/editor/engine/files';
 import { EditorTabValue } from '@/lib/models';
-import { MainChannels, Theme } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
+import { MainChannels, Theme } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
-import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@onlook/ui/tooltip';
-import { toast } from '@onlook/ui/use-toast';
+} from '@aether/ui/dropdown-menu';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@aether/ui/tooltip';
+import { toast } from '@aether/ui/use-toast';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Tree, type TreeApi } from 'react-arborist';
@@ -169,7 +169,7 @@ export const DevTab = observer(() => {
     };
 
     useEffect(() => {
-        const handleOpenCodeInOnlook = async (data: any) => {
+        const handleOpenCodeInAether = async (data: any) => {
             if (data && data.filePath) {
                 editorEngine.editPanelTab = EditorTabValue.DEV;
 
@@ -199,11 +199,11 @@ export const DevTab = observer(() => {
         };
 
         // Subscribe to the event using the standard IPC API
-        window.api.on(MainChannels.VIEW_CODE_IN_ONLOOK, handleOpenCodeInOnlook);
+        window.api.on(MainChannels.VIEW_CODE_IN_ONLOOK, handleOpenCodeInAether);
 
         // Cleanup
         return () => {
-            window.api.removeListener(MainChannels.VIEW_CODE_IN_ONLOOK, handleOpenCodeInOnlook);
+            window.api.removeListener(MainChannels.VIEW_CODE_IN_ONLOOK, handleOpenCodeInAether);
         };
     }, [editorEngine]);
 
@@ -915,7 +915,7 @@ export const DevTab = observer(() => {
                                         />
                                         {searchQuery && (
                                             <button
-                                                className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-onlook active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
+                                                className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-aether active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
                                                 onClick={() => setSearchQuery('')}
                                             >
                                                 <Icons.CrossS className="h-3 w-3 text-foreground-primary/50 group-hover:text-foreground-primary" />
@@ -927,7 +927,7 @@ export const DevTab = observer(() => {
                                             <Button
                                                 variant={'default'}
                                                 size={'icon'}
-                                                className="p-2 w-fit h-fit text-foreground-primary border-border-primary hover:border-border-onlook bg-background-secondary hover:bg-background-onlook border"
+                                                className="p-2 w-fit h-fit text-foreground-primary border-border-primary hover:border-border-aether bg-background-secondary hover:bg-background-aether border"
                                                 onClick={loadProjectFiles}
                                             >
                                                 <Icons.Reload />

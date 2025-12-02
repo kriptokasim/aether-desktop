@@ -1,7 +1,7 @@
-import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@onlook/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@aether/ui/tooltip';
 import { camelCase } from 'lodash';
 import { useState, useEffect } from 'react';
-import { toNormalCase } from '@onlook/utility';
+import { toNormalCase } from '@aether/utility';
 import { useEditorEngine } from '@/components/Context';
 
 interface ColorNameInputProps {

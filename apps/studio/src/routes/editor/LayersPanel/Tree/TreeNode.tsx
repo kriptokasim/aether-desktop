@@ -1,9 +1,9 @@
 import { useEditorEngine } from '@/components/Context';
-import { MouseAction } from '@onlook/models/editor';
-import type { DomElement, LayerNode } from '@onlook/models/element';
-import { Icons } from '@onlook/ui/icons';
-import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@onlook/ui/tooltip';
-import { cn } from '@onlook/ui/utils';
+import { MouseAction } from '@aether/models/editor';
+import type { DomElement, LayerNode } from '@aether/models/element';
+import { Icons } from '@aether/ui/icons';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@aether/ui/tooltip';
+import { cn } from '@aether/ui/utils';
 import { TooltipArrow } from '@radix-ui/react-tooltip';
 import { observer } from 'mobx-react-lite';
 import { motion } from 'motion/react';
@@ -117,7 +117,7 @@ const TreeNode = observer(
                             isComponentAncestor(node) && !node.data.instanceId && !hovered,
                         'text-purple-500 dark:text-purple-200':
                             isComponentAncestor(node) && !node.data.instanceId && hovered,
-                        'text-foreground-onlook':
+                        'text-foreground-aether':
                             !isComponentAncestor(node) &&
                             !node.data.instanceId &&
                             !selected &&
@@ -130,7 +130,7 @@ const TreeNode = observer(
                         'rounded-t': selected && node.isInternal,
                         'rounded-b': isParentSelected && parentGroupEnd(node),
                         'rounded-none': isParentSelected && node.nextSibling,
-                        'bg-background-onlook': hovered,
+                        'bg-background-aether': hovered,
                         'bg-[#FA003C] dark:bg-[#FA003C]/90': selected,
                         'bg-[#FA003C]/10 dark:bg-[#FA003C]/10': isParentSelected,
                         'bg-[#FA003C]/20 dark:bg-[#FA003C]/20': hovered && isParentSelected,

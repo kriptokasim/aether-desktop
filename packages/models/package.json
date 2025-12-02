@@ -1,10 +1,10 @@
 {
-    "name": "@onlook/models",
-    "description": "Common models shared between onlook packages",
+    "name": "@aether/models",
+    "description": "Common models shared between aether packages",
     "version": "0.0.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/onlook-dev/desktop.git"
+        "url": "https://github.com/aether-dev/desktop.git"
     },
     "type": "module",
     "main": "src/index.ts",
@@ -15,21 +15,21 @@
         "typecheck": "tsc --noEmit"
     },
     "keywords": [
-        "onlook",
+        "aether",
         "models"
     ],
     "author": {
-        "name": "Onlook",
-        "email": "contact@onlook.com"
+        "name": "Aether",
+        "email": "contact@aether.com"
     },
     "license": "Apache-2.0",
-    "homepage": "https://onlook.com",
+    "homepage": "https://aether.com",
     "exports": {
         ".": "./src/index.ts",
         "./*": "./src/*/index.ts"
     },
     "devDependencies": {
-        "@onlook/typescript": "*",
+        "@aether/typescript": "*",
         "@types/uuid": "^11.0.0",
         "typescript": "^5.5.4"
     },

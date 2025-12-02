@@ -1,8 +1,8 @@
 import { useProjectsManager } from '@/components/Context';
 import { sendAnalytics } from '@/lib/utils';
-import type { Project } from '@onlook/models/projects';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
+import type { Project } from '@aether/models/projects';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
 import { observer } from 'mobx-react-lite';
 import { motion } from 'motion/react';
 import type { ComponentProps } from 'react';

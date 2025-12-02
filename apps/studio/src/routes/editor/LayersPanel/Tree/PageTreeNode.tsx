@@ -1,14 +1,14 @@
 import { useEditorEngine } from '@/components/Context';
-import type { PageNode } from '@onlook/models/pages';
+import type { PageNode } from '@aether/models/pages';
 import {
     ContextMenu,
     ContextMenuContent,
     ContextMenuItem,
     ContextMenuTrigger,
-} from '@onlook/ui/context-menu';
-import { Icons } from '@onlook/ui/icons';
-import { toast } from '@onlook/ui/use-toast';
-import { cn } from '@onlook/ui/utils';
+} from '@aether/ui/context-menu';
+import { Icons } from '@aether/ui/icons';
+import { toast } from '@aether/ui/use-toast';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { motion } from 'motion/react';
 import { useState } from 'react';

@@ -1,6 +1,6 @@
-import type { ActionLocation } from '@onlook/models/actions';
-import { WebviewChannels } from '@onlook/models/constants';
-import type { DomElement } from '@onlook/models/element';
+import type { ActionLocation } from '@aether/models/actions';
+import { WebviewChannels } from '@aether/models/constants';
+import type { DomElement } from '@aether/models/element';
 import { ipcRenderer } from 'electron';
 import { buildLayerTree } from '../dom';
 import { getDomElementByDomId } from '../elements';

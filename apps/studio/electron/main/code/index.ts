@@ -1,7 +1,7 @@
-import type { CodeDiff } from '@onlook/models/code';
-import { MainChannels } from '@onlook/models/constants';
-import type { TemplateNode } from '@onlook/models/element';
-import { DEFAULT_IDE, IdeType } from '@onlook/models/ide';
+import type { CodeDiff } from '@aether/models/code';
+import { MainChannels } from '@aether/models/constants';
+import type { TemplateNode } from '@aether/models/element';
+import { DEFAULT_IDE, IdeType } from '@aether/models/ide';
 import { dialog, shell } from 'electron';
 import { mainWindow } from '..';
 import { GENERATE_CODE_OPTIONS } from '../run/helpers';
@@ -89,7 +89,7 @@ export function openInIde(templateNode: TemplateNode) {
     const command = ide.getCodeCommand(templateNode);
 
     if (ide.type === IdeType.ONLOOK) {
-        // Send an event to the renderer process to view the file in Onlook's internal IDE
+        // Send an event to the renderer process to view the file in Aether's internal IDE
         const startTag = templateNode.startTag;
         const endTag = templateNode.endTag || startTag;
 
@@ -117,7 +117,7 @@ export function openFileInIde(filePath: string, line?: number) {
     const command = ide.getCodeFileCommand(filePath, line);
 
     if (ide.type === IdeType.ONLOOK) {
-        // Send an event to the renderer process to view the file in Onlook's internal IDE
+        // Send an event to the renderer process to view the file in Aether's internal IDE
         mainWindow?.webContents.send(MainChannels.VIEW_CODE_IN_ONLOOK, {
             filePath,
             line,

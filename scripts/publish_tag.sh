@@ -11,4 +11,4 @@ git commit -m "Publish version v$VERSION"
 git tag -a v$VERSION -m "Version $VERSION"
 
 # Push the tag to the remote repository
-git push --follow-tags https://github.com/onlook-dev/onlook.git HEAD
+git push --follow-tags https://github.com/aether-dev/aether.git HEAD

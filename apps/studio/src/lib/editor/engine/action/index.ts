@@ -10,9 +10,9 @@ import {
     type RemoveImageAction,
     type UngroupElementsAction,
     type UpdateStyleAction,
-} from '@onlook/models/actions';
-import { WebviewChannels } from '@onlook/models/constants';
-import { StyleChangeType } from '@onlook/models/style';
+} from '@aether/models/actions';
+import { WebviewChannels } from '@aether/models/constants';
+import { StyleChangeType } from '@aether/models/style';
 import type { EditorEngine } from '..';
 import { assertNever } from '/common/helpers';
 

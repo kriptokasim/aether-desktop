@@ -2,7 +2,7 @@ import generate from '@babel/generator';
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
 import * as t from '@babel/types';
-import type { PageMetadata } from '@onlook/models';
+import type { PageMetadata } from '@aether/models';
 import { promises as fs } from 'fs';
 import * as path from 'path';
 import { formatContent, writeFile } from '../code/files';

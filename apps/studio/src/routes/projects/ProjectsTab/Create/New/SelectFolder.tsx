@@ -1,9 +1,9 @@
 import { invokeMainChannel, platformSlash } from '@/lib/utils';
 import { getFolderNameAndTargetPath } from '@/routes/projects/helpers';
-import { MainChannels } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
-import { CardDescription, CardTitle } from '@onlook/ui/card';
-import { Icons } from '@onlook/ui/icons';
+import { MainChannels } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
+import { CardDescription, CardTitle } from '@aether/ui/card';
+import { Icons } from '@aether/ui/icons';
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
 import type { StepComponent } from '../withStepProps';
 
@@ -55,11 +55,11 @@ const NewSelectFolder: StepComponent = ({ props, variant }) => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
-                        className="w-full flex flex-row items-center border px-4 py-5 rounded bg-background-onlook gap-2"
+                        className="w-full flex flex-row items-center border px-4 py-5 rounded bg-background-aether gap-2"
                     >
                         <div className="flex flex-col gap-1 break-all">
                             <p className="text-regular">{projectData.name}</p>
-                            <p className="text-mini text-foreground-onlook">
+                            <p className="text-mini text-foreground-aether">
                                 {projectData.folderPath}
                             </p>
                         </div>
@@ -83,7 +83,7 @@ const NewSelectFolder: StepComponent = ({ props, variant }) => {
                         className="w-full"
                     >
                         <Button
-                            className="w-full h-32 text-regularPlus text-foreground-onlook border-[0.5px] bg-background-onlook/50 hover:bg-background-onlook/60"
+                            className="w-full h-32 text-regularPlus text-foreground-aether border-[0.5px] bg-background-aether/50 hover:bg-background-aether/60"
                             variant={'outline'}
                             onClick={pickProjectFolder}
                         >

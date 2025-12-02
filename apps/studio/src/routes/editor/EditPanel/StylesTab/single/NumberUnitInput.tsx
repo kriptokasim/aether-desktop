@@ -5,8 +5,8 @@ import {
     parsedValueToString,
     stringToParsedValue,
 } from '@/lib/editor/styles/numberUnit';
-import { Icons } from '@onlook/ui/icons';
-import { toast } from '@onlook/ui/use-toast';
+import { Icons } from '@aether/ui/icons';
+import { toast } from '@aether/ui/use-toast';
 import { observer } from 'mobx-react-lite';
 import { type ChangeEvent, useEffect, useState } from 'react';
 
@@ -124,7 +124,7 @@ const NumberUnitInput = observer(
                         )
                     }
                     onChange={handleNumberInputChange}
-                    className="w-full p-[6px] px-2 rounded border-none text-foreground-active bg-background-onlook/75 text-start focus:outline-none focus:ring-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="w-full p-[6px] px-2 rounded border-none text-foreground-active bg-background-aether/75 text-start focus:outline-none focus:ring-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     onFocus={() => {
                         setPrevNumberValue(numberValue);
                         editorEngine.history.startTransaction;
@@ -139,7 +139,7 @@ const NumberUnitInput = observer(
                 <div className="relative w-full group">
                     <select
                         value={unitValue}
-                        className="p-[6px] w-full px-2 rounded border-none text-foreground-active bg-background-onlook/75 text-start appearance-none focus:outline-none focus:ring-0"
+                        className="p-[6px] w-full px-2 rounded border-none text-foreground-active bg-background-aether/75 text-start appearance-none focus:outline-none focus:ring-0"
                         onChange={handleUnitInputChange}
                     >
                         {elementStyle.params?.units?.map((option) => (
@@ -148,7 +148,7 @@ const NumberUnitInput = observer(
                             </option>
                         ))}
                     </select>
-                    <div className="text-foreground-onlook group-hover:text-foreground-hover absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                    <div className="text-foreground-aether group-hover:text-foreground-hover absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <Icons.ChevronDown />
                     </div>
                 </div>

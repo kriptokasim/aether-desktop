@@ -1,5 +1,5 @@
 import { invokeMainChannel, platformSlash } from '@/lib/utils';
-import { MainChannels } from '@onlook/models/constants';
+import { MainChannels } from '@aether/models/constants';
 import { capitalizeFirstLetter } from '/common/helpers';
 
 export enum CreateMethod {

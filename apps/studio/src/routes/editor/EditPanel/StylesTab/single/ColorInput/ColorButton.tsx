@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { checkPattern } from '@onlook/ui/color-picker';
-import { Color, isColorEmpty } from '@onlook/utility';
+import { checkPattern } from '@aether/ui/color-picker';
+import { Color, isColorEmpty } from '@aether/utility';
 import { twMerge } from 'tailwind-merge';
 
 const ColorButtonBackground = styled.div`

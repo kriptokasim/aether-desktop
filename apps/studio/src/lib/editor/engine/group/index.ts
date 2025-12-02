@@ -5,8 +5,8 @@ import type {
     GroupContainer,
     GroupElementsAction,
     UngroupElementsAction,
-} from '@onlook/models/actions';
-import type { DomElement } from '@onlook/models/element';
+} from '@aether/models/actions';
+import type { DomElement } from '@aether/models/element';
 import type { EditorEngine } from '..';
 
 export class GroupManager {

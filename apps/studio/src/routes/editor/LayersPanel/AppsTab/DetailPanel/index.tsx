@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Icons } from '@onlook/ui/icons';
-import { cn } from '@onlook/ui/utils';
-import { Input } from '@onlook/ui/input';
-import { Button } from '@onlook/ui/button';
+import { Icons } from '@aether/ui/icons';
+import { cn } from '@aether/ui/utils';
+import { Input } from '@aether/ui/input';
+import { Button } from '@aether/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
+} from '@aether/ui/dropdown-menu';
 import ToolCard from './ToolCard';
 import type { ToolInputProps, ToolProps } from './ToolCard';
 import type { AppData } from '../index';
@@ -316,7 +316,7 @@ const DetailPanel: React.FC<DetailPanelProps> = ({ onClose, app }) => {
                             </div>
                             <div className="flex">
                                 <div className="pl-12 py-2 border border-border border-r-0 rounded-l-md rounded-r-[0px] font-normal text-sm text-muted-foreground w-full flex items-center">
-                                    https://mcp.onlook.com/.../stripe-012G
+                                    https://mcp.aether.com/.../stripe-012G
                                 </div>
                                 <Button className="rounded-l-none rounded-r-md bg-background-none hover:bg-background-secondary/90 text-white text-sm font-medium py-6 px-4 border border-border">
                                     Authenticate

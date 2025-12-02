@@ -1,10 +1,10 @@
 import { useProjectsManager } from '@/components/Context';
 import { CreateState } from '@/lib/projects/create';
-import { Button } from '@onlook/ui/button';
-import { CardContent, CardHeader } from '@onlook/ui/card';
-import { Icons } from '@onlook/ui/icons';
-import { MotionCard } from '@onlook/ui/motion-card';
-import { cn } from '@onlook/ui/utils';
+import { Button } from '@aether/ui/button';
+import { CardContent, CardHeader } from '@aether/ui/card';
+import { Icons } from '@aether/ui/icons';
+import { MotionCard } from '@aether/ui/motion-card';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { motion, MotionConfig } from 'motion/react';

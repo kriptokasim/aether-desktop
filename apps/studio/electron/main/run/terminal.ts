@@ -1,5 +1,5 @@
-import { MainChannels } from '@onlook/models/constants';
-import { RunState } from '@onlook/models/run';
+import { MainChannels } from '@aether/models/constants';
+import { RunState } from '@aether/models/run';
 import * as pty from 'node-pty';
 import os from 'os';
 import { mainWindow } from '..';

@@ -2,17 +2,17 @@ import { CLAUDE_MODELS } from '../llm/index.ts';
 import { DEFAULT_IDE } from '../ide/index.ts';
 
 export const APP_NAME = 'Aether';
-export const APP_SCHEMA = 'onlook';
-export const HOSTING_DOMAIN = 'onlook.live';
+export const APP_SCHEMA = 'aether';
+export const HOSTING_DOMAIN = 'aether.live';
 export const CUSTOM_OUTPUT_DIR = '.next-prod';
 export const MAX_NAME_LENGTH = 50;
 
 export enum EditorAttributes {
     // DOM attributes
-    ONLOOK_TOOLBAR = 'onlook-toolbar',
-    ONLOOK_RECT_ID = 'onlook-rect',
-    ONLOOK_STYLESHEET_ID = 'onlook-stylesheet',
-    ONLOOK_STUB_ID = 'onlook-drag-stub',
+    ONLOOK_TOOLBAR = 'aether-toolbar',
+    ONLOOK_RECT_ID = 'aether-rect',
+    ONLOOK_STYLESHEET_ID = 'aether-stylesheet',
+    ONLOOK_STUB_ID = 'aether-drag-stub',
     ONLOOK_MOVE_KEY_PREFIX = 'olk-',
     OVERLAY_CONTAINER_ID = 'overlay-container',
     CANVAS_CONTAINER_ID = 'canvas-container',
@@ -24,25 +24,25 @@ export enum EditorAttributes {
     DATA_ONLOOK_COMPONENT_NAME = 'data-ocname',
 
     // Data attributes
-    DATA_ONLOOK_IGNORE = 'data-onlook-ignore',
-    DATA_ONLOOK_INSERTED = 'data-onlook-inserted',
-    DATA_ONLOOK_DRAG_SAVED_STYLE = 'data-onlook-drag-saved-style',
-    DATA_ONLOOK_DRAGGING = 'data-onlook-dragging',
-    DATA_ONLOOK_DRAG_DIRECTION = 'data-onlook-drag-direction',
-    DATA_ONLOOK_DRAG_START_POSITION = 'data-onlook-drag-start-position',
-    DATA_ONLOOK_NEW_INDEX = 'data-onlook-new-index',
-    DATA_ONLOOK_EDITING_TEXT = 'data-onlook-editing-text',
-    DATA_ONLOOK_DYNAMIC_TYPE = 'data-onlook-dynamic-type',
-    DATA_ONLOOK_CORE_ELEMENT_TYPE = 'data-onlook-core-element-type',
-    ONLOOK_DEFAULT_STYLESHEET_ID = 'onlook-default-stylesheet',
+    DATA_ONLOOK_IGNORE = 'data-aether-ignore',
+    DATA_ONLOOK_INSERTED = 'data-aether-inserted',
+    DATA_ONLOOK_DRAG_SAVED_STYLE = 'data-aether-drag-saved-style',
+    DATA_ONLOOK_DRAGGING = 'data-aether-dragging',
+    DATA_ONLOOK_DRAG_DIRECTION = 'data-aether-drag-direction',
+    DATA_ONLOOK_DRAG_START_POSITION = 'data-aether-drag-start-position',
+    DATA_ONLOOK_NEW_INDEX = 'data-aether-new-index',
+    DATA_ONLOOK_EDITING_TEXT = 'data-aether-editing-text',
+    DATA_ONLOOK_DYNAMIC_TYPE = 'data-aether-dynamic-type',
+    DATA_ONLOOK_CORE_ELEMENT_TYPE = 'data-aether-core-element-type',
+    ONLOOK_DEFAULT_STYLESHEET_ID = 'aether-default-stylesheet',
 }
 
 export enum Links {
     DISCORD = 'https://discord.gg/hERDfFZCsH',
-    GITHUB = 'https://github.com/onlook-dev/desktop',
-    USAGE_DOCS = 'https://github.com/onlook-dev/desktop/wiki/How-to-set-up-my-project%3F',
-    WIKI = 'https://github.com/onlook-dev/desktop/wiki',
-    OPEN_ISSUE = 'https://github.com/onlook-dev/desktop/issues/new/choose',
+    GITHUB = 'https://github.com/aether-dev/desktop',
+    USAGE_DOCS = 'https://github.com/aether-dev/desktop/wiki/How-to-set-up-my-project%3F',
+    WIKI = 'https://github.com/aether-dev/desktop/wiki',
+    OPEN_ISSUE = 'https://github.com/aether-dev/desktop/issues/new/choose',
 }
 
 export enum Orientation {

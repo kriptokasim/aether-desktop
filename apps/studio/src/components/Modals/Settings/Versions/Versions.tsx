@@ -1,9 +1,9 @@
 import { useProjectsManager } from '@/components/Context';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@onlook/ui/accordion';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons/index';
-import { Separator } from '@onlook/ui/separator';
-import { formatCommitDate } from '@onlook/utility';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@aether/ui/accordion';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons/index';
+import { Separator } from '@aether/ui/separator';
+import { formatCommitDate } from '@aether/utility';
 import { observer } from 'mobx-react-lite';
 import React, { useState } from 'react';
 import { NoVersions } from './EmptyState/Version';

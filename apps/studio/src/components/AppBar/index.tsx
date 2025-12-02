@@ -1,6 +1,6 @@
 import { useRouteManager, useUpdateManager } from '@/components/Context';
 import { Route } from '@/lib/routes';
-import { cn } from '@onlook/ui/utils';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { AnnouncementBanner } from './AnnouncementBanner';
 import { HelpButton } from './HelpButton';

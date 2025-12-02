@@ -1,10 +1,10 @@
 import { useEditorEngine } from '@/components/Context';
 import { EditorMode } from '@/lib/models';
 import type { SizePreset } from '@/lib/sizePresets';
-import { DefaultSettings } from '@onlook/models/constants';
-import { ToastAction } from '@onlook/ui/toast';
-import { useToast } from '@onlook/ui/use-toast';
-import { cn } from '@onlook/ui/utils';
+import { DefaultSettings } from '@aether/models/constants';
+import { ToastAction } from '@aether/ui/toast';
+import { useToast } from '@aether/ui/use-toast';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { type MouseEvent, useRef } from 'react';
 

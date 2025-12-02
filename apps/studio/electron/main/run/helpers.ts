@@ -1,14 +1,14 @@
 import { type GeneratorOptions } from '@babel/generator';
 import type { NodePath } from '@babel/traverse';
 import * as t from '@babel/types';
-import type { DetectedPortResults } from '@onlook/models';
-import { CUSTOM_OUTPUT_DIR } from '@onlook/models/constants';
+import type { DetectedPortResults } from '@aether/models';
+import { CUSTOM_OUTPUT_DIR } from '@aether/models/constants';
 import type {
     CoreElementType,
     DynamicType,
     TemplateNode,
     TemplateTag,
-} from '@onlook/models/element';
+} from '@aether/models/element';
 import { detect } from 'detect-port';
 import * as fs from 'fs';
 import { customAlphabet } from 'nanoid/non-secure';

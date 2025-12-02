@@ -1,5 +1,5 @@
 import { useEditorEngine, useUserManager } from '@/components/Context';
-import { Separator } from '@onlook/ui/separator';
+import { Separator } from '@aether/ui/separator';
 import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
 import { BaseDomain } from './Base';

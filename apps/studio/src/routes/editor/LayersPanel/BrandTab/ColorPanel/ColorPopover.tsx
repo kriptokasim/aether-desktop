@@ -1,6 +1,6 @@
-import { DEFAULT_COLOR_NAME } from '@onlook/models/constants';
-import { Popover, PopoverContent, PopoverTrigger } from '@onlook/ui/popover';
-import { toNormalCase, type Color } from '@onlook/utility';
+import { DEFAULT_COLOR_NAME } from '@aether/models/constants';
+import { Popover, PopoverContent, PopoverTrigger } from '@aether/ui/popover';
+import { toNormalCase, type Color } from '@aether/utility';
 import { useEffect, useState } from 'react';
 import ColorPickerContent from '../../../EditPanel/StylesTab/single/ColorInput/ColorPicker';
 import { ColorNameInput } from './ColorNameInput';

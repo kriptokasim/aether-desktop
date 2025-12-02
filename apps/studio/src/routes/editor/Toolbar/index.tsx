@@ -1,10 +1,10 @@
 import { useEditorEngine } from '@/components/Context';
 import { HotKeyLabel } from '@/components/ui/hotkeys-label';
 import { EditorMode } from '@/lib/models';
-import type { DropElementProperties } from '@onlook/models/element';
-import { Icons } from '@onlook/ui/icons';
-import { ToggleGroup, ToggleGroupItem } from '@onlook/ui/toggle-group';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@onlook/ui/tooltip';
+import type { DropElementProperties } from '@aether/models/element';
+import { Icons } from '@aether/ui/icons';
+import { ToggleGroup, ToggleGroupItem } from '@aether/ui/toggle-group';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@aether/ui/tooltip';
 import { observer } from 'mobx-react-lite';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';

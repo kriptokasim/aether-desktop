@@ -1,6 +1,6 @@
 import { useEditorEngine } from '@/components/Context';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 import { observer } from 'mobx-react-lite';
 
@@ -29,7 +29,7 @@ export const AnnouncementModal = observer(() => {
                     >
                         <div className="flex flex-col bg-background border rounded-lg shadow-lg pointer-events-auto w-[580px] p-8 gap-1">
                             <div className="flex flex-row items-center justify-between ">
-                                <h2 className="text-2xl font-light">Onlook has moved to the Web</h2>
+                                <h2 className="text-2xl font-light">Aether has moved to the Web</h2>
                                 <Button
                                     variant="ghost"
                                     size="icon"
@@ -45,15 +45,15 @@ export const AnnouncementModal = observer(() => {
                             <div className="flex flex-col dark:bg-blue-800 bg-blue-200 dark:border-blue-300 border rounded-lg p-4 mt-5 gap-3">
                                 <h3 className="dark:text-blue-100 text-medium">Get 1 Month Free</h3>
                                 <p className="dark:text-blue-200 text-sm">
-                                    If you already have Onlook Pro, you get 1 free month on the Tier
-                                    1 plan. Just sign up for Onlook Web using the same email.
+                                    If you already have Aether Pro, you get 1 free month on the Tier
+                                    1 plan. Just sign up for Aether Web using the same email.
                                 </p>
                                 <Button
                                     size="sm"
                                     className="w-fit border-blue-200 border-[0.5px] bg-blue-600 rounded-[4px] hover:bg-blue-700 text-white"
-                                    onClick={() => window.open('https://onlook.com', '_blank')}
+                                    onClick={() => window.open('https://aether.com', '_blank')}
                                 >
-                                    Start designing in Onlook Web
+                                    Start designing in Aether Web
                                     <Icons.ExternalLink className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>

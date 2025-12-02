@@ -1,7 +1,7 @@
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
 import * as t from '@babel/types';
-import type { PageMetadata, PageNode } from '@onlook/models/pages';
+import type { PageMetadata, PageNode } from '@aether/models/pages';
 import { promises as fs } from 'fs';
 import { nanoid } from 'nanoid';
 import * as path from 'path';

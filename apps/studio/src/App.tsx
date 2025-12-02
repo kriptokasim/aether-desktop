@@ -1,6 +1,6 @@
 import '@fontsource-variable/inter';
-import { Toaster } from '@onlook/ui/toaster';
-import { TooltipProvider } from '@onlook/ui/tooltip';
+import { Toaster } from '@aether/ui/toaster';
+import { TooltipProvider } from '@aether/ui/tooltip';
 import { I18nextProvider } from 'react-i18next';
 import { AppBar } from './components/AppBar';
 import { Modals } from './components/Modals';

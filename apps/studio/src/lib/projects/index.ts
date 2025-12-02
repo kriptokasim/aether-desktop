@@ -1,7 +1,7 @@
-import type { PageMetadata } from '@onlook/models';
-import { MainChannels } from '@onlook/models/constants';
-import type { Project } from '@onlook/models/projects';
-import type { AppState, ProjectsCache } from '@onlook/models/settings';
+import type { PageMetadata } from '@aether/models';
+import { MainChannels } from '@aether/models/constants';
+import type { Project } from '@aether/models/projects';
+import type { AppState, ProjectsCache } from '@aether/models/settings';
 import { makeAutoObservable } from 'mobx';
 import { nanoid } from 'nanoid/non-secure';
 import type { EditorEngine } from '../editor/engine';

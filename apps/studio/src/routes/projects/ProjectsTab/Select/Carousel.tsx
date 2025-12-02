@@ -1,5 +1,5 @@
-import type { Project } from '@onlook/models/projects';
-import { Icons } from '@onlook/ui/icons';
+import type { Project } from '@aether/models/projects';
+import { Icons } from '@aether/ui/icons';
 import type { EmblaCarouselType, EmblaEventType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion, type Variants } from 'motion/react';

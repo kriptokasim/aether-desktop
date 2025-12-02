@@ -1,5 +1,5 @@
-import { PromptProvider } from '@onlook/ai/src/prompt/provider';
-import { chatToolSet } from '@onlook/ai/src/tools';
+import { PromptProvider } from '@aether/ai/src/prompt/provider';
+import { chatToolSet } from '@aether/ai/src/tools';
 import {
     ChatSuggestionSchema,
     ChatSummarySchema,
@@ -8,8 +8,8 @@ import {
     type CompletedStreamResponse,
     type PartialStreamResponse,
     type UsageCheckResult,
-} from '@onlook/models/chat';
-import { MainChannels } from '@onlook/models/constants';
+} from '@aether/models/chat';
+import { MainChannels } from '@aether/models/constants';
 import {
     generateObject,
     NoSuchToolError,
@@ -28,7 +28,7 @@ import {
     DEFAULT_MODELS,
     FAST_MODELS,
     type AIProviderId,
-} from '@onlook/models/constants';
+} from '@aether/models/constants';
 import { initModel } from './llmProvider';
 
 class LlmManager {

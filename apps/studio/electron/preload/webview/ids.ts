@@ -1,4 +1,4 @@
-import { EditorAttributes } from '@onlook/models/constants';
+import { EditorAttributes } from '@aether/models/constants';
 import { uuid } from './bundles';
 
 export function getOrAssignDomId(node: HTMLElement): string {

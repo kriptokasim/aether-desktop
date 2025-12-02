@@ -1,6 +1,6 @@
 import { useEditorEngine } from '@/components/Context';
 import { BrandTabValue } from '@/lib/models';
-import { Button } from '@onlook/ui/button';
+import { Button } from '@aether/ui/button';
 import { observer } from 'mobx-react-lite';
 import ColorPanel from './ColorPanel';
 import FontPanel from './FontPanel';

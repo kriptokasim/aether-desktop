@@ -1,6 +1,6 @@
-import { DefaultSettings, MainChannels } from '@onlook/models/constants';
-import type { Project } from '@onlook/models/projects';
-import { RunState } from '@onlook/models/run';
+import { DefaultSettings, MainChannels } from '@aether/models/constants';
+import type { Project } from '@aether/models/projects';
+import { RunState } from '@aether/models/run';
 import { makeAutoObservable, reaction } from 'mobx';
 import type { EditorEngine } from '../editor/engine';
 import { invokeMainChannel } from '../utils';

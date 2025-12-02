@@ -6,12 +6,12 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-} from '@onlook/ui/alert-dialog';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
-import { Popover, PopoverAnchor, PopoverContent } from '@onlook/ui/popover';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@onlook/ui/tooltip';
-import { cn } from '@onlook/ui/utils';
+} from '@aether/ui/alert-dialog';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
+import { Popover, PopoverAnchor, PopoverContent } from '@aether/ui/popover';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@aether/ui/tooltip';
+import { cn } from '@aether/ui/utils';
 import { TooltipArrow } from '@radix-ui/react-tooltip';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
@@ -74,11 +74,11 @@ export const ChatHistory = observer(({ isOpen, onOpenChange }: ChatHistoryProps)
                                         {sortedConversations.map((conversation) => (
                                             <button
                                                 className={cn(
-                                                    'flex flex-row w-full py-2 items-center rounded-md hover:bg-background-onlook cursor-pointer select-none group relative',
+                                                    'flex flex-row w-full py-2 items-center rounded-md hover:bg-background-aether cursor-pointer select-none group relative',
                                                     conversation.id ===
                                                         editorEngine.chat.conversation.current
                                                             ?.id &&
-                                                        'bg-background-onlook text-primary font-semibold',
+                                                        'bg-background-aether text-primary font-semibold',
                                                 )}
                                                 key={conversation.id}
                                                 onClick={() =>

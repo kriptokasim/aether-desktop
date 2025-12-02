@@ -1,4 +1,4 @@
-import { MainChannels } from '@onlook/models/constants';
+import { MainChannels } from '@aether/models/constants';
 import { ipcMain } from 'electron';
 import {
     scanNextJsImages,
@@ -6,7 +6,7 @@ import {
     deleteImageFromProject,
     renameImageInProject,
 } from '../assets/images';
-import type { ImageContentData } from '@onlook/models/actions';
+import type { ImageContentData } from '@aether/models/actions';
 
 export function listenForAssetMessages() {
     ipcMain.handle(MainChannels.SCAN_IMAGES_IN_PROJECT, async (_event, projectRoot: string) => {

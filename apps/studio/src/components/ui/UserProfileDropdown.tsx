@@ -1,7 +1,7 @@
 import { useAuthManager } from '@/components/Context';
-import { Button } from '@onlook/ui/button';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@onlook/ui/dropdown-menu';
-import { cn } from '@onlook/ui/utils';
+import { Button } from '@aether/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@aether/ui/dropdown-menu';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
 
@@ -29,7 +29,7 @@ const UserProfileDropdown = observer(
                 <DropdownMenuTrigger asChild>
                     <Button
                         className={cn(
-                            'w-8 h-8 p-0 bg-background-onlook rounded-full focus:outline-none group',
+                            'w-8 h-8 p-0 bg-background-aether rounded-full focus:outline-none group',
                             buttonClassName,
                         )}
                     >

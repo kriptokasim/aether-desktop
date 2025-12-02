@@ -1,6 +1,6 @@
-import { CreateStage, SetupStage, type CreateCallback, type SetupCallback } from '@onlook/models';
-import type { ImageMessageContext } from '@onlook/models/chat';
-import { MainChannels } from '@onlook/models/constants';
+import { CreateStage, SetupStage, type CreateCallback, type SetupCallback } from '@aether/models';
+import type { ImageMessageContext } from '@aether/models/chat';
+import { MainChannels } from '@aether/models/constants';
 import { ipcMain } from 'electron';
 import { mainWindow } from '..';
 import projectCreator from '../create';

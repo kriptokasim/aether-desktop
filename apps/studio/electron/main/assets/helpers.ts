@@ -1,6 +1,6 @@
 import type { Node, ObjectExpression } from '@babel/types';
-import type { ColorUpdate } from '@onlook/models/assets';
-import { DEFAULT_COLOR_NAME } from '@onlook/models/constants';
+import type { ColorUpdate } from '@aether/models/assets';
+import { DEFAULT_COLOR_NAME } from '@aether/models/constants';
 import fg from 'fast-glob';
 import fs from 'fs';
 import path from 'path';

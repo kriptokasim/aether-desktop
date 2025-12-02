@@ -6,7 +6,7 @@ import React, {
     useImperativeHandle,
     useRef,
 } from 'react';
-import { Button } from '@onlook/ui/button';
+import { Button } from '@aether/ui/button';
 import { useEditorEngine } from '@/components/Context';
 
 export interface ImagePickerRef {

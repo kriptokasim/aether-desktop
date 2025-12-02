@@ -1,6 +1,6 @@
-import { Button } from '@onlook/ui/button';
-import { CardTitle } from '@onlook/ui/card';
-import { Icons } from '@onlook/ui/icons';
+import { Button } from '@aether/ui/button';
+import { CardTitle } from '@aether/ui/card';
+import { Icons } from '@aether/ui/icons';
 import type { StepComponent } from '../withStepProps';
 
 const LoadWarning: StepComponent = ({ props, variant }) => {
@@ -15,7 +15,7 @@ const LoadWarning: StepComponent = ({ props, variant }) => {
 
     const renderContent = () => (
         <p>
-            Onlook will make code changes to your project.
+            Aether will make code changes to your project.
             <br />
             Please save your progress before importing.
         </p>

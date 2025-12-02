@@ -1,6 +1,6 @@
 {
-    "name": "@onlook/supabase",
-    "description": "Supabase client library for Onlook",
+    "name": "@aether/supabase",
+    "description": "Supabase client library for Aether",
     "version": "0.0.0",
     "private": true,
     "scripts": {
@@ -11,21 +11,21 @@
         "typecheck": "tsc --noEmit"
     },
     "keywords": [
-        "onlook",
+        "aether",
         "supabase"
     ],
     "author": {
-        "name": "Onlook",
-        "email": "contact@onlook.com"
+        "name": "Aether",
+        "email": "contact@aether.com"
     },
     "license": "Apache-2.0",
-    "homepage": "https://onlook.com",
+    "homepage": "https://aether.com",
     "dependencies": {
         "@supabase/supabase-js": "^2.45.6",
         "react": "^18.3.1"
     },
     "devDependencies": {
-        "@onlook/typescript": "*",
+        "@aether/typescript": "*",
         "supabase": "^2.2.1",
         "typescript": "^5.5.4"
     },

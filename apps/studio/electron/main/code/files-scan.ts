@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import * as path from 'path';
 import { nanoid } from 'nanoid';
-import { CUSTOM_OUTPUT_DIR } from '@onlook/models';
+import { CUSTOM_OUTPUT_DIR } from '@aether/models';
 
 export interface FileNode {
     id: string;

@@ -1,5 +1,5 @@
-import type { DomElementStyles } from '@onlook/models/element';
-import { jsonClone } from '@onlook/utility';
+import type { DomElementStyles } from '@aether/models/element';
+import { jsonClone } from '@aether/utility';
 import { elementFromDomId } from '/common/helpers';
 
 export function getStyles(element: HTMLElement): DomElementStyles {

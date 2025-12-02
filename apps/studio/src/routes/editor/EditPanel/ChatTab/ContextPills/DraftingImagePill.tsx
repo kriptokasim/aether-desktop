@@ -1,5 +1,5 @@
-import { type ChatMessageContext, MessageContextType } from '@onlook/models/chat';
-import { Icons } from '@onlook/ui/icons/index';
+import { type ChatMessageContext, MessageContextType } from '@aether/models/chat';
+import { Icons } from '@aether/ui/icons/index';
 import { motion } from 'motion/react';
 import React from 'react';
 import { getTruncatedName } from './helpers';

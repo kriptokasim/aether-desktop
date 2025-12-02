@@ -1,4 +1,4 @@
-import { MainChannels } from '@onlook/models/constants';
+import { MainChannels } from '@aether/models/constants';
 import { ipcMain } from 'electron';
 import analytics from '../analytics';
 import Chat from '../chat';

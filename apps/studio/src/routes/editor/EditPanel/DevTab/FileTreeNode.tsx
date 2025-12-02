@@ -1,13 +1,13 @@
 import { useEditorEngine } from '@/components/Context';
 import type { FileNode } from '@/lib/editor/engine/files';
-import { Icons } from '@onlook/ui/icons';
-import { cn } from '@onlook/ui/utils';
+import { Icons } from '@aether/ui/icons';
+import { cn } from '@aether/ui/utils';
 import {
     ContextMenu,
     ContextMenuContent,
     ContextMenuItem,
     ContextMenuTrigger,
-} from '@onlook/ui/context-menu';
+} from '@aether/ui/context-menu';
 import { observer } from 'mobx-react-lite';
 import { motion } from 'motion/react';
 import type { NodeApi } from 'react-arborist';

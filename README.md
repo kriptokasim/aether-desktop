@@ -2,23 +2,23 @@
 
 <a id="readme-top"></a>
 
-> **Note**: Aether Desktop is an open-source fork based on Onlook Desktop.
+> **Note**: Aether Desktop is an open-source fork based on Aether Desktop.
 
 ![image](https://github.com/user-attachments/assets/7b787ac7-96cd-44fd-90da-46996e1e1bf5)
 
 <div align="center">
-<h3 align="center">Onlook</h3>
+<h3 align="center">Aether</h3>
   <p align="center">
     Cursor for Designers
     <br />
-    <a href="https://github.com/onlook-dev/desktop/wiki"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/aether-dev/desktop/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://youtu.be/RSX_3EaO5eU?feature=shared">View Demo</a>
     ·
-    <a href="https://github.com/onlook-dev/desktop/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/aether-dev/desktop/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/onlook-dev/desktop/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/aether-dev/desktop/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
   <!-- PROJECT SHIELDS -->
 <!--
@@ -65,7 +65,7 @@ https://github.com/user-attachments/assets/c8782d1e-fedc-46f3-8735-c3a762d4db16
 
 
 
-![Onlook-GitHub-Example](https://github.com/user-attachments/assets/642de37a-72cc-4056-8eb7-8eb42714cdc4)
+![Aether-GitHub-Example](https://github.com/user-attachments/assets/642de37a-72cc-4056-8eb7-8eb42714cdc4)
 
 
 ### Built With
@@ -77,7 +77,7 @@ https://github.com/user-attachments/assets/c8782d1e-fedc-46f3-8735-c3a762d4db16
 
 ## Stay up-to-date
 
-Onlook officially launched our first version of Onlook on July 08, 2024 and we've shipped a ton since then. Watch releases of this repository to be notified of future updates, and you can follow along with us on [LinkedIn](https://www.linkedin.com/company/onlook-dev) or [Substack](https://onlook.substack.com/) where we write a weekly newsletter.
+Aether officially launched our first version of Aether on July 08, 2024 and we've shipped a ton since then. Watch releases of this repository to be notified of future updates, and you can follow along with us on [LinkedIn](https://www.linkedin.com/company/aether-dev) or [Substack](https://aether.substack.com/) where we write a weekly newsletter.
 
 <!-- ![Starproject](https://github.com/user-attachments/assets/07742b21-dd98-4be3-b6a6-13d8132af398) -->
 
@@ -87,12 +87,12 @@ Onlook officially launched our first version of Onlook on July 08, 2024 and we'v
 
 ### Installation
 
- 1. Visit [onlook.com](https://onlook.com/) to download the app.
- 2. Run locally following [this guide](https://github.com/onlook-dev/desktop/wiki/Building-from-source)
+ 1. Visit [aether.com](https://aether.com/) to download the app.
+ 2. Run locally following [this guide](https://github.com/aether-dev/desktop/wiki/Building-from-source)
 
 ### Usage
 
-Onlook will run on any React project, bring your own React project or create one using Onlook
+Aether will run on any React project, bring your own React project or create one using Aether
 
 <img width="676" alt="Screenshot 2024-11-27 at 9 36 47 AM" src="https://github.com/user-attachments/assets/ec5c9bb2-7d0a-4754-962e-5d0c9fe0d706">
 
@@ -107,7 +107,7 @@ Use the chat to create or edit a project you're working on. At any time, you can
 
 ![image](https://github.com/user-attachments/assets/f64b51df-03be-44d1-ae35-82e6dc960d06)
 
-See how we're tracking towards major [milestones](<[url](https://github.com/onlook-dev/desktop/milestones)>), and read the [wiki](https://github.com/onlook-dev/desktop/wiki/Roadmap) for details on each version of Onlook. Here's a rough overview of some of the major features we're looking at:
+See how we're tracking towards major [milestones](<[url](https://github.com/aether-dev/desktop/milestones)>), and read the [wiki](https://github.com/aether-dev/desktop/wiki/Roadmap) for details on each version of Aether. Here's a rough overview of some of the major features we're looking at:
 
 -   [x] Browser
 -   [x] Editor
@@ -117,29 +117,29 @@ See how we're tracking towards major [milestones](<[url](https://github.com/onlo
 -   [ ] Components
 -   [ ] Hosting
 
-Also check the [open issues](https://github.com/onlook-dev/desktop/issues) for a full list of proposed features (and known issues).
+Also check the [open issues](https://github.com/aether-dev/desktop/issues) for a full list of proposed features (and known issues).
 
 ## Contributing
 
 ![image](https://github.com/user-attachments/assets/ecc94303-df23-46ae-87dc-66b040396e0b)
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also [open issues](https://github.com/onlook-dev/desktop/issues).
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also [open issues](https://github.com/aether-dev/desktop/issues).
 
 See the [CONTRIBUTING.md](CONTRIBUTING.md) for instructions and code of conduct.
 
 #### Contributors
 
-<a href="https://github.com/onlook-dev/desktop/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=onlook-dev/desktop&t=1" />
+<a href="https://github.com/aether-dev/desktop/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=aether-dev/desktop&t=1" />
 </a>
 
 ## Contact
 
 ![image](https://github.com/user-attachments/assets/60684b68-1925-4550-8efd-51a1509fc953)
 
--   Team: [Discord](https://discord.gg/hERDfFZCsH) - [Twitter](https://twitter.com/onlookdev) - [LinkedIn](https://www.linkedin.com/company/onlook-dev/) - [Email](mailto:contact@onlook.com)
--   Project: [https://github.com/onlook-dev/desktop](https://github.com/onlook-dev/desktop)
--   Website: [https://onlook.com](https://onlook.com)
+-   Team: [Discord](https://discord.gg/hERDfFZCsH) - [Twitter](https://twitter.com/aetherdev) - [LinkedIn](https://www.linkedin.com/company/aether-dev/) - [Email](mailto:contact@aether.com)
+-   Project: [https://github.com/aether-dev/desktop](https://github.com/aether-dev/desktop)
+-   Website: [https://aether.com](https://aether.com)
 
 ## Acknowledgments
 
@@ -157,20 +157,20 @@ Distributed under the Apache 2.0 License. See [LICENSE.md](LICENSE.md) for more 
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/onlook-dev/studio.svg?style=for-the-badge
-[contributors-url]: https://github.com/onlook-dev/desktop/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/onlook-dev/studio.svg?style=for-the-badge
-[forks-url]: https://github.com/onlook-dev/desktop/network/members
-[stars-shield]: https://img.shields.io/github/stars/onlook-dev/studio.svg?style=for-the-badge
-[stars-url]: https://github.com/onlook-dev/desktop/stargazers
-[issues-shield]: https://img.shields.io/github/issues/onlook-dev/studio.svg?style=for-the-badge
-[issues-url]: https://github.com/onlook-dev/desktop/issues
-[license-shield]: https://img.shields.io/github/license/onlook-dev/studio.svg?style=for-the-badge
-[license-url]: https://github.com/onlook-dev/desktop/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/aether-dev/studio.svg?style=for-the-badge
+[contributors-url]: https://github.com/aether-dev/desktop/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/aether-dev/studio.svg?style=for-the-badge
+[forks-url]: https://github.com/aether-dev/desktop/network/members
+[stars-shield]: https://img.shields.io/github/stars/aether-dev/studio.svg?style=for-the-badge
+[stars-url]: https://github.com/aether-dev/desktop/stargazers
+[issues-shield]: https://img.shields.io/github/issues/aether-dev/studio.svg?style=for-the-badge
+[issues-url]: https://github.com/aether-dev/desktop/issues
+[license-shield]: https://img.shields.io/github/license/aether-dev/studio.svg?style=for-the-badge
+[license-url]: https://github.com/aether-dev/desktop/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/company/onlook-dev
+[linkedin-url]: https://www.linkedin.com/company/aether-dev
 [twitter-shield]: https://img.shields.io/badge/-Twitter-black?logo=x&colorB=555
-[twitter-url]: https://x.com/onlookdev
+[twitter-url]: https://x.com/aetherdev
 [discord-shield]: https://img.shields.io/badge/-Discord-black?logo=discord&colorB=555
 [discord-url]: https://discord.gg/hERDfFZCsH
 [React.js]: https://img.shields.io/badge/react-%2320232a.svg?logo=react&logoColor=%2361DAFB

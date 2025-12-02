@@ -7,7 +7,7 @@ import {
     ProxyRoutes,
     AI_PROVIDERS,
     type AIProviderId,
-} from '@onlook/models/constants';
+} from '@aether/models/constants';
 import { type LanguageModelV1 } from 'ai';
 import { getRefreshedAuthTokens } from '../auth';
 import type { AnthropicConfig, AnyProviderConfig, GeminiConfig, OpenAIConfig } from './config';

@@ -4,22 +4,22 @@ import {
     FREESTYLE_IP_ADDRESS,
     FRESTYLE_CUSTOM_HOSTNAME,
     MainChannels,
-} from '@onlook/models/constants';
+} from '@aether/models/constants';
 import type {
     CreateDomainVerificationResponse,
     VerifyDomainResponse,
-} from '@onlook/models/hosting';
-import { Button } from '@onlook/ui/button';
+} from '@aether/models/hosting';
+import { Button } from '@aether/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
-import { toast } from '@onlook/ui/use-toast';
-import { getValidUrl, isApexDomain } from '@onlook/utility';
+} from '@aether/ui/dropdown-menu';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
+import { toast } from '@aether/ui/use-toast';
+import { getValidUrl, isApexDomain } from '@aether/utility';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
 import { RecordField } from './RecordField';

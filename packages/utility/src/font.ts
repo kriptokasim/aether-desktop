@@ -1,4 +1,4 @@
-import { DEFAULT_FONT_STYLE, DEFAULT_FONT_WEIGHT, FONT_VARIANTS } from '@onlook/models/constants';
+import { DEFAULT_FONT_STYLE, DEFAULT_FONT_WEIGHT, FONT_VARIANTS } from '@aether/models/constants';
 import { camelCase } from 'lodash';
 
 /**

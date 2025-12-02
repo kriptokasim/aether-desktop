@@ -1,6 +1,6 @@
 import * as pathModule from 'path';
-import { DefaultSettings } from '@onlook/models/constants';
-import type { Font } from '@onlook/models/assets';
+import { DefaultSettings } from '@aether/models/constants';
+import type { Font } from '@aether/models/assets';
 import { camelCase, kebabCase } from 'lodash';
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
@@ -8,8 +8,8 @@ import * as t from '@babel/types';
 import generate from '@babel/generator';
 import { formatContent, readFile, writeFile } from '../../code/files';
 import fs from 'fs';
-import { extractFontParts, getFontFileName } from '@onlook/utility';
-import type { CodeDiff } from '@onlook/models';
+import { extractFontParts, getFontFileName } from '@aether/utility';
+import type { CodeDiff } from '@aether/models';
 
 /**
  * Adds a new font to the project by:

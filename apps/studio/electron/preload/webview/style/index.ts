@@ -1,5 +1,5 @@
-import { EditorAttributes } from '@onlook/models/constants';
-import type { StyleChange } from '@onlook/models/style';
+import { EditorAttributes } from '@aether/models/constants';
+import type { StyleChange } from '@aether/models/style';
 import type { CssNode, Declaration, Raw, Rule, SelectorList } from 'css-tree';
 import { cssTree } from '../bundles/';
 import { selectorFromDomId } from '/common/helpers';

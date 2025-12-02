@@ -1,5 +1,5 @@
-import { Icons } from '@onlook/ui/icons';
-import { cn } from '@onlook/ui/utils';
+import { Icons } from '@aether/ui/icons';
+import { cn } from '@aether/ui/utils';
 import React from 'react';
 
 export interface FileTabProps {

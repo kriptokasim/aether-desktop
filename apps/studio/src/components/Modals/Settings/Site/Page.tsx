@@ -1,7 +1,7 @@
 import { useEditorEngine, useProjectsManager } from '@/components/Context';
 import { useMetadataForm } from '@/hooks/useMetadataForm';
-import { DefaultSettings, type PageMetadata } from '@onlook/models';
-import { toast } from '@onlook/ui/use-toast';
+import { DefaultSettings, type PageMetadata } from '@aether/models';
+import { toast } from '@aether/ui/use-toast';
 import { memo } from 'react';
 import { MetadataForm } from './MetadataForm';
 

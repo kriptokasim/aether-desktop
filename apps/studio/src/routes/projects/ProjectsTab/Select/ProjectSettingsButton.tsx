@@ -1,8 +1,8 @@
 import { useProjectsManager } from '@/components/Context';
 import { invokeMainChannel } from '@/lib/utils';
 import { getRandomPlaceholder } from '@/routes/projects/helpers';
-import { MainChannels } from '@onlook/models/constants';
-import type { Project } from '@onlook/models/projects';
+import { MainChannels } from '@aether/models/constants';
+import type { Project } from '@aether/models/projects';
 import {
     AlertDialog,
     AlertDialogContent,
@@ -10,19 +10,19 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-} from '@onlook/ui/alert-dialog';
-import { Button } from '@onlook/ui/button';
-import { Checkbox } from '@onlook/ui/checkbox';
+} from '@aether/ui/alert-dialog';
+import { Button } from '@aether/ui/button';
+import { Checkbox } from '@aether/ui/checkbox';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
-import { Label } from '@onlook/ui/label';
-import { cn } from '@onlook/ui/utils';
+} from '@aether/ui/dropdown-menu';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
+import { Label } from '@aether/ui/label';
+import { cn } from '@aether/ui/utils';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -70,7 +70,7 @@ export default function ProjectSettingsButton({ project }: { project: Project })
                         onSelect={handleOpenProjectFolder}
                         onMouseEnter={() => setIsDirectoryHovered(true)}
                         onMouseLeave={() => setIsDirectoryHovered(false)}
-                        className="text-foreground-active hover:!bg-background-onlook hover:!text-foreground-active gap-2"
+                        className="text-foreground-active hover:!bg-background-aether hover:!text-foreground-active gap-2"
                     >
                         {isDirectoryHovered ? (
                             <Icons.DirectoryOpen className="w-4 h-4" />
@@ -81,7 +81,7 @@ export default function ProjectSettingsButton({ project }: { project: Project })
                     </DropdownMenuItem>
                     <DropdownMenuItem
                         onSelect={() => setShowRenameDialog(true)}
-                        className="text-foreground-active hover:!bg-background-onlook hover:!text-foreground-active gap-2"
+                        className="text-foreground-active hover:!bg-background-aether hover:!text-foreground-active gap-2"
                     >
                         <Icons.Pencil className="w-4 h-4" />
                         {t('projects.actions.renameProject')}

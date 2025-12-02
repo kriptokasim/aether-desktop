@@ -1,6 +1,6 @@
-import type { CreateProjectResponse } from '@onlook/models';
-import type { ImageMessageContext } from '@onlook/models/chat';
-import { MainChannels } from '@onlook/models/constants';
+import type { CreateProjectResponse } from '@aether/models';
+import type { ImageMessageContext } from '@aether/models/chat';
+import { MainChannels } from '@aether/models/constants';
 import { makeAutoObservable } from 'mobx';
 import { ProjectTabs, type ProjectsManager } from '.';
 import { invokeMainChannel, sendAnalytics } from '../utils';

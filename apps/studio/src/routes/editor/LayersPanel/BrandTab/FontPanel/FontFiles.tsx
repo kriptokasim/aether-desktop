@@ -1,7 +1,7 @@
-import { FONT_VARIANTS } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
-import { extractFontParts } from '@onlook/utility';
+import { FONT_VARIANTS } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
+import { extractFontParts } from '@aether/utility';
 import { observer } from 'mobx-react-lite';
 
 export interface FontFile {

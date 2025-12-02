@@ -1,9 +1,9 @@
 import { useEditorEngine, useProjectsManager } from '@/components/Context';
 import { SettingsTabValue } from '@/lib/models';
-import { Button } from '@onlook/ui/button';
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@onlook/ui/dialog';
-import { Icons } from '@onlook/ui/icons/index';
-import { cn } from '@onlook/ui/utils';
+import { Button } from '@aether/ui/button';
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@aether/ui/dialog';
+import { Icons } from '@aether/ui/icons/index';
+import { cn } from '@aether/ui/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useMemo, useState } from 'react';

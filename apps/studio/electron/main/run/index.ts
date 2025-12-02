@@ -1,6 +1,6 @@
-import { MainChannels } from '@onlook/models/constants';
-import type { TemplateNode } from '@onlook/models/element';
-import { RunState } from '@onlook/models/run';
+import { MainChannels } from '@aether/models/constants';
+import type { TemplateNode } from '@aether/models/element';
+import { RunState } from '@aether/models/run';
 import { subscribe, type AsyncSubscription } from '@parcel/watcher';
 import { mainWindow } from '..';
 import { sendAnalytics } from '../analytics';

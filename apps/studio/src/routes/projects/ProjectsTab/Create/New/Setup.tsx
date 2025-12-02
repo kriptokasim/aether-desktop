@@ -1,11 +1,11 @@
 import { invokeMainChannel, sendAnalytics } from '@/lib/utils';
 import { CreateMethod } from '@/routes/projects/helpers';
-import type { CreateStage } from '@onlook/models';
-import { MainChannels } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
-import { CardDescription, CardTitle } from '@onlook/ui/card';
-import { Icons } from '@onlook/ui/icons';
-import { Progress } from '@onlook/ui/progress';
+import type { CreateStage } from '@aether/models';
+import { MainChannels } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
+import { CardDescription, CardTitle } from '@aether/ui/card';
+import { Icons } from '@aether/ui/icons';
+import { Progress } from '@aether/ui/progress';
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
 import { useEffect, useState } from 'react';
 import type { StepComponent } from '../withStepProps';
@@ -137,13 +137,13 @@ const NewSetupProject: StepComponent = ({ props, variant }) => {
 
     function renderDescription(): string | JSX.Element {
         if (state === StepState.INSTALLED) {
-            return 'Open this project in Onlook any time to start designing';
+            return 'Open this project in Aether any time to start designing';
         }
         if (state === StepState.ERROR) {
             return (
                 <p>
                     {`Please try again or `}
-                    <a href="mailto:support@onlook.com" className="underline">
+                    <a href="mailto:support@aether.com" className="underline">
                         {'contact support'}
                     </a>
                     {` for help.`}

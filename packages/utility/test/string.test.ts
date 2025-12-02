@@ -1,4 +1,4 @@
-import { generateUniqueName } from '@onlook/utility';
+import { generateUniqueName } from '@aether/utility';
 
 describe('generateUniqueName', () => {
     it('should generate a unique name when no existing names', () => {

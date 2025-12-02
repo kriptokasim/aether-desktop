@@ -20,8 +20,8 @@ export enum ProxyRoutes {
     GEMINI = '/gemini',
     TRAINLOOP = '/trainloop',
 }
-export const REDIRECT_APP_URL = 'https://onlook.dev/redirect-app';
-export const REQUEST_TYPE_HEADER = 'X-Onlook-Request-Type';
+export const REDIRECT_APP_URL = 'https://aether.dev/redirect-app';
+export const REQUEST_TYPE_HEADER = 'X-Aether-Request-Type';
 
 export enum HostingRoutes {
     CREATE_DOMAIN_VERIFICATION = '/create-domain-verification',

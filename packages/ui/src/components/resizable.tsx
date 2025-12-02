@@ -1,4 +1,4 @@
-import { cn } from '@onlook/ui/utils';
+import { cn } from '@aether/ui/utils';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 export function useResizable({

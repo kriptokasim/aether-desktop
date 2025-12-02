@@ -1,5 +1,5 @@
-import type { Project } from '@onlook/models/projects';
-import { timeAgo } from '@onlook/utility';
+import type { Project } from '@aether/models/projects';
+import { timeAgo } from '@aether/utility';
 import { observer } from 'mobx-react-lite';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
@@ -40,7 +40,7 @@ const ProjectInfo = observer(({ project, direction }: { project: Project; direct
                         {project.name}
                     </motion.p>
                 </AnimatePresence>
-                <div className="text-foreground-onlook flex flex-col md:flex-row gap-2 md:gap-7 text-small">
+                <div className="text-foreground-aether flex flex-col md:flex-row gap-2 md:gap-7 text-small">
                     <p>
                         {t('projects.select.lastEdited', {
                             time: timeAgo(new Date(project.updatedAt).toISOString()),

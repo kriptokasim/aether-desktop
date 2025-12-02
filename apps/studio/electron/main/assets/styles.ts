@@ -7,11 +7,11 @@ import type {
     ColorUpdate,
     ConfigUpdateResult,
     UpdateResult,
-} from '@onlook/models/assets';
-import { Theme } from '@onlook/models/assets';
-import type { CodeDiffRequest } from '@onlook/models/code';
-import { DEFAULT_COLOR_NAME } from '@onlook/models/constants';
-import { parseHslValue } from '@onlook/utility';
+} from '@aether/models/assets';
+import { Theme } from '@aether/models/assets';
+import type { CodeDiffRequest } from '@aether/models/code';
+import { DEFAULT_COLOR_NAME } from '@aether/models/constants';
+import { parseHslValue } from '@aether/utility';
 import fs from 'fs';
 import { camelCase } from 'lodash';
 import path from 'path';

@@ -1,11 +1,11 @@
-import type { ChatConversation, ProjectSuggestions } from '@onlook/models/chat';
+import type { ChatConversation, ProjectSuggestions } from '@aether/models/chat';
 import type {
     AppState,
     AuthTokens,
     ProjectsCache,
     UserMetadata,
     UserSettings,
-} from '@onlook/models/settings';
+} from '@aether/models/settings';
 import { DirectoryPersistentStorage } from './directory';
 import { SingleFilePersistentStorage } from './file';
 

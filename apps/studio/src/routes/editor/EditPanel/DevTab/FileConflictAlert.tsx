@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
 
 interface FileConflictAlertProps {
     filename: string;

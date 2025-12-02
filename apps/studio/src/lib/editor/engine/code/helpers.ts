@@ -1,5 +1,5 @@
-import type { CodeDiffRequest } from '@onlook/models/code';
-import { StyleChangeType, type StyleChange } from '@onlook/models/style';
+import type { CodeDiffRequest } from '@aether/models/code';
+import { StyleChangeType, type StyleChange } from '@aether/models/style';
 import { twMerge } from 'tailwind-merge';
 import { CssToTailwindTranslator, propertyMap } from '/common/helpers/twTranslator';
 

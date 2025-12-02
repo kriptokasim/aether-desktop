@@ -5,8 +5,8 @@ import traverse from '@babel/traverse';
 import generate from '@babel/generator';
 import * as pathModule from 'path';
 import { readFile, writeFile } from '../../code/files';
-import { DefaultSettings } from '@onlook/models/constants';
-import type { Font } from '@onlook/models/assets';
+import { DefaultSettings } from '@aether/models/constants';
+import type { Font } from '@aether/models/assets';
 import { detectRouterType } from '../../pages/helpers';
 import {
     createStringLiteralWithFont,
@@ -15,7 +15,7 @@ import {
     removeFontsFromClassName,
 } from './utils';
 import type { TraverseCallback } from './types';
-import type { CodeDiff } from '@onlook/models/code';
+import type { CodeDiff } from '@aether/models/code';
 
 /**
  * Traverses JSX elements in a file to find and modify className attributes

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { AppData } from './index';
-import { cn } from '@onlook/ui/utils';
+import { cn } from '@aether/ui/utils';
 
 // Company brand colors
 const BRAND_COLORS: Record<string, string> = {

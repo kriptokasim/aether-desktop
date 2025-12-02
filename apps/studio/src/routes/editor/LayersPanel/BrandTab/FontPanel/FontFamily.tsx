@@ -1,16 +1,16 @@
-import { Button } from '@onlook/ui/button';
+import { Button } from '@aether/ui/button';
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
-import { Icons } from '@onlook/ui/icons';
+} from '@aether/ui/dropdown-menu';
+import { Icons } from '@aether/ui/icons';
 import { useState } from 'react';
-import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@onlook/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@aether/ui/tooltip';
 import { TooltipArrow } from '@radix-ui/react-tooltip';
-import { cn } from '@onlook/ui/utils';
+import { cn } from '@aether/ui/utils';
 import { camelCase } from 'lodash';
 
 interface FontVariantProps {

@@ -1,10 +1,10 @@
 {
-    "name": "@onlook/foundation",
-    "description": "A shared library for Onlook",
+    "name": "@aether/foundation",
+    "description": "A shared library for Aether",
     "version": "0.0.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/onlook-dev/desktop.git"
+        "url": "https://github.com/aether-dev/desktop.git"
     },
     "type": "commonjs",
     "main": "dist/index.js",
@@ -22,17 +22,17 @@
         "typecheck": "tsc --noEmit"
     },
     "keywords": [
-        "onlook",
+        "aether",
         "utils"
     ],
     "author": {
-        "name": "Onlook",
-        "email": "contact@onlook.com"
+        "name": "Aether",
+        "email": "contact@aether.com"
     },
     "license": "Apache-2.0",
-    "homepage": "https://onlook.com",
+    "homepage": "https://aether.com",
     "devDependencies": {
-        "@onlook/typescript": "*",
+        "@aether/typescript": "*",
         "@types/babel__generator": "^7.6.8",
         "@types/babel__traverse": "^7.20.6",
         "@types/bun": "latest",
@@ -44,6 +44,7 @@
         "@babel/generator": "^7.14.5",
         "@babel/parser": "^7.14.3",
         "@babel/traverse": "^7.14.5",
-        "@babel/types": "^7.24.7"
+        "@babel/types": "^7.24.7",
+        "fast-glob": "^3.3.3"
     }
 }

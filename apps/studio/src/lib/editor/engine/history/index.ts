@@ -1,6 +1,6 @@
 import { sendAnalytics } from '@/lib/utils';
-import type { Action } from '@onlook/models/actions';
-import { jsonClone } from '@onlook/utility';
+import type { Action } from '@aether/models/actions';
+import { jsonClone } from '@aether/utility';
 import { makeAutoObservable } from 'mobx';
 import type { EditorEngine } from '..';
 import { undoAction, updateTransactionActions } from './helpers';

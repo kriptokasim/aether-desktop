@@ -4,9 +4,9 @@ import type {
     ActionLocation,
     ActionTarget,
     InsertElementAction,
-} from '@onlook/models/actions';
-import { EditorAttributes } from '@onlook/models/constants';
-import type { DomElement } from '@onlook/models/element';
+} from '@aether/models/actions';
+import { EditorAttributes } from '@aether/models/constants';
+import type { DomElement } from '@aether/models/element';
 import { makeAutoObservable } from 'mobx';
 import type { EditorEngine } from '..';
 

@@ -1,4 +1,4 @@
-import { cn } from '@onlook/ui/utils';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useEditorEngine } from '../Context';
 
@@ -9,7 +9,7 @@ enum Variant {
 }
 
 export const AnnouncementBanner = observer(({ variant = Variant.INFO }: { variant?: Variant }) => {
-    const MESSAGE = 'Onlook is moving to the web';
+    const MESSAGE = 'Aether is moving to the web';
     const editorEngine = useEditorEngine();
 
     return (

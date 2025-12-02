@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Icons } from '@onlook/ui/icons';
-import { cn } from '@onlook/ui/utils';
+import { Icons } from '@aether/ui/icons';
+import { cn } from '@aether/ui/utils';
 
 // Import the AppIcon component or create a placeholder
 interface AppIconProps {

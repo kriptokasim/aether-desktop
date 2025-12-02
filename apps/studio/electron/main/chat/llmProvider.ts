@@ -1,17 +1,17 @@
-import type { StreamRequestType } from '@onlook/models/chat';
-import { type AIProviderId } from '@onlook/models/constants';
+import type { StreamRequestType } from '@aether/models/chat';
+import { type AIProviderId } from '@aether/models/constants';
 import { type LanguageModelV1 } from 'ai';
 import { getAetherAIProviderConfig } from './config';
 import { createProviderClient } from './providerFactory';
 
-export interface OnlookPayload {
+export interface AetherPayload {
     requestType: StreamRequestType;
 }
 
 export async function initModel(
     provider: AIProviderId,
     modelName: string,
-    payload: OnlookPayload,
+    payload: AetherPayload,
 ): Promise<LanguageModelV1> {
     const providerConfig = getAetherAIProviderConfig(provider);
     const config = providerConfig.providers[provider];

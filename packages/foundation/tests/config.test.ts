@@ -1,4 +1,4 @@
-import { CUSTOM_OUTPUT_DIR } from '@onlook/models/constants';
+import { CUSTOM_OUTPUT_DIR } from '@aether/models/constants';
 import { afterEach, describe, expect, test } from 'bun:test';
 import fs from 'fs';
 import path from 'path';

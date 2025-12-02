@@ -1,8 +1,8 @@
 import type { ProjectsManager } from '@/lib/projects';
-import { RunState } from '@onlook/models/run';
+import { RunState } from '@aether/models/run';
 import { makeAutoObservable } from 'mobx';
 import type { EditorEngine } from '..';
-import { isOnlookInDoc } from '/common/helpers';
+import { isAetherInDoc } from '/common/helpers';
 
 export enum WebviewState {
     NOT_RUNNING,
@@ -126,8 +126,8 @@ export class WebviewManager {
             return WebviewState.RUNNING_NO_DOM;
         }
 
-        const hasOnlook = isOnlookInDoc(doc);
-        if (hasOnlook) {
+        const hasAether = isAetherInDoc(doc);
+        if (hasAether) {
             this.editorEngine.errors.shouldShowErrors = false;
             return WebviewState.DOM_ONLOOK_ENABLED;
         }

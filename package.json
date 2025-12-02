@@ -1,13 +1,13 @@
 {
-    "name": "@onlook/repo",
+    "name": "@aether/repo",
     "version": "0.0.0",
-    "description": "Onlook Monorepo",
-    "homepage": "https://onlook.com",
+    "description": "Aether Monorepo",
+    "homepage": "https://aether.com",
     "license": "Apache-2.0",
     "private": true,
     "author": {
-        "name": "Onlook",
-        "email": "contact@onlook.com"
+        "name": "Aether",
+        "email": "contact@aether.com"
     },
     "workspaces": [
         "packages/*",
@@ -15,21 +15,21 @@
         "tooling/*"
     ],
     "scripts": {
-        "build:foundation": "bun --filter @onlook/foundation build",
-        "build:cli": "bun build:foundation && bun --filter onlook typecheck && bun --filter onlook build",
-        "build:studio": "bun build:foundation && bun --filter @onlook/studio build",
+        "build:foundation": "bun --filter @aether/foundation build",
+        "build:cli": "bun build:foundation && bun --filter aether typecheck && bun --filter aether build",
+        "build:studio": "bun build:foundation && bun --filter @aether/studio build",
         "clean": "git clean -xdf node_modules",
         "clean:workspaces": "bun --filter '*' clean",
-        "db:gen": "bun --filter @onlook/supabase db:gen",
-        "db:gen:local": "bun --filter @onlook/backend db:gen",
-        "dev:foundation": "bun --filter @onlook/foundation dev",
-        "dev:studio": "bun --filter @onlook/studio dev",
+        "db:gen": "bun --filter @aether/supabase db:gen",
+        "db:gen:local": "bun --filter @aether/backend db:gen",
+        "dev:foundation": "bun --filter @aether/foundation dev",
+        "dev:studio": "bun --filter @aether/studio dev",
         "build": "bun --filter '*' build",
         "ci:build": "bun run build:foundation && bun --filter '*' build",
         "dev": "bun --elide-lines=0  --filter '*' dev",
         "test": "bun --filter '*' test",
         "format": "bun --filter '*' format",
-        "lint": "bun --filter @onlook/studio lint",
+        "lint": "bun --filter @aether/studio lint",
         "typecheck": "bun --filter '*' typecheck",
         "increment_tag": "./scripts/increment_tag.sh",
         "publish_tag": "./scripts/publish_tag.sh",
@@ -39,10 +39,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/onlook-dev/desktop.git"
+        "url": "git+https://github.com/aether-dev/desktop.git"
     },
     "bugs": {
-        "url": "https://github.com/onlook-dev/desktop/issues"
+        "url": "https://github.com/aether-dev/desktop/issues"
     },
     "devDependencies": {
         "extract-zip": "^2.0.1",

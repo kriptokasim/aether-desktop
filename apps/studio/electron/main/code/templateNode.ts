@@ -1,7 +1,7 @@
 import traverse from '@babel/traverse';
 import type t from '@babel/types';
-import { EditorAttributes } from '@onlook/models/constants';
-import type { TemplateNode, TemplateTag } from '@onlook/models/element';
+import { EditorAttributes } from '@aether/models/constants';
+import type { TemplateNode, TemplateTag } from '@aether/models/element';
 import { readCodeBlock } from '.';
 import { parseJsxFile } from './helpers';
 

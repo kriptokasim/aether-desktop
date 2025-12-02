@@ -2,13 +2,13 @@ import {
     type Change,
     type StyleActionTarget,
     type UpdateStyleAction,
-} from '@onlook/models/actions';
-import type { DomElement } from '@onlook/models/element';
-import { StyleChangeType, type StyleChange } from '@onlook/models/style';
+} from '@aether/models/actions';
+import type { DomElement } from '@aether/models/element';
+import { StyleChangeType, type StyleChange } from '@aether/models/style';
 import { makeAutoObservable, reaction } from 'mobx';
 import type { EditorEngine } from '..';
-import type { Font } from '@onlook/models/assets';
-import { convertFontString } from '@onlook/utility';
+import type { Font } from '@aether/models/assets';
+import { convertFontString } from '@aether/utility';
 
 export interface SelectedStyle {
     styles: Record<string, string>;

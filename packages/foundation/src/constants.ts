@@ -41,9 +41,9 @@ export enum PACKAGE_MANAGER {
 }
 
 export enum ONLOOK_PLUGIN {
-    NEXTJS = '@onlook/nextjs',
-    WEBPACK = '@onlook/react',
-    BABEL = '@onlook/babel-plugin-react',
+    NEXTJS = '@aether/nextjs',
+    WEBPACK = '@aether/react',
+    BABEL = '@aether/babel-plugin-react',
 }
 
 export const NEXTJS_COMMON_FILES = ['pages', 'app', 'src/pages', 'src/app'];

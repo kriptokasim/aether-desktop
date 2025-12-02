@@ -1,6 +1,6 @@
-import { MainChannels } from '@onlook/models/constants';
-import type { UserMetadata } from '@onlook/models/settings';
-import supabase from '@onlook/supabase/clients';
+import { MainChannels } from '@aether/models/constants';
+import type { UserMetadata } from '@aether/models/settings';
+import supabase from '@aether/supabase/clients';
 import { makeAutoObservable } from 'mobx';
 import { invokeMainChannel } from '../utils';
 

@@ -22,36 +22,36 @@
         --np-secondary-icon-background: #14b8a6; /* teal-500*/
         --np-secondary-icon-shape: #ccfbf1; /* teal 100*/
 
-        --background: 0 0% 100%; /* white */
-        --background-onlook: 0 0% 90%; /* light gray */
-        --background-brand: 171 100% 67%; /* lighter teal */
-        --background-brand-secondary: 171 100% 77%; /* even lighter teal */
-        --background-primary: 0 0% 100%; /* white */
-        --background-secondary: 0 0% 95%; /* very light gray */
-        --background-positive: 147 100% 44%; /* green */
-        --background-tertiary: 0 0% 90%; /* light gray */
-        --background-toolbar-base: 0 0% 100%; /* white */
-        --background-hover: 0 0% 95%; /* very light gray */
-        --background-active: 0 0% 90%; /* light gray */
-        --background-disabled: 0 0% 95%; /* very light gray */
+        --background: 48 20% 98%; /* Cream Canvas #FDFCF8 */
+        --background-aether: 48 20% 95%;
+        --background-brand: 32 95% 44%; /* Warm Amber #D97706 */
+        --background-brand-secondary: 38 92% 50%; /* Soft Gold #F59E0B */
+        --background-primary: 48 20% 98%;
+        --background-secondary: 40 17% 92%;
+        --background-positive: 147 100% 44%;
+        --background-tertiary: 40 17% 87%;
+        --background-toolbar-base: 48 20% 98%;
+        --background-hover: 40 17% 95%;
+        --background-active: 40 17% 90%;
+        --background-disabled: 0 0% 95%;
 
-        --foreground: 0 0% 10%; /* black */
-        --foreground-onlook: 0 0% 20%; /* dark gray */
-        --foreground-brand: 344 100% 66%; /* red */
-        --foreground-primary: 0 0% 10%; /* black */
-        --foreground-secondary: 0 0% 20%; /* dark gray */
-        --foreground-tertiary: 0 0% 33%; /* medium gray */
-        --foreground-quadranary: 0 0% 47%; /* gray */
-        --foreground-positive: 147 100% 18%; /* dark green */
-        --foreground-hover: 0 0% 12%; /* very dark gray */
-        --foreground-active: 0 0% 10%; /* black */
-        --foreground-disabled: 0 0% 90%; /* light gray */
+        --foreground: 33 13% 24%; /* Deep Bronze #453C33 */
+        --foreground-aether: 33 13% 30%;
+        --foreground-brand: 32 95% 44%;
+        --foreground-primary: 33 13% 24%;
+        --foreground-secondary: 33 13% 40%;
+        --foreground-tertiary: 33 13% 50%;
+        --foreground-quadranary: 33 13% 60%;
+        --foreground-positive: 147 100% 18%;
+        --foreground-hover: 33 13% 20%;
+        --foreground-active: 33 13% 15%;
+        --foreground-disabled: 0 0% 80%;
 
-        --primary: 0 0% 10%; /* black */
-        --primary-foreground: 0 0% 100%; /* white */
+        --primary: 32 95% 44%; /* Warm Amber */
+        --primary-foreground: 0 0% 100%;
 
-        --secondary: 0 0% 95%; /* very light gray */
-        --secondary-foreground: 0 0% 10%; /* black */
+        --secondary: 38 92% 50%; /* Soft Gold */
+        --secondary-foreground: 33 13% 24%;
 
         --destructive: 344 100% 66%; /* red */
         --destructive-foreground: 0 0% 100%; /* white */
@@ -67,9 +67,9 @@
         --icon-active: 0 0% 10%; /* black */
         --icon-disabled: 0 0% 20%; /* dark gray */
 
-        --border: 0 0% 90%; /* light gray */
-        --border-active: 0 0% 67%; /* medium gray */
-        --border-hover: 0 0% 57%; /* gray */
+        --border: 40 17% 87%; /* Toasted Taupe #E5E0D8 */
+        --border-active: 40 17% 80%;
+        --border-hover: 40 17% 75%;
 
         --muted: 0 0% 95%; /* very light gray */
         --muted-foreground: 0 0% 20%; /* dark gray */
@@ -103,7 +103,7 @@
         --np-secondary-icon-shape: #ccfbf1; /* teal 100*/
 
         --background: 20 14.3% 4.1%; /* shadcn */
-        --background-onlook: 0 0% 10%; /* gray[900] */
+        --background-aether: 0 0% 10%; /* gray[900] */
         --background-brand: 171 100% 17%; /* teal[700] */
         --background-brand-secondary: 171 100% 27%; /* teal[500] */
         --background-primary: 0 0% 10%; /* gray[900] */
@@ -116,7 +116,7 @@
         --background-disabled: 0 0% 10%; /* gray[900] */
 
         --foreground: 60 9.1% 97.8%; /* shadcn */
-        --foreground-onlook: 0 0% 67%; /* gray[200] */
+        --foreground-aether: 0 0% 67%; /* gray[200] */
         --foreground-brand: 344 100% 66%; /* red[DEFAULT] */
         --foreground-primary: 0 0% 100%; /* gray[50] */
         --foreground-secondary: 0 0% 67%; /* gray[200] */

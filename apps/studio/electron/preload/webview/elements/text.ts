@@ -1,5 +1,5 @@
-import { EditorAttributes } from '@onlook/models/constants';
-import type { DomElement } from '@onlook/models/element';
+import { EditorAttributes } from '@aether/models/constants';
+import type { DomElement } from '@aether/models/element';
 import { publishEditText } from '../events/publish';
 import { getDomElement, restoreElementStyle } from './helpers';
 import { elementFromDomId } from '/common/helpers';

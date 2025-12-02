@@ -1,13 +1,13 @@
-import type { TemplateNode } from '@onlook/models/element';
-import { IdeType } from '@onlook/models/ide';
-import type { Icons } from '@onlook/ui/icons';
+import type { TemplateNode } from '@aether/models/element';
+import { IdeType } from '@aether/models/ide';
+import type { Icons } from '@aether/ui/icons';
 
 export class IDE {
     static readonly VS_CODE = new IDE('VSCode', IdeType.VS_CODE, 'vscode', 'VSCodeLogo');
     static readonly CURSOR = new IDE('Cursor', IdeType.CURSOR, 'cursor', 'CursorLogo');
     static readonly ZED = new IDE('Zed', IdeType.ZED, 'zed', 'ZedLogo');
     static readonly WINDSURF = new IDE('Windsurf', IdeType.WINDSURF, 'windsurf', 'WindsurfLogo');
-    static readonly ONLOOK = new IDE('Onlook', IdeType.ONLOOK, 'onlook', 'Code');
+    static readonly ONLOOK = new IDE('Aether', IdeType.ONLOOK, 'aether', 'Code');
 
     private constructor(
         public readonly displayName: string,

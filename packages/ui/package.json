@@ -1,6 +1,6 @@
 {
-    "name": "@onlook/ui",
-    "description": "A ui library for Onlook",
+    "name": "@aether/ui",
+    "description": "A ui library for Aether",
     "version": "0.0.0",
     "private": true,
     "type": "module",
@@ -9,7 +9,7 @@
     "types": "src/index.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/onlook-dev/desktop.git"
+        "url": "https://github.com/aether-dev/desktop.git"
     },
     "files": [
         "tokens.ts",
@@ -24,18 +24,18 @@
         "typecheck": "tsc --noEmit"
     },
     "keywords": [
-        "onlook",
+        "aether",
         "ui"
     ],
     "author": {
-        "name": "Onlook",
-        "email": "contact@onlook.com"
+        "name": "Aether",
+        "email": "contact@aether.com"
     },
     "license": "Apache-2.0",
-    "homepage": "https://onlook.com",
+    "homepage": "https://aether.com",
     "devDependencies": {
-        "@onlook/utility": "*",
-        "@onlook/typescript": "*",
+        "@aether/utility": "*",
+        "@aether/typescript": "*",
         "@types/color-namer": "^1.3.3",
         "autoprefixer": "^10.4.20",
         "react": "^18.3.1",
@@ -56,7 +56,7 @@
     "dependencies": {
         "@emotion/react": "^11.13.3",
         "@emotion/styled": "^11.13.0",
-        "@onlook/foundation": "*",
+        "@aether/foundation": "*",
         "@radix-ui/react-accordion": "^1.2.0",
         "@radix-ui/react-alert-dialog": "^1.1.1",
         "@radix-ui/react-checkbox": "^1.1.2",

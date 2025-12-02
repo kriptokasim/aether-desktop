@@ -1,5 +1,5 @@
-import type { PageMetadata } from '@onlook/models';
-import { MainChannels } from '@onlook/models/constants';
+import type { PageMetadata } from '@aether/models';
+import { MainChannels } from '@aether/models/constants';
 import { ipcMain } from 'electron';
 import path from 'path';
 import {

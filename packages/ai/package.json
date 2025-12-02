@@ -1,6 +1,6 @@
 {
-    "name": "@onlook/ai",
-    "description": "A AI library for Onlook",
+    "name": "@aether/ai",
+    "description": "A AI library for Aether",
     "main": "./src/index.ts",
     "type": "module",
     "module": "src/index.ts",
@@ -9,7 +9,7 @@
     "private": true,
     "repository": {
         "type": "git",
-        "url": "https://github.com/onlook-dev/desktop.git"
+        "url": "https://github.com/aether-dev/desktop.git"
     },
     "scripts": {
         "clean": "rm -rf node_modules",
@@ -18,23 +18,23 @@
         "typecheck": "tsc --noEmit"
     },
     "keywords": [
-        "onlook",
+        "aether",
         "AI"
     ],
     "author": {
-        "name": "Onlook",
-        "email": "contact@onlook.com"
+        "name": "Aether",
+        "email": "contact@aether.com"
     },
     "license": "Apache-2.0",
-    "homepage": "https://onlook.com",
+    "homepage": "https://aether.com",
     "devDependencies": {
-        "@onlook/typescript": "*"
+        "@aether/typescript": "*"
     },
     "dependencies": {
         "@ai-sdk/anthropic": "^1.1.17",
         "ai": "^4.2.6",
         "diff-match-patch": "^1.0.5",
-        "fg": "^0.0.3",
+        "fast-glob": "^3.3.3",
         "marked": "^15.0.7"
     }
 }

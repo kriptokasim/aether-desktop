@@ -1,19 +1,19 @@
 import { useEditorEngine, useUserManager } from '@/components/Context';
 import { EditorMode, EditorTabValue } from '@/lib/models';
-import { DefaultSettings, MainChannels } from '@onlook/models/constants';
-import { IdeType } from '@onlook/models/ide';
+import { DefaultSettings, MainChannels } from '@aether/models/constants';
+import { IdeType } from '@aether/models/ide';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
-import { Icons } from '@onlook/ui/icons';
-import ResizablePanel from '@onlook/ui/resizable';
-import { Separator } from '@onlook/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@onlook/ui/tabs';
-import { cn } from '@onlook/ui/utils';
+} from '@aether/ui/dropdown-menu';
+import { Icons } from '@aether/ui/icons';
+import ResizablePanel from '@aether/ui/resizable';
+import { Separator } from '@aether/ui/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@aether/ui/tabs';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -38,7 +38,7 @@ export const EditPanel = observer(() => {
     const { t } = useTranslation();
 
     const currentIdeType = userManager.settings.settings?.editor?.ideType;
-    const isOnlookIde = currentIdeType === IdeType.ONLOOK;
+    const isAetherIde = currentIdeType === IdeType.ONLOOK;
 
     const chatSettings = userManager.settings.settings?.chat || DefaultSettings.CHAT_SETTINGS;
     const [isOpen, setIsOpen] = useState(true);
@@ -50,7 +50,7 @@ export const EditPanel = observer(() => {
         tabChange(editorEngine.editPanelTab);
     }, [editorEngine.editPanelTab]);
 
-    // Listens for SHOW_EDITOR_TAB event to switch to DevTab when files are opened via Onlook IDE
+    // Listens for SHOW_EDITOR_TAB event to switch to DevTab when files are opened via Aether IDE
     useEffect(() => {
         const handleShowEditorTab = (_event: any, tabValue: string) => {
             if (tabValue === EditorTabValue.DEV) {
@@ -211,7 +211,7 @@ export const EditPanel = observer(() => {
                             <Icons.MixerHorizontal className="mr-1.5 mb-0.5" />
                             Props
                         </TabsTrigger>
-                        {isOnlookIde && (
+                        {isAetherIde && (
                             <TabsTrigger
                                 className="bg-transparent py-2 px-1 text-small hover:text-foreground-hover"
                                 value={EditorTabValue.DEV}
@@ -242,10 +242,10 @@ export const EditPanel = observer(() => {
                         )}
                     </TabsContent>
                     {/* Empty TabsContent to make the tabs system work, but actual content is rendered separately */}
-                    {isOnlookIde && <TabsContent value={EditorTabValue.DEV}></TabsContent>}
+                    {isAetherIde && <TabsContent value={EditorTabValue.DEV}></TabsContent>}
 
                     {/* Keep DevTab mounted but control visibility based on selected tab so we dont lose the state when switching tabs */}
-                    {isOnlookIde && (
+                    {isAetherIde && (
                         <div
                             className={
                                 selectedTab === EditorTabValue.DEV ? 'block h-full' : 'hidden'

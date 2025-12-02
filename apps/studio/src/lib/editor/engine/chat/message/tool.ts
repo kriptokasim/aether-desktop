@@ -1,5 +1,5 @@
-import type { ToolChatMessage } from '@onlook/models/chat';
-import { ChatMessageRole } from '@onlook/models/chat';
+import type { ToolChatMessage } from '@aether/models/chat';
+import { ChatMessageRole } from '@aether/models/chat';
 import type { CoreToolMessage, ToolContent } from 'ai';
 import { nanoid } from 'nanoid/non-secure';
 

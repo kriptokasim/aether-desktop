@@ -1,7 +1,7 @@
 import type { NodePath } from '@babel/traverse';
 import * as t from '@babel/types';
-import type { CodeInsert, PasteParams } from '@onlook/models/actions';
-import { EditorAttributes } from '@onlook/models/constants';
+import type { CodeInsert, PasteParams } from '@aether/models/actions';
+import { EditorAttributes } from '@aether/models/constants';
 import { parseJsxCodeBlock } from '../helpers';
 import { addKeyToElement, addParamToElement, jsxFilter } from './helpers';
 import { assertNever } from '/common/helpers';

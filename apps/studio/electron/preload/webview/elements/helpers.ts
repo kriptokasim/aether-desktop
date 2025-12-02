@@ -1,7 +1,7 @@
-import type { ActionLocation } from '@onlook/models/actions';
-import { EditorAttributes } from '@onlook/models/constants';
-import type { DomElement, ParentDomElement } from '@onlook/models/element';
-import { jsonClone } from '@onlook/utility';
+import type { ActionLocation } from '@aether/models/actions';
+import { EditorAttributes } from '@aether/models/constants';
+import type { DomElement, ParentDomElement } from '@aether/models/element';
+import { jsonClone } from '@aether/utility';
 import { getWebviewId } from '../state';
 import { getStyles } from './style';
 import { getInstanceId, getOid } from '/common/helpers/ids';

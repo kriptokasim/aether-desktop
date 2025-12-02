@@ -1,5 +1,5 @@
-import { addNextBuildConfig } from '@onlook/foundation';
-import { CUSTOM_OUTPUT_DIR } from '@onlook/models/constants';
+import { addNextBuildConfig } from '@aether/foundation';
+import { CUSTOM_OUTPUT_DIR } from '@aether/models/constants';
 import type { FreestyleFile } from 'freestyle-sandboxes';
 import {
     appendFileSync,

@@ -1,8 +1,8 @@
 import { useEditorEngine } from '@/components/Context';
 import { HotKeyLabel } from '@/components/ui/hotkeys-label';
 import { EditorMode } from '@/lib/models';
-import { ToggleGroup, ToggleGroupItem } from '@onlook/ui/toggle-group';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@onlook/ui/tooltip';
+import { ToggleGroup, ToggleGroupItem } from '@aether/ui/toggle-group';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@aether/ui/tooltip';
 import { observer } from 'mobx-react-lite';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';

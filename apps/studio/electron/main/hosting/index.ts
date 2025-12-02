@@ -1,9 +1,9 @@
-import {
-    addBuiltWithScript,
-    injectBuiltWithScript,
-    removeBuiltWithScript,
-    removeBuiltWithScriptFromLayout,
-} from '@onlook/growth';
+// import {
+//     addBuiltWithScript,
+//     injectBuiltWithScript,
+//     removeBuiltWithScript,
+//     removeBuiltWithScriptFromLayout,
+// } from '@aether/growth';
 import {
     ApiRoutes,
     BASE_API_ROUTE,
@@ -12,14 +12,14 @@ import {
     FUNCTIONS_ROUTE,
     HostingRoutes,
     MainChannels,
-} from '@onlook/models/constants';
+} from '@aether/models/constants';
 import {
     PublishStatus,
     type PublishOptions,
     type PublishRequest,
     type PublishResponse,
-} from '@onlook/models/hosting';
-import { isEmptyString, isNullOrUndefined } from '@onlook/utility';
+} from '@aether/models/hosting';
+import { isEmptyString, isNullOrUndefined } from '@aether/utility';
 import {
     type FreestyleDeployWebConfiguration,
     type FreestyleDeployWebSuccessResponse,
@@ -64,7 +64,7 @@ class HostingManager {
             if (!options?.skipBadge) {
                 this.emitState(PublishStatus.LOADING, 'Adding badge...');
                 await this.addBadge(folderPath);
-                timer.log('"Built with Onlook" badge added');
+                timer.log('"Built with Aether" badge added');
             }
 
             // Run the build script
@@ -97,7 +97,7 @@ class HostingManager {
 
             if (!options?.skipBadge) {
                 await this.removeBadge(folderPath);
-                timer.log('"Built with Onlook" badge removed');
+                timer.log('"Built with Aether" badge removed');
             }
 
             return {
@@ -118,13 +118,13 @@ class HostingManager {
     }
 
     async addBadge(folderPath: string) {
-        await injectBuiltWithScript(folderPath);
-        await addBuiltWithScript(folderPath);
+        // await injectBuiltWithScript(folderPath);
+        // await addBuiltWithScript(folderPath);
     }
 
     async removeBadge(folderPath: string) {
-        await removeBuiltWithScriptFromLayout(folderPath);
-        await removeBuiltWithScript(folderPath);
+        // await removeBuiltWithScriptFromLayout(folderPath);
+        // await removeBuiltWithScript(folderPath);
     }
 
     async runPrepareStep(folderPath: string) {

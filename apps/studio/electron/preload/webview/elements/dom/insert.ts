@@ -1,6 +1,6 @@
-import type { ActionElement, ActionLocation } from '@onlook/models/actions';
-import { EditorAttributes, INLINE_ONLY_CONTAINERS } from '@onlook/models/constants';
-import type { DomElement } from '@onlook/models/element';
+import type { ActionElement, ActionLocation } from '@aether/models/actions';
+import { EditorAttributes, INLINE_ONLY_CONTAINERS } from '@aether/models/constants';
+import type { DomElement } from '@aether/models/element';
 import { getOrAssignDomId } from '../../ids';
 import cssManager from '../../style';
 import { getDeepElement, getDomElement } from '../helpers';

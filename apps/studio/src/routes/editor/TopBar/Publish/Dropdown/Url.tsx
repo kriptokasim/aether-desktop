@@ -1,9 +1,9 @@
 import { invokeMainChannel } from '@/lib/utils';
-import { MainChannels } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons/index';
-import { Input } from '@onlook/ui/input';
-import { getValidUrl } from '@onlook/utility';
+import { MainChannels } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons/index';
+import { Input } from '@aether/ui/input';
+import { getValidUrl } from '@aether/utility';
 
 export const UrlSection = ({ url }: { url: string }) => {
     const openUrl = () => {

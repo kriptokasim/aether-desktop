@@ -1,8 +1,8 @@
 import { useEditorEngine } from '@/components/Context';
-import { FONT_VARIANTS } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
+import { FONT_VARIANTS } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
 import debounce from 'lodash/debounce';
 import { observer } from 'mobx-react-lite';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -119,7 +119,7 @@ const FontPanel = observer(() => {
                     />
                     {searchQuery && (
                         <button
-                            className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-onlook active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
+                            className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-aether active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
                             onClick={() => handleSearch('')}
                         >
                             <Icons.CrossS className="h-3 w-3 text-foreground-primary/50 group-hover:text-foreground-primary" />

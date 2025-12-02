@@ -1,9 +1,9 @@
 import { useEditorEngine } from '@/components/Context';
 import { HotKeyLabel } from '@/components/ui/hotkeys-label';
-import { DefaultSettings, EditorAttributes } from '@onlook/models/constants';
-import { Input } from '@onlook/ui/input';
-import { Popover, PopoverContent, PopoverTrigger } from '@onlook/ui/popover';
-import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@onlook/ui/tooltip';
+import { DefaultSettings, EditorAttributes } from '@aether/models/constants';
+import { Input } from '@aether/ui/input';
+import { Popover, PopoverContent, PopoverTrigger } from '@aether/ui/popover';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@aether/ui/tooltip';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
 import { Hotkey } from '/common/hotkeys';

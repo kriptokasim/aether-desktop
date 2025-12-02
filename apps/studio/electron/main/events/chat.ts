@@ -1,6 +1,6 @@
-import type { ChatConversation, ProjectSuggestions } from '@onlook/models/chat';
-import { StreamRequestType } from '@onlook/models/chat';
-import { MainChannels } from '@onlook/models/constants';
+import type { ChatConversation, ProjectSuggestions } from '@aether/models/chat';
+import { StreamRequestType } from '@aether/models/chat';
+import { MainChannels } from '@aether/models/constants';
 import type { SampleFeedbackType } from '@trainloop/sdk';
 import type { CoreMessage } from 'ai';
 import { ipcMain } from 'electron';

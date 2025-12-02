@@ -49,7 +49,7 @@ export enum MainChannels {
     WRITE_CODE_DIFFS = 'write-code-diffs',
     VIEW_SOURCE_CODE = 'view-source-code',
     VIEW_SOURCE_FILE = 'view-source-file',
-    VIEW_CODE_IN_ONLOOK = 'view-code-in-onlook',
+    VIEW_CODE_IN_ONLOOK = 'view-code-in-aether',
     PICK_COMPONENTS_DIRECTORY = 'pick-directory',
     GET_COMPONENTS = 'get-components',
     CLEAN_CODE_KEYS = 'clean-move-keys',

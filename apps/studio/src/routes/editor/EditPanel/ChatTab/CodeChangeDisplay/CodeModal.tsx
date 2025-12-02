@@ -1,8 +1,8 @@
 import { useEditorEngine } from '@/components/Context';
-import { Button } from '@onlook/ui/button';
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@onlook/ui/dialog';
-import { Icons } from '@onlook/ui/icons';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@onlook/ui/tabs';
+import { Button } from '@aether/ui/button';
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@aether/ui/dialog';
+import { Icons } from '@aether/ui/icons';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@aether/ui/tabs';
 import { useState } from 'react';
 import { CodeBlock } from './CodeBlock';
 import { CodeDiff } from './CodeDiff';

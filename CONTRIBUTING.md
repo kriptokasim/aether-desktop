@@ -1,8 +1,8 @@
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish
-to make via [issues](https://github.com/onlook-dev/desktop/issues),
-[Discord](https://discord.gg/hERDfFZCsH), [email](mailto:contact@onlook.com), or
+to make via [issues](https://github.com/aether-dev/desktop/issues),
+[Discord](https://discord.gg/hERDfFZCsH), [email](mailto:contact@aether.com), or
 any other method with the owners of this repository before making a change.
 
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md), please follow it

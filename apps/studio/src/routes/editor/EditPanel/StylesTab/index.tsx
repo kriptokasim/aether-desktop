@@ -9,10 +9,10 @@ import {
     StyleGroupKey,
     StyleType,
 } from '@/lib/editor/styles/models';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@onlook/ui/accordion';
-import { Icons } from '@onlook/ui/icons/index';
-import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@onlook/ui/tooltip';
-import { cn } from '@onlook/ui/utils';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@aether/ui/accordion';
+import { Icons } from '@aether/ui/icons/index';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@aether/ui/tooltip';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -63,7 +63,7 @@ const SingleStyle = memo(({ style }: { style: SingleStyle }) => {
     const { t } = useTranslation();
     return (
         <div className="flex flex-row items-center mt-2">
-            <p className="text-xs w-24 mr-2 text-start text-foreground-onlook">
+            <p className="text-xs w-24 mr-2 text-start text-foreground-aether">
                 {t(style.displayName)}
             </p>
             <div className="text-end ml-auto">

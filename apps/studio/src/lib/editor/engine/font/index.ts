@@ -1,9 +1,9 @@
 import { makeAutoObservable, reaction } from 'mobx';
 import type { EditorEngine } from '..';
 import { invokeMainChannel } from '@/lib/utils';
-import { fontFamilies, MainChannels, type CodeDiff, type WriteCodeAction } from '@onlook/models';
+import { fontFamilies, MainChannels, type CodeDiff, type WriteCodeAction } from '@aether/models';
 import type { ProjectsManager } from '@/lib/projects';
-import type { Font } from '@onlook/models/assets';
+import type { Font } from '@aether/models/assets';
 import type { FontFile } from '@/routes/editor/LayersPanel/BrandTab/FontPanel/FontFiles';
 import WebFont from 'webfontloader';
 import FlexSearch from 'flexsearch';

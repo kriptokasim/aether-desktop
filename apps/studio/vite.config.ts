@@ -27,6 +27,7 @@ export default defineConfig(({ command }) => {
             alias: {
                 '@': path.join(__dirname, 'src'),
                 common: path.join(__dirname, 'common'),
+                '@aether/ai': path.join(__dirname, '../../packages/ai'),
             },
         },
         optimizeDeps: {
@@ -53,9 +54,41 @@ export default defineConfig(({ command }) => {
                             minify: isBuild,
                             outDir: 'dist-electron/main',
                             rollupOptions: {
-                                external: Object.keys(
-                                    'dependencies' in pkg ? pkg.dependencies : {},
-                                ),
+                                external: (id) => {
+                                    if (id.startsWith('@aether/')) {
+                                        return false;
+                                    }
+                                    if (id === 'nanoid' || id.startsWith('nanoid/')) {
+                                        return false;
+                                    }
+                                    if (id === 'electron') {
+                                        return true;
+                                    }
+                                    if (
+                                        id === 'fast-glob' ||
+                                        id.startsWith('fast-glob/') ||
+                                        id.includes('/node_modules/fast-glob/') ||
+                                        id.includes('\\node_modules\\fast-glob\\')
+                                    ) {
+                                        return true;
+                                    }
+                                    if (
+                                        id === 'micromatch' ||
+                                        id.startsWith('micromatch/') ||
+                                        id.includes('/node_modules/micromatch/') ||
+                                        id.includes('\\node_modules\\micromatch\\')
+                                    ) {
+                                        return true;
+                                    }
+                                    const deps = Object.keys(
+                                        'dependencies' in pkg ? pkg.dependencies : {},
+                                    );
+                                    return deps.some((d) => id === d || id.startsWith(`${d}/`));
+                                },
+                                output: {
+                                    format: 'cjs',
+                                    entryFileNames: '[name].cjs',
+                                },
                             },
                         },
                     },

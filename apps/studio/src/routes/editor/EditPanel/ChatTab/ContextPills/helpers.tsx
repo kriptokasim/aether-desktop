@@ -1,6 +1,6 @@
 import { getTruncatedFileName } from '@/lib/utils';
-import { MessageContextType, type ChatMessageContext } from '@onlook/models/chat';
-import { Icons } from '@onlook/ui/icons/index';
+import { MessageContextType, type ChatMessageContext } from '@aether/models/chat';
+import { Icons } from '@aether/ui/icons/index';
 import React from 'react';
 import NodeIcon from '../../../LayersPanel/Tree/NodeIcon';
 import { assertNever } from '/common/helpers';

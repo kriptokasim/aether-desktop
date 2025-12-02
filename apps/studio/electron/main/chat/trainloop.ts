@@ -1,4 +1,4 @@
-import { BASE_PROXY_ROUTE, FUNCTIONS_ROUTE, ProxyRoutes } from '@onlook/models/constants';
+import { BASE_PROXY_ROUTE, FUNCTIONS_ROUTE, ProxyRoutes } from '@aether/models/constants';
 import { Client, type SampleFeedbackType } from '@trainloop/sdk';
 import type { CoreMessage } from 'ai';
 import { getRefreshedAuthTokens } from '../auth';
@@ -39,7 +39,7 @@ class TrainLoopManager {
             await client.sendData(
                 messages as unknown as Record<string, string>[],
                 type,
-                'onlook-apply-set',
+                'aether-apply-set',
             );
         } catch (error) {
             // Log but don't throw - analytics failures shouldn't break the app

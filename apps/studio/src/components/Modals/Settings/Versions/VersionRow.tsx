@@ -1,12 +1,12 @@
 import { useEditorEngine, useProjectsManager } from '@/components/Context';
-import type { GitCommit } from '@onlook/git';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@onlook/ui/tooltip';
-import { toast } from '@onlook/ui/use-toast';
-import { cn } from '@onlook/ui/utils';
-import { formatCommitDate, timeAgo } from '@onlook/utility';
+import type { GitCommit } from '@aether/git';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@aether/ui/tooltip';
+import { toast } from '@aether/ui/use-toast';
+import { cn } from '@aether/ui/utils';
+import { formatCommitDate, timeAgo } from '@aether/utility';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useRef, useState } from 'react';
 

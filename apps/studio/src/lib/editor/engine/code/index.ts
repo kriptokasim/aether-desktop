@@ -16,17 +16,17 @@ import type {
     UngroupElementsAction,
     UpdateStyleAction,
     WriteCodeAction,
-} from '@onlook/models/actions';
+} from '@aether/models/actions';
 import {
     CodeActionType,
     type CodeGroup,
     type CodeMove,
     type CodeRemove,
     type CodeUngroup,
-} from '@onlook/models/actions';
-import type { CodeDiff, CodeDiffRequest } from '@onlook/models/code';
-import { MainChannels, WebviewChannels } from '@onlook/models/constants';
-import { IdeType } from '@onlook/models/ide';
+} from '@aether/models/actions';
+import type { CodeDiff, CodeDiffRequest } from '@aether/models/code';
+import { MainChannels, WebviewChannels } from '@aether/models/constants';
+import { IdeType } from '@aether/models/ide';
 import { makeAutoObservable } from 'mobx';
 import type { EditorEngine } from '..';
 import { addTailwindToRequest, getOrCreateCodeDiffRequest } from './helpers';

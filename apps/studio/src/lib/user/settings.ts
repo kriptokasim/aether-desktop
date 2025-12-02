@@ -1,5 +1,5 @@
-import { DefaultSettings, MainChannels } from '@onlook/models/constants';
-import type { ChatSettings, EditorSettings, UserSettings } from '@onlook/models/settings';
+import { DefaultSettings, MainChannels } from '@aether/models/constants';
+import type { ChatSettings, EditorSettings, UserSettings } from '@aether/models/settings';
 import { makeAutoObservable } from 'mobx';
 import { invokeMainChannel } from '../utils';
 

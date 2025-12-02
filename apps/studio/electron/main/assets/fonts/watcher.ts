@@ -1,12 +1,12 @@
 import { subscribe, type AsyncSubscription } from '@parcel/watcher';
-import { DefaultSettings, MainChannels } from '@onlook/models/constants';
+import { DefaultSettings, MainChannels } from '@aether/models/constants';
 import * as pathModule from 'path';
 import { scanFonts } from './scanner';
 import fs from 'fs';
 import { addFontVariableToLayout } from './layout';
 import { removeFontVariableFromLayout } from './layout';
 import { removeFontFromTailwindConfig, updateTailwindFontConfig } from './tailwind';
-import type { Font } from '@onlook/models/assets';
+import type { Font } from '@aether/models/assets';
 import { detectRouterType } from '../../pages';
 import { mainWindow } from '../../index';
 

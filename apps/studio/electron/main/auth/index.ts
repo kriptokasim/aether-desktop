@@ -1,6 +1,6 @@
-import { APP_SCHEMA, MainChannels } from '@onlook/models/constants';
-import type { AuthTokens, UserMetadata } from '@onlook/models/settings';
-import supabase from '@onlook/supabase/clients';
+import { APP_SCHEMA, MainChannels } from '@aether/models/constants';
+import type { AuthTokens, UserMetadata } from '@aether/models/settings';
+import supabase from '@aether/supabase/clients';
 import type {
     AuthResponse,
     Session,

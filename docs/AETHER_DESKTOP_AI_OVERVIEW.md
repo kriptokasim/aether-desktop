@@ -17,7 +17,7 @@ Each provider requires specific configuration via environment variables:
 - **OpenAI**: `VITE_OPENAI_API_KEY`.
 - **Gemini**: `VITE_GEMINI_API_KEY`.
 
-This document provides a high-level overview of the AI integration within Aether Desktop (formerly Onlook Desktop). It describes the architecture, key modules, UI entry points, and configuration.
+This document provides a high-level overview of the AI integration within Aether Desktop (formerly Aether Desktop). It describes the architecture, key modules, UI entry points, and configuration.
 
 ## Overview
 
@@ -134,4 +134,4 @@ Users can configure the following settings via the UI (Settings > AI):
 ## Current Limitations / Observations
 
 *   **Proxy Dependency**: Without a direct API key, it relies on a specific Supabase proxy structure.
-*   **Tooling**: The `chatToolSet` is imported from `@onlook/ai`. Tool execution is handled by the `ai` SDK, with custom repair logic implemented for `NoSuchToolError` to guide the model towards valid tools.
+*   **Tooling**: The `chatToolSet` is imported from `@aether/ai`. Tool execution is handled by the `ai` SDK, with custom repair logic implemented for `NoSuchToolError` to guide the model towards valid tools.

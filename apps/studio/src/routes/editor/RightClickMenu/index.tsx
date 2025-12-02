@@ -1,17 +1,17 @@
 import { useEditorEngine, useUserManager } from '@/components/Context';
 import { EditorTabValue } from '@/lib/models';
-import type { DomElement } from '@onlook/models/element';
-import { DEFAULT_IDE } from '@onlook/models/ide';
+import type { DomElement } from '@aether/models/element';
+import { DEFAULT_IDE } from '@aether/models/ide';
 import {
     ContextMenu,
     ContextMenuContent,
     ContextMenuItem,
     ContextMenuSeparator,
     ContextMenuTrigger,
-} from '@onlook/ui/context-menu';
-import { Icons } from '@onlook/ui/icons';
-import { Kbd } from '@onlook/ui/kbd';
-import { cn } from '@onlook/ui/utils';
+} from '@aether/ui/context-menu';
+import { Icons } from '@aether/ui/icons';
+import { Kbd } from '@aether/ui/kbd';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
 import { Hotkey } from '/common/hotkeys';

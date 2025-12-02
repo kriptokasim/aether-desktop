@@ -1,10 +1,10 @@
 import { useEditorEngine, useUserManager } from '@/components/Context';
 import type { ClickRectState } from '@/lib/editor/engine/overlay/state';
 import { EditorMode, EditorTabValue } from '@/lib/models';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons/index';
-import { Textarea } from '@onlook/ui/textarea';
-import { cn } from '@onlook/ui/utils';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons/index';
+import { Textarea } from '@aether/ui/textarea';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';

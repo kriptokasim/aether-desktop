@@ -1,9 +1,9 @@
 import { useProjectsManager } from '@/components/Context';
 import { invokeMainChannel } from '@/lib/utils';
-import type { RunBunCommandResult } from '@onlook/models';
-import { MainChannels } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
+import type { RunBunCommandResult } from '@aether/models';
+import { MainChannels } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 

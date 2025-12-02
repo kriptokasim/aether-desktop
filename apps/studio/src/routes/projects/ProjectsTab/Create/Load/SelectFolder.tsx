@@ -1,9 +1,9 @@
 import { invokeMainChannel } from '@/lib/utils';
 import { getNameFromPath } from '@/routes/projects/helpers';
-import { MainChannels } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
-import { CardDescription, CardTitle } from '@onlook/ui/card';
-import { Icons } from '@onlook/ui/icons';
+import { MainChannels } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
+import { CardDescription, CardTitle } from '@aether/ui/card';
+import { Icons } from '@aether/ui/icons';
 import type { StepComponent } from '../withStepProps';
 
 const LoadSelectFolder: StepComponent = ({ props, variant }) => {
@@ -37,11 +37,11 @@ const LoadSelectFolder: StepComponent = ({ props, variant }) => {
     const renderContent = () => (
         <>
             {projectData.folderPath ? (
-                <div className="w-full flex flex-row items-center border-[0.5px] bg-background-onlook/60 px-4 py-5 rounded">
+                <div className="w-full flex flex-row items-center border-[0.5px] bg-background-aether/60 px-4 py-5 rounded">
                     <div className="flex flex-col text-sm gap-1 break-all">
                         <p className="text-regularPlus">{projectData.name}</p>
                         <button
-                            className="hover:underline text-mini text-foreground-onlook text-start"
+                            className="hover:underline text-mini text-foreground-aether text-start"
                             onClick={handleClickPath}
                         >
                             {projectData.folderPath}
@@ -63,7 +63,7 @@ const LoadSelectFolder: StepComponent = ({ props, variant }) => {
                 </div>
             ) : (
                 <Button
-                    className="w-full h-32 text-regularPlus text-foreground-onlook border-[0.5px] bg-background-onlook/50 hover:bg-background-onlook/60"
+                    className="w-full h-32 text-regularPlus text-foreground-aether border-[0.5px] bg-background-aether/50 hover:bg-background-aether/60"
                     variant={'outline'}
                     onClick={pickProjectFolder}
                 >

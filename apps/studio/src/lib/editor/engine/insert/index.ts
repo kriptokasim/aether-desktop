@@ -1,17 +1,17 @@
 import { EditorMode } from '@/lib/models';
 import { createDomId, createOid } from '@/lib/utils';
-import type { ImageContentData } from '@onlook/models';
+import type { ImageContentData } from '@aether/models';
 import {
     type ActionElement,
     type ActionLocation,
     type ActionTarget,
     type InsertElementAction,
     type UpdateStyleAction,
-} from '@onlook/models/actions';
-import { DefaultSettings, EditorAttributes } from '@onlook/models/constants';
-import type { DropElementProperties, ElementPosition } from '@onlook/models/element';
-import { StyleChangeType } from '@onlook/models/style';
-import { colors } from '@onlook/ui/tokens';
+} from '@aether/models/actions';
+import { DefaultSettings, EditorAttributes } from '@aether/models/constants';
+import type { DropElementProperties, ElementPosition } from '@aether/models/element';
+import { StyleChangeType } from '@aether/models/style';
+import { colors } from '@aether/ui/tokens';
 import type React from 'react';
 import type { EditorEngine } from '..';
 import type { RectDimensions } from '../overlay/rect';

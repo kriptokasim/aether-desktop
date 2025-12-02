@@ -1,6 +1,6 @@
 import traverse, { NodePath } from '@babel/traverse';
 import * as t from '@babel/types';
-import { EditorAttributes } from '@onlook/models/constants';
+import { EditorAttributes } from '@aether/models/constants';
 import { generateCode } from '../code/diff/helpers';
 import { formatContent, readFile, writeFile } from '../code/files';
 import { parseJsxFile } from '../code/helpers';

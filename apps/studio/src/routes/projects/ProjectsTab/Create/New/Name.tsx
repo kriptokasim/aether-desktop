@@ -1,7 +1,7 @@
-import { Button } from '@onlook/ui/button';
-import { CardDescription, CardTitle } from '@onlook/ui/card';
-import { Input } from '@onlook/ui/input';
-import { Label } from '@onlook/ui/label';
+import { Button } from '@aether/ui/button';
+import { CardDescription, CardTitle } from '@aether/ui/card';
+import { Input } from '@aether/ui/input';
+import { Label } from '@aether/ui/label';
 import { getRandomPlaceholder } from '../../../helpers';
 import type { StepComponent } from '../withStepProps';
 

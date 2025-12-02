@@ -1,6 +1,6 @@
 import { useProjectsManager } from '@/components/Context';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons/index';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons/index';
 import { observer } from 'mobx-react-lite';
 
 export const NoVersions = observer(() => {

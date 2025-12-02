@@ -1,8 +1,8 @@
 import { useEditorEngine } from '@/components/Context';
-import { ColorPicker } from '@onlook/ui/color-picker';
-import { Icons } from '@onlook/ui/icons';
-import { PopoverScrollArea, PopoverSeparator } from '@onlook/ui/popover';
-import { Color, type Palette } from '@onlook/utility';
+import { ColorPicker } from '@aether/ui/color-picker';
+import { Icons } from '@aether/ui/icons';
+import { PopoverScrollArea, PopoverSeparator } from '@aether/ui/popover';
+import { Color, type Palette } from '@aether/utility';
 import { useEffect, useState } from 'react';
 
 interface ColorPickerProps {

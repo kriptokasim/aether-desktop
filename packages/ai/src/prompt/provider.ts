@@ -1,11 +1,11 @@
-import { AI_PROVIDERS, type AIProviderId } from '@onlook/models/constants';
+import { AI_PROVIDERS, type AIProviderId } from '@aether/models/constants';
 import type {
     ChatMessageContext,
     ErrorMessageContext,
     FileMessageContext,
     HighlightMessageContext,
     ProjectMessageContext,
-} from '@onlook/models/chat';
+} from '@aether/models/chat';
 import type { CoreUserMessage, ImagePart, UserContent } from 'ai';
 import { CONTEXT_PROMPTS } from './context';
 import { CREATE_PAGE_EXAMPLE_CONVERSATION, PAGE_SYSTEM_PROMPT } from './create';

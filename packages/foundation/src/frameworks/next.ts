@@ -3,7 +3,7 @@ import generate from '@babel/generator';
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
 import * as t from '@babel/types';
-import { CUSTOM_OUTPUT_DIR } from '@onlook/models/constants';
+import { CUSTOM_OUTPUT_DIR } from '@aether/models/constants';
 import * as fs from 'fs';
 import * as path from 'path';
 

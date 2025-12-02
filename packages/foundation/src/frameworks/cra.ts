@@ -54,7 +54,7 @@ export const ensureConfigOverrides = (): void => {
         const ast = parse(fileContent, genASTParserOptionsByFileExtension(FILE_EXTENSION.JS));
 
         let hasCustomizeCraImport = false;
-        let hasOnlookReactPlugin = false;
+        let hasAetherReactPlugin = false;
 
         traverse(ast, {
             ImportDeclaration(path) {
@@ -83,7 +83,7 @@ export const ensureConfigOverrides = (): void => {
                                 t.isStringLiteral(pluginArg, { value: ONLOOK_PLUGIN.WEBPACK }),
                             )
                         ) {
-                            hasOnlookReactPlugin = true;
+                            hasAetherReactPlugin = true;
                         }
                     });
                 }
@@ -108,7 +108,7 @@ export const ensureConfigOverrides = (): void => {
             ast.program.body.unshift(requireDeclaration);
         }
 
-        if (!hasOnlookReactPlugin) {
+        if (!hasAetherReactPlugin) {
             traverse(ast, {
                 AssignmentExpression(path) {
                     if (

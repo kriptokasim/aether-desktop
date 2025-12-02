@@ -1,10 +1,10 @@
 import { useProjectsManager } from '@/components/Context';
 import { invokeMainChannel } from '@/lib/utils';
-import { HOSTING_DOMAIN, MainChannels } from '@onlook/models/constants';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
-import { getValidSubdomain, getValidUrl, timeAgo } from '@onlook/utility';
+import { HOSTING_DOMAIN, MainChannels } from '@aether/models/constants';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
+import { getValidSubdomain, getValidUrl, timeAgo } from '@aether/utility';
 import { observer } from 'mobx-react-lite';
 
 export const BaseDomain = observer(() => {

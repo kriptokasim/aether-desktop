@@ -1,7 +1,7 @@
 import traverse, { NodePath } from '@babel/traverse';
 import * as t from '@babel/types';
-import { EditorAttributes } from '@onlook/models/constants';
-import type { DynamicType, TemplateNode } from '@onlook/models/element';
+import { EditorAttributes } from '@aether/models/constants';
+import type { DynamicType, TemplateNode } from '@aether/models/element';
 import { generateCode } from '../code/diff/helpers';
 import { formatContent, readFile } from '../code/files';
 import { parseJsxFile } from '../code/helpers';

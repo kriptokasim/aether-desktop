@@ -1,5 +1,5 @@
-import { EditorAttributes, WebviewChannels } from '@onlook/models/constants';
-import type { LayerNode } from '@onlook/models/element';
+import { EditorAttributes, WebviewChannels } from '@aether/models/constants';
+import type { LayerNode } from '@aether/models/element';
 import { ipcRenderer } from 'electron';
 import { debounce } from './bundles/helpers';
 import { getOrAssignDomId } from './ids';

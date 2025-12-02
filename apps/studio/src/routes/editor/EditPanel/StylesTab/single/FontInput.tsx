@@ -1,11 +1,11 @@
 import { useEditorEngine } from '@/components/Context';
 import type { SingleStyle } from '@/lib/editor/styles/models';
 import { BrandTabValue, LayersPanelTabValue } from '@/lib/models';
-import type { Font } from '@onlook/models/assets';
-import { Icons } from '@onlook/ui/icons';
-import { Popover, PopoverContent, PopoverTrigger } from '@onlook/ui/popover';
-import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@onlook/ui/tooltip';
-import { convertFontString } from '@onlook/utility';
+import type { Font } from '@aether/models/assets';
+import { Icons } from '@aether/ui/icons';
+import { Popover, PopoverContent, PopoverTrigger } from '@aether/ui/popover';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@aether/ui/tooltip';
+import { convertFontString } from '@aether/utility';
 import { TooltipArrow } from '@radix-ui/react-tooltip';
 import { camelCase } from 'lodash';
 import { observer } from 'mobx-react-lite';
@@ -55,7 +55,7 @@ export const FontInput = observer(
         return (
             <Popover open={isOpen} onOpenChange={setIsOpen}>
                 <PopoverTrigger asChild>
-                    <button className="p-[6px] w-32 px-2 text-start rounded border-none text-xs text-active bg-background-onlook/75 appearance-none focus:outline-none focus:ring-0 flex items-center justify-between">
+                    <button className="p-[6px] w-32 px-2 text-start rounded border-none text-xs text-active bg-background-aether/75 appearance-none focus:outline-none focus:ring-0 flex items-center justify-between">
                         <Tooltip>
                             <TooltipTrigger asChild>
                                 <span
@@ -79,7 +79,7 @@ export const FontInput = observer(
                                 </TooltipContent>
                             </TooltipPortal>
                         </Tooltip>
-                        <Icons.ChevronDown className="text-foreground-onlook" />
+                        <Icons.ChevronDown className="text-foreground-aether" />
                     </button>
                 </PopoverTrigger>
                 <PopoverContent
@@ -139,7 +139,7 @@ export const FontInput = observer(
                         <div className="p-2 border-t border-border">
                             <button
                                 onClick={handleAddNewFont}
-                                className="w-full p-2 text-sm text-center rounded-md bg-background-onlook hover:bg-background-secondary text-muted-foreground hover:text-foreground transition-colors"
+                                className="w-full p-2 text-sm text-center rounded-md bg-background-aether hover:bg-background-secondary text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 Add a new font
                             </button>

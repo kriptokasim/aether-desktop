@@ -148,7 +148,7 @@ const defaultBabelrcContent = {
 };
 
 /**
- * Modify the .babelrc file to include the "@onlook/react" plugin
+ * Modify the .babelrc file to include the "@aether/react" plugin
  */
 export const modifyBabelrc = (): void => {
     let babelrcContent: { plugins: string[] };
@@ -168,13 +168,13 @@ export const modifyBabelrc = (): void => {
         babelrcContent.plugins = [];
     }
 
-    // Check if "@onlook/react" is already in the plugins array
+    // Check if "@aether/react" is already in the plugins array
     if (!babelrcContent.plugins.includes(ONLOOK_PLUGIN.WEBPACK)) {
-        // Add "@onlook/react" to the plugins array
+        // Add "@aether/react" to the plugins array
         babelrcContent.plugins.push(ONLOOK_PLUGIN.WEBPACK);
     }
 
     // Write the updated content back to the .babelrc file
     fs.writeFileSync(babelrcPath, JSON.stringify(babelrcContent, null, 2), 'utf8');
-    console.log('.babelrc has been updated with the "@onlook/react" plugin.');
+    console.log('.babelrc has been updated with the "@aether/react" plugin.');
 };

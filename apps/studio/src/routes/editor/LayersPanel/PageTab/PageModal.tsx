@@ -4,7 +4,7 @@ import {
     normalizeRoute,
     validateNextJsRoute,
 } from '@/lib/editor/engine/pages/helper';
-import { Button } from '@onlook/ui/button';
+import { Button } from '@aether/ui/button';
 import {
     Dialog,
     DialogContent,
@@ -12,10 +12,10 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-} from '@onlook/ui/dialog';
-import { Input } from '@onlook/ui/input';
-import { toast } from '@onlook/ui/use-toast';
-import { cn } from '@onlook/ui/utils';
+} from '@aether/ui/dialog';
+import { Input } from '@aether/ui/input';
+import { toast } from '@aether/ui/use-toast';
+import { cn } from '@aether/ui/utils';
 import { useEffect, useMemo, useState } from 'react';
 
 interface PageModalProps {

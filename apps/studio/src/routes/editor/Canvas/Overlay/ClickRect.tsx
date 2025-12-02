@@ -1,7 +1,7 @@
 import type { RectDimensions } from '@/lib/editor/engine/overlay/rect';
 import { adaptValueToCanvas } from '@/lib/editor/engine/overlay/utils';
-import type { DomElementStyles } from '@onlook/models/element';
-import { colors } from '@onlook/ui/tokens';
+import type { DomElementStyles } from '@aether/models/element';
+import { colors } from '@aether/ui/tokens';
 import { nanoid } from 'nanoid';
 import { BaseRect } from './BaseRect';
 import { ResizeHandles } from './ResizeHandles';

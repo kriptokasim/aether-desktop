@@ -1,14 +1,14 @@
 import { useProjectsManager } from '@/components/Context';
-import { Button } from '@onlook/ui/button';
+import { Button } from '@aether/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@onlook/ui/dropdown-menu';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
-import { timeAgo } from '@onlook/utility';
+} from '@aether/ui/dropdown-menu';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
+import { timeAgo } from '@aether/utility';
 
 export const Verified = () => {
     const projectsManager = useProjectsManager();

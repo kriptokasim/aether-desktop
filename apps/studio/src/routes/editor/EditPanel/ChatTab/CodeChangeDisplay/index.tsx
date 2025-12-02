@@ -1,5 +1,5 @@
 import { useEditorEngine } from '@/components/Context';
-import { CodeBlockProcessor } from '@onlook/ai';
+import { CodeBlockProcessor } from '@aether/ai';
 import { useMemo } from 'react';
 import { CollapsibleCodeBlock } from './CollapsibleCodeBlock';
 

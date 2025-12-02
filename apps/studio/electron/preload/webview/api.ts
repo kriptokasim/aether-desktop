@@ -12,7 +12,7 @@ import {
     getActionElementByDomId,
     getActionLocation,
     getElementType,
-    getFirstOnlookElement,
+    getFirstAetherElement,
     setElementType,
 } from './elements/dom/helpers';
 import { getInsertLocation } from './elements/dom/insert';
@@ -21,7 +21,7 @@ import { getElementIndex } from './elements/move';
 import { drag, endAllDrag, endDrag, startDrag } from './elements/move/drag';
 import { getComputedStyleByDomId } from './elements/style';
 import { editText, startEditingText, stopEditingText } from './elements/text';
-import { onOnlookViewCode, removeOnlookViewCode, viewCodeInOnlook } from './events/code';
+import { onAetherViewCode, removeAetherViewCode, viewCodeInAether } from './events/code';
 import { setWebviewId } from './state';
 import { getTheme, setTheme } from './theme';
 
@@ -32,7 +32,7 @@ export function setApi() {
         getComputedStyleByDomId,
         updateElementInstance,
         setWebviewId,
-        getFirstOnlookElement,
+        getFirstAetherElement,
 
         // Elements
         getElementAtLoc,
@@ -65,9 +65,9 @@ export function setApi() {
         editText,
         stopEditingText,
 
-        // Onlook IDE
-        onOnlookViewCode,
-        removeOnlookViewCode,
-        viewCodeInOnlook,
+        // Aether IDE
+        onAetherViewCode,
+        removeAetherViewCode,
+        viewCodeInAether,
     });
 }

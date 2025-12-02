@@ -1,11 +1,11 @@
-# Onlook nextjs preprocessor
+# Aether nextjs preprocessor
 
 ## Usage
 
 1. Install preprocessor library
 
 ```bash
-npm i --save-dev @onlook/nextjs
+npm i --save-dev @aether/nextjs
 ```
 
 2. Update `next.config.mjs` or `next.config.js`
@@ -16,7 +16,7 @@ import path from "path";
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    swcPlugins: [["@onlook/nextjs", { root: path.resolve(".") }]],
+    swcPlugins: [["@aether/nextjs", { root: path.resolve(".") }]],
   },
 }
 

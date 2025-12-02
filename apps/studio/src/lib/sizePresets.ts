@@ -1,4 +1,4 @@
-import { type IconProps, Icons } from '@onlook/ui/icons';
+import { type IconProps, Icons } from '@aether/ui/icons';
 
 export interface SizePreset {
     name: string;

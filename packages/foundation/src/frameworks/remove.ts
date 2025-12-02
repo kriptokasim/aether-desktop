@@ -11,9 +11,9 @@ export const removeNextConfig = async (targetPath: string): Promise<void> => {
         const fullPath = path.join(targetPath, configFile);
         let content = await fs.promises.readFile(fullPath, 'utf8');
 
-        // Remove the Onlook plugin configuration with any object
+        // Remove the Aether plugin configuration with any object
         content = content.replace(
-            /swcPlugins:\s*\[\s*\[\s*"@onlook\/nextjs"(,\s*\{[^}]*\})?\s*\]\s*\]/,
+            /swcPlugins:\s*\[\s*\[\s*"@aether\/nextjs"(,\s*\{[^}]*\})?\s*\]\s*\]/,
             '',
         );
 
@@ -27,7 +27,7 @@ export const removeNextConfig = async (targetPath: string): Promise<void> => {
         content = content.replace(/,(\s*[}\]])/g, '$1');
 
         await fs.promises.writeFile(fullPath, content, 'utf8');
-        console.log(`Onlook plugin configuration removed from ${fullPath}`);
+        console.log(`Aether plugin configuration removed from ${fullPath}`);
     } else {
         console.log(`No Next.js config file found in ${targetPath}`);
     }
@@ -42,8 +42,8 @@ export const removeViteConfig = async (targetPath: string): Promise<void> => {
         const fullPath = path.join(targetPath, configFile);
         let content = await fs.promises.readFile(fullPath, 'utf8');
 
-        // Remove the Onlook babel plugin from the plugins array
-        content = content.replace(/,?\s*"@onlook\/babel-plugin-react"(?=\s*[\],])/g, '');
+        // Remove the Aether babel plugin from the plugins array
+        content = content.replace(/,?\s*"@aether\/babel-plugin-react"(?=\s*[\],])/g, '');
 
         // Remove empty babel plugins array if it exists
         content = content.replace(/plugins:\s*\[\s*\],?\s*/g, '');
@@ -55,7 +55,7 @@ export const removeViteConfig = async (targetPath: string): Promise<void> => {
         content = content.replace(/,(\s*[}\]])/g, '$1');
 
         await fs.promises.writeFile(fullPath, content, 'utf8');
-        console.log(`Onlook babel plugin removed from ${fullPath}`);
+        console.log(`Aether babel plugin removed from ${fullPath}`);
     } else {
         console.log(`No Vite config file found in ${targetPath}`);
     }

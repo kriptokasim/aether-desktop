@@ -1,9 +1,9 @@
 import { useProjectsManager } from '@/components/Context';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
-import { toast } from '@onlook/ui/use-toast';
-import { cn } from '@onlook/ui/utils';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
+import { toast } from '@aether/ui/use-toast';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 

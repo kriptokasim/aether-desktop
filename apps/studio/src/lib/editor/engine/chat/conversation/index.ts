@@ -1,8 +1,8 @@
 import type { ProjectsManager } from '@/lib/projects';
 import { invokeMainChannel, sendAnalytics } from '@/lib/utils';
-import { type ChatConversation, type ChatMessageContext } from '@onlook/models/chat';
-import { MainChannels } from '@onlook/models/constants';
-import type { Project } from '@onlook/models/projects';
+import { type ChatConversation, type ChatMessageContext } from '@aether/models/chat';
+import { MainChannels } from '@aether/models/constants';
+import type { Project } from '@aether/models/projects';
 import type { CoreAssistantMessage, CoreToolMessage, CoreUserMessage } from 'ai';
 import { makeAutoObservable, reaction } from 'mobx';
 import type { EditorEngine } from '../..';

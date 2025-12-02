@@ -1,4 +1,4 @@
-import type { PageNode } from '@onlook/models';
+import type { PageNode } from '@aether/models';
 
 export const normalizeRoute = (route: string): string => {
     return route

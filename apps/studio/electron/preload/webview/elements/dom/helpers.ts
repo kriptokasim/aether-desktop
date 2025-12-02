@@ -1,6 +1,6 @@
-import type { ActionElement, ActionLocation } from '@onlook/models/actions';
-import { EditorAttributes } from '@onlook/models/constants';
-import type { CoreElementType, DomElement, DynamicType } from '@onlook/models/element';
+import type { ActionElement, ActionLocation } from '@aether/models/actions';
+import { EditorAttributes } from '@aether/models/constants';
+import type { CoreElementType, DomElement, DynamicType } from '@aether/models/element';
 import { getOrAssignDomId } from '../../ids';
 import { getDomElement, getImmediateTextContent } from '../helpers';
 import { elementFromDomId } from '/common/helpers';
@@ -115,7 +115,7 @@ export function setElementType(domId: string, dynamicType: string, coreElementTy
     }
 }
 
-export function getFirstOnlookElement(): DomElement | null {
+export function getFirstAetherElement(): DomElement | null {
     const body = document.body;
     const firstElement = body.querySelector(`[${EditorAttributes.DATA_ONLOOK_ID}]`);
     if (firstElement) {

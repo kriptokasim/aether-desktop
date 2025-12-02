@@ -1,5 +1,5 @@
 import { subscribe, type AsyncSubscription } from '@parcel/watcher';
-import { MainChannels } from '@onlook/models/constants';
+import { MainChannels } from '@aether/models/constants';
 import * as pathModule from 'path';
 import fs from 'fs';
 import { mainWindow } from '../index';

@@ -1,6 +1,6 @@
 import { useEditorEngine, useProjectsManager, useUserManager } from '@/components/Context';
-import { UsagePlanType } from '@onlook/models/usage';
-import { Icons } from '@onlook/ui/icons/index';
+import { UsagePlanType } from '@aether/models/usage';
+import { Icons } from '@aether/ui/icons/index';
 import { observer } from 'mobx-react-lite';
 import { UpgradePrompt } from '../UpgradePrompt';
 import { Verification } from './Verification';

@@ -1,6 +1,6 @@
-import { Icons } from '@onlook/ui/icons';
-import { Input } from '@onlook/ui/input';
-import { cn } from '@onlook/ui/utils';
+import { Icons } from '@aether/ui/icons';
+import { Input } from '@aether/ui/input';
+import { cn } from '@aether/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -225,7 +225,7 @@ const AppsTab = observer(({ onSelectApp }: AppsTabProps) => {
                         />
                         {searchQuery && (
                             <button
-                                className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-onlook active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
+                                className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-aether active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
                                 onClick={() => setSearchQuery('')}
                             >
                                 <Icons.CrossS className="h-3 w-3 text-foreground-primary/50 group-hover:text-foreground-primary" />

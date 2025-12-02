@@ -1,4 +1,4 @@
-import type { PageMetadata } from '@onlook/models';
+import type { PageMetadata } from '@aether/models';
 import { useEffect, useState } from 'react';
 
 interface UseMetadataFormProps {

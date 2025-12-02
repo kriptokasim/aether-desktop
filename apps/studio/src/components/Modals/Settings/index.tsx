@@ -1,11 +1,11 @@
 import { useEditorEngine, useProjectsManager } from '@/components/Context';
 import { SettingsTabValue } from '@/lib/models';
-import type { PageNode } from '@onlook/models';
-import { Button } from '@onlook/ui/button';
-import { Icons } from '@onlook/ui/icons';
-import { Separator } from '@onlook/ui/separator';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@onlook/ui/tooltip';
-import { cn } from '@onlook/ui/utils';
+import type { PageNode } from '@aether/models';
+import { Button } from '@aether/ui/button';
+import { Icons } from '@aether/ui/icons';
+import { Separator } from '@aether/ui/separator';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@aether/ui/tooltip';
+import { cn } from '@aether/ui/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useMemo } from 'react';

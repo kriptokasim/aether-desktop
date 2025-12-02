@@ -1,6 +1,6 @@
 import { invokeMainChannel } from '@/lib/utils';
-import { EditorAttributes, MainChannels } from '@onlook/models/constants';
-import type { LayerNode, TemplateNode } from '@onlook/models/element';
+import { EditorAttributes, MainChannels } from '@aether/models/constants';
+import type { LayerNode, TemplateNode } from '@aether/models/element';
 import type { WebviewTag } from 'electron';
 import { makeAutoObservable } from 'mobx';
 import type { EditorEngine } from '..';

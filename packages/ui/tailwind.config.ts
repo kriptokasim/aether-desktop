@@ -18,7 +18,7 @@ const config = {
             colors: {
                 background: {
                     DEFAULT: 'hsl(var(--background))',
-                    onlook: 'hsl(var(--background-onlook))',
+                    aether: 'hsl(var(--background-aether))',
                     brand: {
                         DEFAULT: 'hsl(var(--background-brand))',
                         secondary: 'hsl(var(--background-brand-secondary))',
@@ -33,7 +33,7 @@ const config = {
                 },
                 foreground: {
                     DEFAULT: 'hsl(var(--foreground))',
-                    onlook: 'hsl(var(--foreground-onlook))',
+                    aether: 'hsl(var(--foreground-aether))',
                     brand: 'hsl(var(--foreground-brand))',
                     primary: 'hsl(var(--foreground-primary))',
                     secondary: 'hsl(var(--foreground-secondary))',

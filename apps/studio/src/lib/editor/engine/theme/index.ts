@@ -1,10 +1,10 @@
 import type { ProjectsManager } from '@/lib/projects';
 import { invokeMainChannel } from '@/lib/utils';
 import type { ColorItem } from '@/routes/editor/LayersPanel/BrandTab/ColorPanel/ColorPalletGroup';
-import { DEFAULT_COLOR_NAME, MainChannels } from '@onlook/models';
-import type { ConfigResult, ParsedColors, ThemeColors } from '@onlook/models/assets';
-import { Theme } from '@onlook/models/assets';
-import { Color, generateUniqueName } from '@onlook/utility';
+import { DEFAULT_COLOR_NAME, MainChannels } from '@aether/models';
+import type { ConfigResult, ParsedColors, ThemeColors } from '@aether/models/assets';
+import { Theme } from '@aether/models/assets';
+import { Color, generateUniqueName } from '@aether/utility';
 import { makeAutoObservable } from 'mobx';
 import colors from 'tailwindcss/colors';
 import type { EditorEngine } from '..';

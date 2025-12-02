@@ -1,7 +1,7 @@
-import type { GitCommit } from '@onlook/git';
-import { GitChannels } from '@onlook/models/constants';
-import { type Project } from '@onlook/models/projects';
-import { toast } from '@onlook/ui/use-toast';
+import type { GitCommit } from '@aether/git';
+import { GitChannels } from '@aether/models/constants';
+import { type Project } from '@aether/models/projects';
+import { toast } from '@aether/ui/use-toast';
 import { makeAutoObservable } from 'mobx';
 import type { EditorEngine } from '../editor/engine';
 import { invokeMainChannel, sendAnalytics } from '../utils';
@@ -44,7 +44,7 @@ export class VersionsManager {
     }
 
     createCommit = async (
-        message: string = 'New Onlook backup',
+        message: string = 'New Aether backup',
         showToast = true,
     ): Promise<{
         success: boolean;
