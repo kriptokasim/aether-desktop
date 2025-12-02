@@ -4,19 +4,17 @@ import { join } from 'path';
 
 class ImageStorage {
     private static instance: ImageStorage;
-    private readonly IMAGES_FOLDER: string;
-
-    private constructor() {
-        const APP_PATH = app.getPath('userData');
-        this.IMAGES_FOLDER = join(APP_PATH, 'images');
-        this.ensureImagesFolderExists();
-    }
+    private constructor() {}
 
     public static getInstance(): ImageStorage {
         if (!ImageStorage.instance) {
             ImageStorage.instance = new ImageStorage();
         }
         return ImageStorage.instance;
+    }
+
+    private get IMAGES_FOLDER(): string {
+        return join(app.getPath('userData'), 'images');
     }
 
     private ensureImagesFolderExists() {
@@ -42,6 +40,7 @@ class ImageStorage {
     }
 
     writeImage(fileName: string, base64Img: string): string | null {
+        this.ensureImagesFolderExists();
         const data = base64Img.replace(/^data:image\/\w+;base64,/, '');
         const imageData = Buffer.from(data, 'base64');
         const filePath = join(this.IMAGES_FOLDER, fileName);
@@ -71,6 +70,7 @@ class ImageStorage {
 
     listImages(): string[] {
         try {
+            this.ensureImagesFolderExists();
             return readdirSync(this.IMAGES_FOLDER);
         } catch (error) {
             console.error('Error listing images:', error);

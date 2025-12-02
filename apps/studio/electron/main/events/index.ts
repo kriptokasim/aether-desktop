@@ -3,7 +3,7 @@ import { WindowCommand } from '@aether/models/projects';
 import { BrowserWindow, ipcMain, shell } from 'electron';
 import { mainWindow } from '..';
 import { imageStorage } from '../storage/images';
-import { updater } from '../update';
+import AppUpdater from '../update';
 import { listenForAnalyticsMessages } from './analytics';
 import { listenForAssetMessages } from './asset';
 import { listenForAuthMessages } from './auth';
@@ -63,7 +63,7 @@ function listenForGeneralMessages() {
     ipcMain.handle(
         MainChannels.QUIT_AND_INSTALL,
         (e: Electron.IpcMainInvokeEvent, args: string) => {
-            return updater.quitAndInstall();
+            return AppUpdater.getInstance().quitAndInstall();
         },
     );
 

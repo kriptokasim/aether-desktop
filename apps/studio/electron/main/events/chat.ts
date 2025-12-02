@@ -16,14 +16,14 @@ export function listenForChatMessages() {
                 messages: CoreMessage[];
                 requestType: StreamRequestType;
             };
-            return Chat.stream(messages, requestType);
+            return Chat.getInstance().stream(messages, requestType);
         },
     );
 
     ipcMain.handle(
         MainChannels.SEND_STOP_STREAM_REQUEST,
         (e: Electron.IpcMainInvokeEvent, args) => {
-            return Chat.abortStream();
+            return Chat.getInstance().abortStream();
         },
     );
 
@@ -49,7 +49,7 @@ export function listenForChatMessages() {
         const { messages } = args as {
             messages: CoreMessage[];
         };
-        return Chat.generateSuggestions(messages);
+        return Chat.getInstance().generateSuggestions(messages);
     });
 
     ipcMain.handle(
@@ -70,7 +70,7 @@ export function listenForChatMessages() {
 
     ipcMain.handle(MainChannels.GENERATE_CHAT_SUMMARY, async (e, args) => {
         const { messages } = args as { messages: CoreMessage[] };
-        return Chat.generateChatSummary(messages);
+        return Chat.getInstance().generateChatSummary(messages);
     });
 
     ipcMain.handle(MainChannels.SAVE_APPLY_RESULT, (e, args) => {

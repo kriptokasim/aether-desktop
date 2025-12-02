@@ -395,4 +395,4 @@ ${currentStatus}`;
     }
 }
 
-export default LlmManager.getInstance();
+export default LlmManager;

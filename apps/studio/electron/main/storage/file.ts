@@ -3,11 +3,12 @@ import path from 'path';
 import { BasePersistentStorage } from './base';
 
 export class SingleFilePersistentStorage<T> extends BasePersistentStorage<T> {
-    public readonly FILE_PATH: string;
-
     constructor(fileName: string, encrypted = false) {
         super(fileName, encrypted);
-        this.FILE_PATH = path.join(this.APP_PATH, `${fileName}.json`);
+    }
+
+    get FILE_PATH(): string {
+        return path.join(this.APP_PATH, `${this.fileName}.json`);
     }
 
     read(): T | null {

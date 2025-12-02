@@ -10,18 +10,23 @@ export class DirectoryPersistentStorage<
     T extends { id: K },
     K extends string | number = string,
 > extends BasePersistentStorage<T> {
-    public readonly DIR_PATH: string;
-    private readonly INDEX_PATH: string;
-
     constructor(
         fileName: string,
         encrypted = false,
         private readonly getCollectionKey?: (item: T) => string,
     ) {
         super(fileName, encrypted);
-        this.DIR_PATH = path.join(this.APP_PATH, fileName);
-        this.INDEX_PATH = path.join(this.DIR_PATH, 'index.json');
+    }
 
+    get DIR_PATH(): string {
+        return path.join(this.APP_PATH, this.fileName);
+    }
+
+    private get INDEX_PATH(): string {
+        return path.join(this.DIR_PATH, 'index.json');
+    }
+
+    private ensureDir() {
         if (!existsSync(this.DIR_PATH)) {
             mkdirSync(this.DIR_PATH, { recursive: true });
         }
@@ -44,6 +49,7 @@ export class DirectoryPersistentStorage<
 
     writeItem(item: T) {
         try {
+            this.ensureDir();
             const filePath = this.getItemPath(item.id);
             const data = this.encrypted
                 ? this.writeEncryptedData(item)
@@ -115,6 +121,7 @@ export class DirectoryPersistentStorage<
     }
 
     private writeIndex(index: StorageIndex<K>) {
+        this.ensureDir();
         writeFileSync(this.INDEX_PATH, JSON.stringify(index));
     }
 

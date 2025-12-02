@@ -9,7 +9,7 @@ import { sendAnalytics } from './analytics';
 import { handleAuthCallback, setupAuthAutoRefresh } from './auth';
 import { listenForIpcMessages } from './events';
 import runManager from './run';
-import { updater } from './update';
+import AppUpdater from './update';
 
 // Help main inherit $PATH defined in dotfiles (.bashrc/.bash_profile/.zshrc/etc).
 fixPath();
@@ -97,7 +97,7 @@ const setupAppEventListeners = () => {
     });
 
     app.on('ready', () => {
-        updater.listen();
+        AppUpdater.getInstance().listen();
         sendAnalytics('start app');
     });
 
