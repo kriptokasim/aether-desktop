@@ -33,12 +33,12 @@ export const TerminalCard = ({ command, output, exitCode, isRunning }: TerminalC
 
     const getStatusIcon = () => {
         if (isRunning) {
-            return <Icons.Spinner className="w-3 h-3 animate-spin" />;
+            return <Icons.Reload className="w-3 h-3 animate-spin" />;
         }
         if (exitCode === 0) {
             return <Icons.Check className="w-3 h-3" />;
         }
-        return <Icons.Cross className="w-3 h-3" />;
+        return <Icons.CrossS className="w-3 h-3" />;
     };
 
     return (

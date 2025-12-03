@@ -21,14 +21,16 @@ export const FigmaCard = ({
         <div className="w-full my-2 overflow-hidden border rounded-lg bg-background-secondary border-border-secondary">
             <div className="flex gap-3 p-3">
                 {/* Icon / Preview */}
-                <div className="flex items-center justify-center w-10 h-10 rounded-md bg-[#F24E1E]/10 text-[#F24E1E] shrink-0">
-                    <Icons.Figma className="w-5 h-5" />
+                <div className="flex items-center justify-center w-8 h-8 rounded bg-[#F24E1E]/10 text-[#F24E1E]">
+                    <Icons.ComponentInstance className="w-5 h-5" />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                    <h4 className="text-sm font-medium text-foreground truncate">{nodeName}</h4>
-                    <p className="text-xs text-foreground-tertiary truncate">Node ID: {nodeId}</p>
+                    <h4 className="text-sm font-medium truncate text-foreground">{nodeName}</h4>
+                    <p className="text-xs text-foreground-secondary truncate">
+                        Figma Node: {nodeId}
+                    </p>
                 </div>
             </div>
 
@@ -72,8 +74,8 @@ export const FigmaCard = ({
                     >
                         {isGenerating ? (
                             <>
-                                <Icons.Spinner className="w-3 h-3 animate-spin" />
-                                Generating...
+                                <Icons.Reload className="w-3 h-3 animate-spin" />
+                                Generating code...
                             </>
                         ) : (
                             <>

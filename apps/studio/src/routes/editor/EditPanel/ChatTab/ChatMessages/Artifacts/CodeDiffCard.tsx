@@ -90,7 +90,7 @@ export const CodeDiffCard = ({
                         className="h-7 text-xs gap-1.5 text-red-400 hover:text-red-300 hover:bg-red-950/20 border-red-900/20"
                         onClick={onReject}
                     >
-                        <Icons.Cross className="w-3 h-3" />
+                        <Icons.CrossS className="w-3 h-3" />
                         Reject
                     </Button>
                     <Button

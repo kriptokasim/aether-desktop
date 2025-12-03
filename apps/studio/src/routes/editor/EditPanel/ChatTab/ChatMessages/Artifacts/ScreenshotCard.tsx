@@ -56,15 +56,13 @@ export const ScreenshotCard = ({ url, base64, caption, onCritique }: ScreenshotC
                 </div>
 
                 {onCritique && (
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        className="h-7 text-xs gap-1.5"
+                    <button
                         onClick={onCritique}
+                        className="flex items-center gap-1.5 px-2 py-1 text-[10px] font-medium text-foreground-secondary hover:text-foreground bg-background-primary hover:bg-background-secondary border border-border-secondary rounded transition-colors"
                     >
-                        <Icons.Eye className="w-3 h-3" />
+                        <Icons.EyeOpen className="w-3 h-3" />
                         Critique
-                    </Button>
+                    </button>
                 )}
             </div>
         </div>

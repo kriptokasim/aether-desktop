@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import { CodeBlock } from '../../CodeChangeDisplay/CodeBlock';
+import { CodeDiffCard } from '../Artifacts/CodeDiffCard';
 import { FigmaCard } from '../Artifacts/FigmaCard';
 import { ScreenshotCard } from '../Artifacts/ScreenshotCard';
 import { TerminalCard } from '../Artifacts/TerminalCard';
@@ -73,6 +74,40 @@ export const ToolCallDisplay = observer(
                     isGenerating={!toolResult && isStream}
                 />
             );
+        }
+
+        if (toolCall.toolName === 'str_replace_editor') {
+            const args = (toolCall as any).args as {
+                command: string;
+                path: string;
+                old_str?: string;
+                new_str?: string;
+                file_text?: string;
+            };
+
+            // Only show diff for replace/create/insert commands
+            if (['str_replace', 'create', 'insert'].includes(args?.command)) {
+                let originalContent = '';
+                let newContent = '';
+
+                if (args.command === 'str_replace') {
+                    originalContent = args.old_str || '';
+                    newContent = args.new_str || '';
+                } else if (args.command === 'create') {
+                    newContent = args.file_text || '';
+                } else if (args.command === 'insert') {
+                    newContent = args.new_str || '';
+                }
+
+                return (
+                    <CodeDiffCard
+                        path={args?.path || ''}
+                        originalContent={originalContent}
+                        newContent={newContent}
+                        isApplied={!!toolResult}
+                    />
+                );
+            }
         }
 
         return (
