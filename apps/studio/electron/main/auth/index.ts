@@ -9,7 +9,7 @@ import type {
     User,
 } from '@supabase/supabase-js';
 import { shell } from 'electron';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import analytics, { sendAnalytics } from '../analytics';
 import { PersistentStorage } from '../storage';
 

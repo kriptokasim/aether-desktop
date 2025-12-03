@@ -20,7 +20,7 @@ import {
     type TextStreamPart,
     type ToolSet,
 } from 'ai';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import { z } from 'zod';
 import { PersistentStorage } from '../storage';
 import {

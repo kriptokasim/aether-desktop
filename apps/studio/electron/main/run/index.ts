@@ -2,7 +2,7 @@ import { MainChannels } from '@aether/models/constants';
 import type { TemplateNode } from '@aether/models/element';
 import { RunState } from '@aether/models/run';
 import { subscribe, type AsyncSubscription } from '@parcel/watcher';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import { sendAnalytics } from '../analytics';
 import { writeFile } from '../code/files';
 import { removeIdsFromDirectory } from './cleanup';

@@ -8,7 +8,7 @@ import { removeFontVariableFromLayout } from './layout';
 import { removeFontFromTailwindConfig, updateTailwindFontConfig } from './tailwind';
 import type { Font } from '@aether/models/assets';
 import { detectRouterType } from '../../pages';
-import { mainWindow } from '../../index';
+import { mainWindow } from '../../window';
 
 export class FontFileWatcher {
     private subscription: AsyncSubscription | null = null;

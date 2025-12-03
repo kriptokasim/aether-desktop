@@ -1,7 +1,7 @@
 import { MainChannels } from '@aether/models/constants';
 import { WindowCommand } from '@aether/models/projects';
 import { BrowserWindow, ipcMain, shell } from 'electron';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import { imageStorage } from '../storage/images';
 import AppUpdater from '../update';
 import { listenForAnalyticsMessages } from './analytics';

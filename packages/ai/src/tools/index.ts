@@ -130,8 +130,17 @@ export const getStrReplaceEditorTool = (handlers: FileOperationHandlers) => {
     return strReplaceEditorTool;
 };
 
+import { searchCodebaseTool } from './search';
+import { runTerminalCommandSafeTool } from './terminal';
+import { takeScreenshotTool } from './browser';
+import { readFigmaNodeTool } from './figma';
+
 export const chatToolSet: ToolSet = {
     list_files: listFilesTool,
     read_files: readFilesTool,
     aether_instructions: aetherInstructionsTool,
+    search_codebase: searchCodebaseTool,
+    run_terminal_command_safe: runTerminalCommandSafeTool,
+    take_screenshot: takeScreenshotTool,
+    read_figma_node: readFigmaNodeTool,
 };

@@ -2,7 +2,7 @@ import electronUpdater from 'electron-updater';
 
 import { MainChannels } from '@aether/models/constants';
 import log from 'electron-log';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 
 class AppUpdater {
     static instance: AppUpdater | null = null;

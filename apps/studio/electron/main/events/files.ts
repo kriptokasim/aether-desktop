@@ -5,6 +5,10 @@ import { scanProjectFiles, getProjectFiles } from '../code/files-scan';
 export function listenForFileMessages() {
     // Scan all project files and return a tree structure
     ipcMain.handle(MainChannels.SCAN_FILES, async (_event, projectRoot: string) => {
+        // Start watching the project
+        const { projectWatcher } = await import('../code/watcher');
+        projectWatcher.watch(projectRoot);
+
         const files = await scanProjectFiles(projectRoot);
         return files;
     });

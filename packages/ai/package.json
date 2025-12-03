@@ -31,7 +31,9 @@
         "@aether/typescript": "*"
     },
     "dependencies": {
+        "@aether/supabase": "^0.0.0",
         "@ai-sdk/anthropic": "^1.1.17",
+        "@supabase/supabase-js": "^2.86.0",
         "ai": "^4.2.6",
         "diff-match-patch": "^1.0.5",
         "fast-glob": "^3.3.3",

@@ -2,7 +2,7 @@ import { CreateStage, SetupStage, type CreateCallback, type SetupCallback } from
 import type { ImageMessageContext } from '@aether/models/chat';
 import { MainChannels } from '@aether/models/constants';
 import { ipcMain } from 'electron';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import projectCreator from '../create';
 import { getCreateProjectPath } from '../create/helpers';
 import { createProject } from '../create/install';

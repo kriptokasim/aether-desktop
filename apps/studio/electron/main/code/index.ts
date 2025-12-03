@@ -3,7 +3,7 @@ import { MainChannels } from '@aether/models/constants';
 import type { TemplateNode } from '@aether/models/element';
 import { DEFAULT_IDE, IdeType } from '@aether/models/ide';
 import { dialog, shell } from 'electron';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import { GENERATE_CODE_OPTIONS } from '../run/helpers';
 import { PersistentStorage } from '../storage';
 import { generateCode } from './diff/helpers';

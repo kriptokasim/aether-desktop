@@ -24,7 +24,7 @@ import {
     type FreestyleDeployWebConfiguration,
     type FreestyleDeployWebSuccessResponse,
 } from 'freestyle-sandboxes';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import analytics from '../analytics';
 import { getRefreshedAuthTokens } from '../auth';
 import {

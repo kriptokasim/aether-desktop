@@ -14,8 +14,8 @@ import AppUpdater from './update';
 // Help main inherit $PATH defined in dotfiles (.bashrc/.bash_profile/.zshrc/etc).
 fixPath();
 
-export let mainWindow: BrowserWindow | null = null;
-const require = createRequire(import.meta.url);
+import { setMainWindow } from './window';
+
 export const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Constants
@@ -59,7 +59,7 @@ const setupProtocol = () => {
 };
 
 const createWindow = () => {
-    mainWindow = new BrowserWindow({
+    const win = new BrowserWindow({
         title: APP_NAME,
         minWidth: 800,
         icon: path.join(process.env.VITE_PUBLIC, 'favicon.ico'),
@@ -70,7 +70,8 @@ const createWindow = () => {
             webviewTag: true,
         },
     });
-    return mainWindow;
+    setMainWindow(win);
+    return win;
 };
 
 const loadWindowContent = (win: BrowserWindow) => {
@@ -103,12 +104,13 @@ const setupAppEventListeners = () => {
 
     app.on('window-all-closed', async () => {
         if (process.platform !== 'darwin') {
-            mainWindow = null;
+            setMainWindow(null);
             app.quit();
         }
     });
 
-    app.on('second-instance', (_, commandLine) => {
+    app.on('second-instance', async (_, commandLine) => {
+        const { mainWindow } = await import('./window');
         if (mainWindow) {
             if (mainWindow.isMinimized()) {
                 mainWindow.restore();
@@ -139,6 +141,7 @@ const setupAppEventListeners = () => {
         });
 
         try {
+            const { mainWindow } = await import('./window');
             await Promise.race([
                 Promise.all([
                     mainWindow?.webContents.send(MainChannels.CLEAN_UP_BEFORE_QUIT),

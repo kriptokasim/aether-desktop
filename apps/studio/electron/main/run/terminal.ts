@@ -2,7 +2,7 @@ import { MainChannels } from '@aether/models/constants';
 import { RunState } from '@aether/models/run';
 import * as pty from 'node-pty';
 import os from 'os';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import { getBunCommand } from '../bun';
 
 class TerminalManager {

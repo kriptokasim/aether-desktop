@@ -12,7 +12,7 @@ import { MainChannels } from '@aether/models/constants';
 import type { CoreMessage, CoreSystemMessage } from 'ai';
 import fs from 'fs';
 import path from 'path';
-import { mainWindow } from '..';
+import { mainWindow } from '../window';
 import Chat from '../chat';
 import { getCreateProjectPath } from './helpers';
 import { createProject } from './install';
@@ -101,12 +101,16 @@ export class ProjectCreator {
             experimental_providerMetadata: {
                 anthropic: { cacheControl: { type: 'ephemeral' } },
             },
-        };
+        } as any;
 
-        const response = await Chat.stream([systemMessage, ...messages], StreamRequestType.CREATE, {
-            abortController: this.abortController,
-            skipSystemPrompt: true,
-        });
+        const response = await Chat.getInstance().stream(
+            [systemMessage, ...messages],
+            StreamRequestType.CREATE,
+            {
+                abortController: this.abortController,
+                skipSystemPrompt: true,
+            },
+        );
 
         if (response.type !== 'full') {
             throw new Error('Failed to generate page. ' + this.getStreamErrorMessage(response));
@@ -134,7 +138,13 @@ export class ProjectCreator {
         const projectName = `project-${Date.now()}`;
 
         await createProject(projectName, projectsPath, this.createCallback.bind(this));
-        return path.join(projectsPath, projectName);
+        const fullPath = path.join(projectsPath, projectName);
+
+        // Start watching the new project
+        const { projectWatcher } = await import('../code/watcher');
+        projectWatcher.watch(fullPath);
+
+        return fullPath;
     }
 
     private createCallback: CreateCallback = (stage: CreateStage, message: string) => {
