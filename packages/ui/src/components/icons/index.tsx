@@ -133,6 +133,10 @@ export interface IconProps {
 }
 
 export const Icons = {
+    Eye: EyeOpenIcon,
+    Spinner: ReloadIcon,
+    Cross: Cross2Icon,
+    Figma: ComponentInstanceIcon, // Fallback as FigmaLogoIcon might not be available in this version
     AetherLogo: ({ className, ...props }: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"

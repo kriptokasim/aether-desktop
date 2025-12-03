@@ -134,6 +134,7 @@ import { searchCodebaseTool } from './search';
 import { runTerminalCommandSafeTool } from './terminal';
 import { takeScreenshotTool } from './browser';
 import { readFigmaNodeTool } from './figma';
+import { readComponentSchema } from './code';
 
 export const chatToolSet: ToolSet = {
     list_files: listFilesTool,
@@ -143,4 +144,5 @@ export const chatToolSet: ToolSet = {
     run_terminal_command_safe: runTerminalCommandSafeTool,
     take_screenshot: takeScreenshotTool,
     read_figma_node: readFigmaNodeTool,
+    read_component_schema: readComponentSchema,
 };

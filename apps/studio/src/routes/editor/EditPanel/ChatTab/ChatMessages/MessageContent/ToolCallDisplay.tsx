@@ -1,4 +1,5 @@
-import { useUserManager } from '@/components/Context';
+import { useEditorEngine, useUserManager } from '@/components/Context';
+import { ChatMessageRole } from '@aether/models/chat';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@aether/ui/collapsible';
 import { Icons } from '@aether/ui/icons';
 import { cn } from '@aether/ui/utils';
@@ -7,10 +8,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import { CodeBlock } from '../../CodeChangeDisplay/CodeBlock';
+import { FigmaCard } from '../Artifacts/FigmaCard';
+import { ScreenshotCard } from '../Artifacts/ScreenshotCard';
+import { TerminalCard } from '../Artifacts/TerminalCard';
 
 export const ToolCallDisplay = observer(
     ({ toolCall, isStream }: { toolCall: ToolCallPart; isStream: boolean }) => {
         const userManager = useUserManager();
+        const editorEngine = useEditorEngine();
         const [isOpen, setIsOpen] = useState(false);
 
         const getAnimation = () => {
@@ -19,6 +24,56 @@ export const ToolCallDisplay = observer(
             }
             return isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 };
         };
+
+        // Find the result for this tool call
+        const toolResult = editorEngine.chat.conversation.current?.messages
+            .filter((m) => m.role === ChatMessageRole.TOOL)
+            .flatMap((m) => (Array.isArray(m.content) ? m.content : []))
+            .find((c: any) => c.toolCallId === toolCall.toolCallId) as any;
+
+        // Render specific cards based on tool name
+        if (toolCall.toolName === 'run_terminal_command_safe') {
+            const args = (toolCall as any).args as { command: string };
+            const result = toolResult?.result as { output: string; exitCode?: number } | string;
+            const output = typeof result === 'string' ? result : result?.output || '';
+            const exitCode = typeof result === 'object' ? result?.exitCode : undefined;
+
+            return (
+                <TerminalCard
+                    command={args?.command || ''}
+                    output={output}
+                    exitCode={exitCode}
+                    isRunning={!toolResult && isStream}
+                />
+            );
+        }
+
+        if (toolCall.toolName === 'take_screenshot') {
+            const args = (toolCall as any).args as { url?: string };
+            const result = toolResult?.result as string; // Assuming base64 or URL is returned directly
+
+            return (
+                <ScreenshotCard
+                    url={args?.url}
+                    base64={result}
+                    caption={args?.url ? `Screenshot of ${args.url}` : 'Screenshot'}
+                />
+            );
+        }
+
+        if (toolCall.toolName === 'read_figma_node') {
+            const args = (toolCall as any).args as { nodeId: string };
+            const result = toolResult?.result as { name: string; imageUrl?: string };
+
+            return (
+                <FigmaCard
+                    nodeId={args?.nodeId || ''}
+                    nodeName={result?.name || args?.nodeId || ''}
+                    previewUrl={result?.imageUrl}
+                    isGenerating={!toolResult && isStream}
+                />
+            );
+        }
 
         return (
             <Collapsible open={isOpen} onOpenChange={setIsOpen}>
@@ -69,7 +124,7 @@ export const ToolCallDisplay = observer(
                             >
                                 <div className="border-t">
                                     <CodeBlock
-                                        code={JSON.stringify(toolCall.args, null, 2)}
+                                        code={JSON.stringify((toolCall as any).args, null, 2)}
                                         variant="minimal"
                                     />
                                 </div>
